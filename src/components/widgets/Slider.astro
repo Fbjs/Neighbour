@@ -1,0 +1,165 @@
+<div class="w-full mx-auto">
+    <div id="default-carousel" class="relative overflow-hidden" data-carousel="static">
+        <!-- Carousel Wrapper -->
+        <div class="relative h-[700px]">
+            <!-- Carousel Items -->
+            <div class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-100" data-carousel-item>
+                <!---img src="/src/assets/images/tex5.jpg" class="w-full h-full object-cover shadow-lg" alt="Item 1">-->
+                <video autoplay muted loop playsinline class="w-full h-full object-cover shadow-lg">
+                    <source src="/src/assets/images/slider_1.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <div class="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-50 text-white text-center p-8">
+                    <h1 class="text-5xl font-bold mb-4">Soluciones tecnológicas Innovadoras y Eficientes</h1>
+                    <p class="text-lg mb-6 container">
+                        Neighbour Technology SpA es una empresa líder en el desarrollo de aplicaciones y sistemas de información. 
+                        Optimización de recursos y creación de herramientas digitales innovadoras para garantizar la máxima satisfacción y eficiencia.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#conocenos" class="px-6 py-3 bg-blue-600 rounded-full text-white hover:bg-blue-700 transition">
+                            Conócenos <i class="fas fa-info-circle"></i>
+                        </a>
+                        <a href="#contactanos" class="px-6 py-3 bg-gray-600 rounded-full text-white hover:bg-gray-700 transition">
+                            Contáctanos
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Repite lo anterior para cada diapositiva -->
+
+            <div class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-100" data-carousel-item>
+                <!---img src="/src/assets/images/tex5.jpg" class="w-full h-full object-cover shadow-lg" alt="Item 1">--->
+                <video autoplay muted loop playsinline class="w-full h-full object-cover shadow-lg">
+                    <source src="/src/assets/images/slider_2.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <div class="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-50 text-white text-center p-8">
+                    <h1 class="text-5xl font-bold mb-4">Innovación y Creatividad en cada Proyecto</h1>
+                    <p class="text-lg mb-6 container">
+                        En Neighbour Technology SpA nos destacamos por nuestra metodología centrada en la mejora continua, la sinergia y la creatividad colaborativa.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#conocenos" class="px-6 py-3 bg-blue-600 rounded-full text-white hover:bg-blue-700 transition">
+                            Conócenos <i class="fas fa-info-circle"></i>
+                        </a>
+                        <a href="#contactanos" class="px-6 py-3 bg-gray-600 rounded-full text-white hover:bg-gray-700 transition">
+                            Contáctanos
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-100" data-carousel-item>
+                <!---img src="/src/assets/images/tex5.jpg" class="w-full h-full object-cover shadow-lg" alt="Item 1">---->
+                <video autoplay muted loop playsinline class="w-full h-full object-cover shadow-lg">
+                    <source src="/src/assets/images/slider_3.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <div class="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-50 text-white text-center p-8">
+                    <h1 class="text-5xl font-bold mb-4">Soluciones Digitales de Alto Impacto</h1>
+                    <p class="text-lg mb-6 container">
+                        Nuestro enfoque en la calidad y eficiencia garantiza resultados excepcionales y la satisfacción de nuestros clientes.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#conocenos" class="px-6 py-3 bg-blue-600 rounded-full text-white hover:bg-blue-700 transition">
+                            Conócenos <i class="fas fa-info-circle"></i>
+                        </a>
+                        <a href="#contactanos" class="px-6 py-3 bg-gray-600 rounded-full text-white hover:bg-gray-700 transition">
+                            Contáctanos
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Previous/Next Buttons -->
+        <button type="button" class="absolute  z-30 top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full" aria-label="Anterior" data-carousel-prev>
+            &#10094;
+        </button>
+        <button type="button" class="absolute  z-30 top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full" aria-label="Siguiente" data-carousel-next>
+            &#10095;
+        </button>
+
+        <!-- Carousel Indicators -->
+        <div class="absolute bottom-4 left-1/2 flex -translate-x-1/2 space-x-3 z-30">
+            <button type="button" class="w-4 h-4 rounded-full bg-white/60 hover:bg-white transition-shadow duration-300 shadow-md" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+            <button type="button" class="w-4 h-4 rounded-full bg-white/60 hover:bg-white transition-shadow duration-300 shadow-md" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+            <button type="button" class="w-4 h-4 rounded-full bg-white/60 hover:bg-white transition-shadow duration-300 shadow-md" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+            <!-- Añadir más indicadores según sea necesario -->
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const carousel = document.getElementById('default-carousel');
+        if (!carousel) {
+            console.error('El carrusel no se encontró.');
+            return;
+        }
+
+        const items = Array.from(carousel.querySelectorAll('[data-carousel-item]'));
+        const indicators = Array.from(carousel.querySelectorAll('[data-carousel-slide-to]'));
+        let currentIndex = 0;
+
+        function showItem(index) {
+            items.forEach((item, i) => {
+                const htmlItem = item;
+                htmlItem.style.opacity = i === index ? '1' : '0';
+                htmlItem.style.zIndex = i === index ? '1' : '0';
+            });
+
+            indicators.forEach((indicator, i) => {
+                const htmlIndicator = indicator;
+                htmlIndicator.classList.toggle('bg-white', i === index);
+                htmlIndicator.classList.toggle('bg-white/60', i !== index);
+            });
+        }
+
+        function showNextItem() {
+            currentIndex = (currentIndex + 1) % items.length;
+            showItem(currentIndex);
+        }
+
+        function showPreviousItem() {
+            currentIndex = (currentIndex - 1 + items.length) % items.length;
+            showItem(currentIndex);
+        }
+
+        function goToItem(index) {
+            currentIndex = index;
+            showItem(currentIndex);
+        }
+
+        // Auto-play every 5 seconds
+        const intervalId = setInterval(showNextItem, 5000);
+
+        // Event listeners for indicators
+        indicators.forEach((indicator, i) => {
+            indicator.addEventListener('click', () => {
+                clearInterval(intervalId); // Stop auto-play when user interacts
+                goToItem(i);
+            });
+        });
+
+        // Event listeners for Previous/Next buttons
+        const prevButton = carousel.querySelector('[data-carousel-prev]');
+        const nextButton = carousel.querySelector('[data-carousel-next]');
+
+        if (prevButton && nextButton) {
+            prevButton.addEventListener('click', () => {
+                clearInterval(intervalId); // Stop auto-play when user interacts
+                showPreviousItem();
+            });
+
+            nextButton.addEventListener('click', () => {
+                clearInterval(intervalId); // Stop auto-play when user interacts
+                showNextItem();
+            });
+        }
+
+        // Initialize first item
+        showItem(currentIndex);
+    });
+</script>

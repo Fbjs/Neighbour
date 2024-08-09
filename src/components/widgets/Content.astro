@@ -6,6 +6,11 @@ import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
 import ItemGrid from '../ui/ItemGrid.astro';
 
+import image2 from '~/assets/images/FENIX_contact_center.png';
+
+import tex5 from '~/assets/images/tex5.jpg';
+
+
 const {
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
@@ -76,7 +81,7 @@ const {
                 <Fragment set:html={image} />
               ) : (
                 <Image
-                  class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
+                  class="mx-auto w-full rounded-lg shadow-lg"
                   width={500}
                   height={500}
                   widths={[400, 768]}
@@ -92,3 +97,8 @@ const {
     </div>
   </div>
 </WidgetWrapper>
+
+
+<div class="relative m-auto max-w-5xl">
+  <img src={image2?.src} alt="tex5" class="mx-auto rounded-md w-full" />
+</div>

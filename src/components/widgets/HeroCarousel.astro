@@ -1,0 +1,116 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+
+const slides = [
+  {
+    videoSrc: "https://neighbour.cl/slider_1_v2.mp4",
+    title: "Soluciones tecnológicas Innovadoras y Eficientes",
+    subtitle: "Neighbour Technology SpA es una empresa líder en el desarrollo de aplicaciones y sistemas de información. Optimización de recursos y creación de herramientas digitales innovadoras para garantizar la máxima satisfacción y eficiencia.",
+    actions: [
+      {
+        variant: 'primary',
+        text: 'Conócenos',
+        href: '#features',
+        icon: 'tabler:info-circle',
+      },
+      { text: 'Contáctanos', href: '#contact' },
+    ],
+    image: { src: '~/assets/images/astro-hero.png', alt: 'Neighbour Technology Hero Image' }
+  },
+  {
+    videoSrc: "https://neighbour.cl/slider_2_v2.mp4",
+    title: "Innovación y Creatividad en cada Proyecto",
+    subtitle: "En Neighbour Technology SpA nos destacamos por nuestra metodología centrada en la mejora continua, la sinergia y la creatividad colaborativa.",
+    actions: [
+      {
+        variant: 'primary',
+        text: 'Explora',
+        href: '#services',
+        icon: 'tabler:info-circle',
+      },
+      { text: 'Contáctanos', href: '#contact' },
+    ],
+    image: { src: '~/assets/images/astro-hero-2.png', alt: 'Neighbour Technology Hero Image 2' }
+  },
+  {
+    videoSrc: "https://neighbour.cl/slider_3_v2.mp4",
+    title: "Soluciones Digitales de Alto Impacto",
+    subtitle: "Nuestro enfoque en la calidad y eficiencia garantiza resultados excepcionales y la satisfacción de nuestros clientes.",
+    actions: [
+      {
+        variant: 'primary',
+        text: 'Descubre',
+        href: '#about',
+        icon: 'tabler:info-circle',
+      },
+      { text: 'Contáctanos', href: '#contact' },
+    ],
+    image: { src: '~/assets/images/astro-hero-3.png', alt: 'Neighbour Technology Hero Image 3' }
+  }
+];
+---
+
+<div class="carousel relative w-full overflow-hidden">
+  <div class="slides flex transition-transform duration-1000 ease-in-out" id="carousel-slides">
+    {slides.map((slide, index) => (
+      <div class="slide min-w-full relative" key={index}>
+        <Hero
+          videoSrc={slide.videoSrc}
+          actions={slide.actions}
+          image={slide.image}
+        >
+          <Fragment slot="title">
+            <span class="text-accent text-white highlight">{slide.title}</span>
+          </Fragment>
+          <Fragment slot="subtitle">
+            <div class="text-white ">
+              <span class="hidden sm:inline text-white">
+                <span class="font-semibold">Neighbour Technology SpA</span> {slide.subtitle}</span>
+              <span class="block mb-1 sm:hidden font-bold text-white">Neighbour Technology: Innovación y Eficiencia.</span>
+              {slide.subtitle}
+            </div>      
+          </Fragment>
+        </Hero>
+      </div>
+    ))}
+  </div>
+  <button class="prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-white p-2 rounded-full" id="prev-btn">Prev</button>
+  <button class="next absolute top-1/2 right-4 transform -translate-y-1/2 bg-white p-2 rounded-full" id="next-btn">Next</button>
+</div>
+
+<style>
+  .carousel {
+    position: relative;
+    width: 100%;
+  }
+  .slides {
+    display: flex;
+    transition: transform 1s ease-in-out;
+  }
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    let currentIndex = 0;
+    const slides = document.getElementById('carousel-slides');
+    const totalSlides = slides.children.length;
+
+    document.getElementById('prev-btn').addEventListener('click', () => {
+      currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalSlides - 1;
+      updateCarousel();
+    });
+
+    document.getElementById('next-btn').addEventListener('click', () => {
+      currentIndex = (currentIndex < totalSlides - 1) ? currentIndex + 1 : 0;
+      updateCarousel();
+    });
+
+    function updateCarousel() {
+      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+  });
+</script>

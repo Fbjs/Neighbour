@@ -1,7 +1,39 @@
 import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 
 export const headerData = {
-  links: [
+  links:[
+    {
+      text: 'Inicio',
+      href: '/',
+    },
+    {
+      text: 'Nosotros',
+      href: getPermalink('/about'),
+    },
+    {
+      text: 'Servicios',
+      links: [
+        {
+          text: 'Fenix Contact Center Suite',
+          href: getPermalink('/services'),
+        },
+        {
+          text: 'LeadSync Suite',
+          href: getPermalink('/landing/product'),
+        },
+        {
+          text: 'Web Design',
+          href: getBlogPermalink(),
+        },
+      ]
+    },
+    {
+      text: 'Contacto',
+      href: getPermalink('/contact'),
+    },
+  ],
+
+  /*links: [
     {
       text: 'Homes',
       links: [
@@ -114,8 +146,8 @@ export const headerData = {
       text: 'Widgets',
       href: '#',
     },
-  ],
-  actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
+  ],*/
+  //actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
 };
 
 export const footerData = {

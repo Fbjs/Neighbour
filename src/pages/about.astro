@@ -7,113 +7,115 @@ import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'About us',
+  title: 'Sobre Nosotros - Neighbour Technology SpA',
 };
 ---
 
+<style>
+  .bg-fondo {
+    background-image: url('/src/assets/images/tex5.jpg'); /* Reemplaza con la ruta a tu imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
+  <div class="bg-fondo">
+    <Hero
+      tagline="Sobre Nosotros"
+      image={{
+        src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        alt: 'Caos Image',
+      }}
+    >
+      <Fragment slot="title">
+        Potencia tu presencia en línea con nuestras <br />
+        <span class="text-accent dark:text-white highlight"> Soluciones Tecnológicas Innovadoras</span>
+      </Fragment>
 
-  <Hero
-    tagline="About us"
-    image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
-    }}
-  >
-    <Fragment slot="title">
-      Elevate your online presence with our <br />
-      <span class="text-accent dark:text-white highlight"> Beautiful Website Templates</span>
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec
-      quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.
-      Suspendisse vitae nisi eget tortor luctus maximus sed non lectus.
-    </Fragment>
-  </Hero>
-
+      <Fragment slot="subtitle">
+        Neighbour Technology SpA es una empresa líder en soluciones tecnológicas, especializada en el desarrollo de aplicaciones y sistemas de información. Nos destacamos por nuestra metodología centrada en la mejora continua, la sinergia y la creatividad colaborativa.
+      </Fragment>
+    </Hero>
+  </div>
+  
   <!-- Stats Widget ****************** -->
-
   <Stats
-    title="Statistics about us"
+    title="Estadísticas de Neighbour Technology"
     stats={[
-      { title: 'Offices', amount: '4' },
-      { title: 'Employees', amount: '248' },
-      { title: 'Templates', amount: '12' },
-      { title: 'Awards', amount: '24' },
+      { title: 'Clientes Satisfechos', amount: '500+' },
+      { title: 'Proyectos Completados', amount: '1200+' },
+      { title: 'Años de Experiencia', amount: '10+' },
+      { title: 'Expertos en Tecnología', amount: '50+' },
     ]}
   />
 
   <!-- Features3 Widget ************** -->
-
   <Features3
-    title="Our templates"
-    subtitle="Etiam scelerisque, enim eget vestibulum luctus, nibh mauris blandit nulla, nec vestibulum risus justo ut enim. Praesent lacinia diam et ante imperdiet euismod."
+    title="Nuestros Servicios"
+    subtitle="Ofrecemos una amplia gama de servicios tecnológicos para satisfacer las necesidades de nuestros clientes."
     columns={3}
     isBeforeContent={true}
     items={[
       {
-        title: 'Educational',
+        title: 'Mantenimiento y Reparación de Hardware',
         description:
-          'Morbi faucibus luctus quam, sit amet aliquet felis tempor id. Cras augue massa, ornare quis dignissim a, molestie vel nulla.',
-        icon: 'tabler:template',
+          'Mantenimiento preventivo, reparaciones, actualizaciones, gestión de inventario y optimización de recursos.',
+        icon: 'tabler:tool',
       },
       {
-        title: 'Interior Design',
+        title: 'Desarrollo de Software y Sistemas Informáticos',
         description:
-          'Vivamus porttitor, tortor convallis aliquam pretium, turpis enim consectetur elit, vitae egestas purus erat ac nunc nulla.',
-        icon: 'tabler:template',
+          'Desarrollos web, intranet, sistemas de inventario, plataformas e-commerce, control documental y automatización de procesos.',
+        icon: 'tabler:code',
       },
       {
-        title: 'Photography',
+        title: 'Outsourcing de Especialistas de Tecnología',
         description:
-          'Duis sed lectus in nisl vehicula porttitor eget quis odio. Aliquam erat volutpat. Nulla eleifend nulla id sem fermentum.',
-        icon: 'tabler:template',
+          'BackOffice, analista de datos, soporte técnico, desarrolladores, gestión de redes y consultoría TI.',
+        icon: 'tabler:users',
       },
     ]}
   />
 
   <!-- Features3 Widget ************** -->
-
   <Features3
     columns={3}
     isAfterContent={true}
     items={[
       {
-        title: 'E-commerce',
+        title: 'CRM Fénix Contact Center Suite',
         description:
-          'Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien.',
+          'Solución multicanal para mejorar la eficiencia, satisfacción del cliente y resultados empresariales.',
         icon: 'tabler:template',
       },
       {
-        title: 'Blog',
+        title: 'Marketing Digital',
         description:
-          'Nullam efficitur volutpat sem sed fringilla. Suspendisse et enim eu orci volutpat laoreet ac vitae libero.',
+          'Campañas de generación de LEADS, Landing Pages y chatbots con análisis en tiempo real.',
         icon: 'tabler:template',
       },
       {
-        title: 'Business',
+        title: 'Data Center',
         description:
-          'Morbi et elit finibus, facilisis justo ut, pharetra ipsum. Donec efficitur, ipsum quis congue luctus, mauris magna.',
+          'Infraestructura de vanguardia, conectividad ultrarrápida, y servicios de nube confiables.',
         icon: 'tabler:template',
       },
       {
-        title: 'Branding',
+        title: 'Servicios TELCO',
         description:
-          'Suspendisse vitae nisi eget tortor luctus maximus sed non lectus. Cras malesuada pretium placerat. Nullam venenatis dolor a ante rhoncus.',
+          'Soluciones integrales de telecomunicaciones con telefonía IP y SMS eficientes.',
         icon: 'tabler:template',
       },
       {
-        title: 'Medical',
+        title: 'Expertos en VICIdial y Asterisk',
         description:
-          'Vestibulum malesuada lacus id nibh posuere feugiat. Nam volutpat nulla a felis ultrices, id suscipit mauris congue. In hac habitasse platea dictumst.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Fashion Design',
-        description:
-          'Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus.',
+          'Optimización de comunicaciones con soluciones líderes en telefonía IP.',
         icon: 'tabler:template',
       },
     ]}
@@ -124,65 +126,62 @@ const metadata = {
   />
 
   <!-- Steps2 Widget ****************** -->
-
   <Steps2
-    title="Our values"
-    subtitle="Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus."
+    title="Nuestros Valores"
+    subtitle="En Neighbour Technology SpA, nos guiamos por los siguientes principios fundamentales."
     items={[
       {
-        title: 'Customer-centric approach',
+        title: 'Enfoque centrado en el cliente',
         description:
-          'Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo. Ut eleifend luctus condimentum.',
+          'Nos esforzamos por comprender y satisfacer las necesidades de nuestros clientes.',
       },
       {
-        title: 'Constant Improvement',
+        title: 'Mejora constante',
         description:
-          'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo.',
+          'Siempre buscamos formas de mejorar nuestros servicios y procesos.',
       },
       {
-        title: 'Ethical Practices',
+        title: 'Prácticas éticas',
         description:
-          'Vestibulum imperdiet libero et lectus molestie, et maximus augue porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+          'Mantenemos un alto estándar de integridad y responsabilidad en todas nuestras operaciones.',
       },
     ]}
   />
 
   <!-- Steps2 Widget ****************** -->
-
   <Steps2
-    title="Achievements"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla, sed porttitor est nibh at nulla."
+    title="Logros"
+    subtitle="Nos enorgullece haber alcanzado estos hitos clave."
     isReversed={true}
     callToAction={{
-      text: 'See more',
+      text: 'Ver más',
       href: '/',
     }}
     items={[
       {
-        title: 'Global reach',
-        description: 'Nam malesuada urna in enim imperdiet tincidunt. Phasellus non tincidunt nisi, at elementum mi.',
+        title: 'Alcance global',
+        description: 'Hemos ampliado nuestras operaciones a múltiples países y continentes.',
         icon: 'tabler:globe',
       },
       {
-        title: 'Positive customer feedback and reviews',
+        title: 'Comentarios positivos de clientes',
         description:
-          'Cras semper nulla leo, eget laoreet erat cursus sed. Praesent faucibus massa in purus iaculis dictum.',
+          'Nuestros clientes valoran la calidad y eficacia de nuestros servicios.',
         icon: 'tabler:message-star',
       },
       {
-        title: 'Awards and recognition as industry experts',
+        title: 'Premios y reconocimientos',
         description:
-          'Phasellus lacinia cursus velit, eu malesuada magna pretium eu. Etiam aliquet tellus purus, blandit lobortis ex rhoncus vitae.',
+          'Hemos sido galardonados como expertos en la industria tecnológica.',
         icon: 'tabler:award',
       },
     ]}
   />
 
   <!-- Features2 Widget ************** -->
-
   <Features2
-    title="Our locations"
-    tagline="Find us"
+    title="Nuestras Ubicaciones"
+    tagline="Encuéntranos en"
     columns={4}
     items={[
       {
@@ -190,7 +189,7 @@ const metadata = {
         description: '1234 Lorem Ipsum St, 12345, Miami',
       },
       {
-        title: 'Spain',
+        title: 'España',
         description: '5678 Lorem Ipsum St, 56789, Madrid',
       },
       {
@@ -198,30 +197,8 @@ const metadata = {
         description: '9012 Lorem Ipsum St, 90123, Sydney',
       },
       {
-        title: 'Brazil',
+        title: 'Brasil',
         description: '3456 Lorem Ipsum St, 34567, São Paulo',
-      },
-    ]}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Technical Support"
-    tagline="Contact us"
-    columns={2}
-    items={[
-      {
-        title: 'Chat with us',
-        description:
-          'Integer luctus laoreet libero, auctor varius purus rutrum sit amet. Ut nec molestie nisi, quis eleifend mi.',
-        icon: 'tabler:messages',
-      },
-      {
-        title: 'Call us',
-        description:
-          'Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue.',
-        icon: 'tabler:headset',
       },
     ]}
   />

@@ -18,6 +18,18 @@
   .text-muted {
     color: var(--aw-color-text-muted);
   }
+
+  .bg-neighbour {
+    background-image: url('~/assets/images/neighbour-hero.webp');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .bg-slider1-neighbour {
+    background-image: url('~/assets/images/slider_1.mp4');
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 @layer components {
@@ -90,3 +102,5 @@
 .dd *:first-child {
   margin-top: 0;
 }
+
+
