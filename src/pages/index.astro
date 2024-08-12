@@ -14,11 +14,26 @@ import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Slider from '~/components/widgets/Slider.astro';
 
+import image2 from '~/assets/images/FENIX_contact_center.png';
+
+
 const metadata = {
   title: 'Neighbour Technology SpA — Soluciones Tecnológicas Innovadoras',
   ignoreTitleTemplate: true,
 };
 ---
+
+<style>
+  .bg-fondo {
+    background-image: url('/src/assets/images/tex5.jpg'); /* Reemplaza con la ruta a tu imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+  }
+</style>
 
 <Layout metadata={metadata}>
   <!----HeroCarousel />----->
@@ -107,9 +122,16 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- Features2 Widget ************** -->
 
-  <Features2
+  <div class="relative m-auto max-w-5xl p-16">
+    <img src={image2?.src} alt="tex5" class="mx-auto rounded-md w-full" />
+  </div>
+
+
+<div class="bg-fondo">
+    <!-- Features2 Widget ************** -->
+
+    <Features2
     title="Otras Especialidades"
     subtitle="Expertos en Soluciones Tecnológicas"
     tagline="Especialidades"
@@ -137,15 +159,17 @@ const metadata = {
   </Features2>
 
   <!-- Stats Widget ****************** -->
-
-  <Stats
-    stats={[
-      { title: 'Clientes Satisfechos', amount: '500+' },
-      { title: 'Proyectos Completados', amount: '1200+' },
-      { title: 'Años de Experiencia', amount: '10+' },
-      { title: 'Expertos en Tecnología', amount: '50+' },
-    ]}
-  />
+  <div class="shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white dark:bg-slate-900 p-6 my-8">
+    <Stats
+      stats={[
+        { title: 'Clientes Satisfechos', amount: '500+' },
+        { title: 'Proyectos Completados', amount: '1200+' },
+        { title: 'Años de Experiencia', amount: '10+' },
+        { title: 'Expertos en Tecnología', amount: '50+' },
+      ]}
+    />
+  </div>
+  
 
   <!-- CallToAction Widget *********** -->
 
@@ -167,4 +191,7 @@ const metadata = {
       Contacta con nosotros para más información sobre nuestros servicios y soluciones tecnológicas.
     </Fragment>
   </CallToAction>
+
+</div>
+
 </Layout>
