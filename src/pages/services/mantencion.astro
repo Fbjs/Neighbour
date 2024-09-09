@@ -1,0 +1,141 @@
+---
+import Layout from '~/layouts/LandingLayoutServices.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import Features2 from '~/components/widgets/Features2.astro';
+import Features from '~/components/widgets/Features.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Brands from '~/components/widgets/Brands.astro';
+
+import HeroImagen from '~/assets/images/mantencion.jpg';
+
+const metadata = {
+  title: 'Mantenimiento de Redes, Software y Hardware',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Mantén tus Sistemas Operando Sin Interrupciones"
+    title="Mantenimiento Integral de Redes, Software y Hardware"
+    subtitle="Ofrecemos servicios especializados para garantizar el correcto funcionamiento de tu infraestructura tecnológica, asegurando rendimiento, estabilidad y seguridad."
+    actions={[
+      { variant: 'primary', text: 'Contáctanos', href: 'https://wa.me/56963238857?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20mantenimiento%20de%20redes%20software%20y%20hardware', icon: 'tabler:square-rounded-arrow-right' },
+      { text: 'Descubre más', href: '/' },
+    ]}
+    image={{
+      src: HeroImagen,
+      alt: 'Mantenimiento de redes, software y hardware',
+    }}
+  />
+
+   <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Nuestros Servicios"
+    subtitle="Nos especializamos en el mantenimiento preventivo y correctivo de redes, software y hardware. Con un equipo altamente capacitado, aseguramos que tus sistemas estén siempre operativos y optimizados para el máximo rendimiento."
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+ 
+
+ <!-- Stats Widget ****************** -->
+
+  <Stats
+    title="Resultados de Nuestros Servicios de Mantenimiento"
+    subtitle="A continuación, algunos de los resultados que nuestros clientes han experimentado tras utilizar nuestros servicios de mantenimiento tecnológico."
+    stats={[
+      { title: 'Sistemas Optimizados', amount: '500+' },
+      { title: 'Redes Mantenidas', amount: '120+' },
+      { title: 'Clientes Satisfechos', amount: '350+' },
+      { title: 'Equipos Sin Fallos', amount: '99%' },
+    ]}
+  />
+
+ <!-- Features Widget *************** -->
+
+ <Features
+  id="features"
+  title="¿Qué Incluyen Nuestros Servicios?"
+  subtitle="Nuestras soluciones de mantenimiento están diseñadas para cubrir todas las necesidades tecnológicas de tu empresa, desde redes hasta hardware."
+  columns={3}
+  items={[
+    {
+      title: 'Mantenimiento de Redes',
+      description:
+        'Gestionamos y optimizamos tu infraestructura de red para asegurar una conectividad constante y eficiente.',
+      icon: 'tabler:network',
+    },
+    {
+      title: 'Soporte de Software',
+      description:
+        'Nos encargamos de la actualización y resolución de problemas de software para garantizar que tus sistemas funcionen sin interrupciones.',
+      icon: 'tabler:device-laptop',
+    },
+    {
+      title: 'Mantenimiento de Hardware',
+      description:
+        'Realizamos mantenimiento preventivo y correctivo de tu equipo físico para extender su vida útil y prevenir fallos.',
+      icon: 'tabler:device-desktop',
+    },
+  ]}
+/>
+
+<CallToAction
+  actions={[
+    {
+      variant: 'primary',
+      target: '_blank',
+      text: 'Solicita Mantenimiento',
+      href: 'https://wa.me/56963238857?text=Quiero%20solicitar%20mantenimiento%20de%20redes%2C%20software%20y%20hardware',
+      icon: 'tabler:message-circle',
+    },
+  ]}
+>
+  <Fragment slot="title">Mantén tus sistemas funcionando al 100%</Fragment>
+
+  <Fragment slot="subtitle">
+    Con nuestros servicios de mantenimiento especializados en redes, software y hardware, garantizamos la continuidad operativa de tu empresa.
+  </Fragment>
+</CallToAction>
+
+
+<FAQs
+title="Preguntas Frecuentes"
+items={[
+  {
+    title: '¿Qué incluye el mantenimiento de redes?',
+    description:
+      'El mantenimiento de redes incluye la optimización, actualización y resolución de problemas de conectividad, así como la monitorización continua del rendimiento de la red.',
+  },
+  {
+    title: '¿Con qué tipo de software trabajan?',
+    description:
+      'Ofrecemos soporte para una amplia variedad de software, desde sistemas operativos hasta aplicaciones empresariales específicas, asegurando que siempre estén actualizados y funcionando correctamente.',
+  },
+  {
+    title: '¿Cuánto tiempo toma un mantenimiento completo?',
+    description:
+      'El tiempo varía según la complejidad del sistema, pero generalmente el mantenimiento preventivo de redes, software y hardware se completa en 1 a 2 días.',
+  },
+  {
+    title: '¿Con qué frecuencia se recomienda el mantenimiento?',
+    description:
+      'Recomendamos realizar un mantenimiento preventivo cada 6 meses para asegurar la estabilidad y el rendimiento óptimo de tus sistemas.',
+  },
+  {
+    title: '¿Cómo se garantiza la seguridad durante el mantenimiento?',
+    description:
+      'Aplicamos estrictos protocolos de seguridad, incluyendo el uso de herramientas avanzadas y la actualización de parches de seguridad para garantizar la integridad de tus sistemas.',
+  },
+]}
+/>
+
+</Layout>

@@ -1,0 +1,141 @@
+---
+import Layout from '~/layouts/LandingLayoutServices.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import Features2 from '~/components/widgets/Features2.astro';
+import Features from '~/components/widgets/Features.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Brands from '~/components/widgets/Brands.astro';
+
+import HeroImagen from '~/assets/images/datacenter.jpg';
+
+const metadata = {
+  title: 'Servidores VPS a la Medida y Datacenter',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Potencia y Flexibilidad con VPS"
+    title="Servidores VPS Personalizados y Soluciones de Datacenter"
+    subtitle="Te ofrecemos servidores VPS a la medida para satisfacer las necesidades de tu negocio, garantizando rendimiento, seguridad y escalabilidad en nuestro moderno datacenter."
+    actions={[
+      { variant: 'primary', text: 'Contáctanos', href: 'https://wa.me/56963238857?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20VPS%20y%20Datacenter', icon: 'tabler:square-rounded-arrow-right' },
+      { text: 'Descubre más', href: '/' },
+    ]}
+    image={{
+      src: HeroImagen,
+      alt: 'Servidores VPS y Datacenter',
+    }}
+  />
+
+   <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Nuestros Servicios de VPS y Datacenter"
+    subtitle="Ofrecemos servidores virtuales privados (VPS) altamente configurables, con acceso completo a recursos dedicados y soporte especializado. Nuestro datacenter está diseñado para garantizar la máxima seguridad, rendimiento y disponibilidad."
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+ 
+
+ <!-- Stats Widget ****************** -->
+
+  <Stats
+    title="Resultados de Nuestras Soluciones VPS"
+    subtitle="Estos resultados reflejan la confianza que nuestros clientes han depositado en nuestras soluciones de VPS y Datacenter a medida."
+    stats={[
+      { title: 'Servidores VPS Implementados', amount: '2000+' },
+      { title: 'Uptime Garantizado', amount: '99.99%' },
+      { title: 'Clientes Empresariales Satisfechos', amount: '1000+' },
+      { title: 'Monitoreo Continuo', amount: '24/7' },
+    ]}
+  />
+
+ <!-- Features Widget *************** -->
+
+ <Features
+  id="features"
+  title="Características de Nuestros Servidores VPS"
+  subtitle="Nuestras soluciones VPS están diseñadas para adaptarse a las necesidades específicas de tu negocio, garantizando seguridad y eficiencia."
+  columns={3}
+  items={[
+    {
+      title: 'Rendimiento Dedicado',
+      description:
+        'Nuestros VPS te ofrecen acceso a recursos dedicados, como CPU, RAM y almacenamiento, asegurando un rendimiento óptimo para tus aplicaciones.',
+      icon: 'tabler:cpu',
+    },
+    {
+      title: 'Escalabilidad Flexible',
+      description:
+        'Aumenta o disminuye los recursos según las demandas de tu proyecto, sin interrupciones en el servicio.',
+      icon: 'tabler:arrows-maximize',
+    },
+    {
+      title: 'Soporte Técnico Especializado',
+      description:
+        'Contamos con un equipo de expertos disponibles 24/7 para ayudarte con cualquier aspecto técnico relacionado con tu VPS o infraestructura de datacenter.',
+      icon: 'tabler:headset',
+    },
+  ]}
+/>
+
+<CallToAction
+  actions={[
+    {
+      variant: 'primary',
+      target: '_blank',
+      text: 'Solicita tu Servidor VPS',
+      href: 'https://wa.me/56963238857?text=Quiero%20solicitar%20un%20servidor%20VPS%20personalizado',
+      icon: 'tabler:message-circle',
+    },
+  ]}
+>
+  <Fragment slot="title">Optimiza tu infraestructura con VPS a la medida</Fragment>
+
+  <Fragment slot="subtitle">
+    Contamos con la infraestructura y el soporte para ofrecerte soluciones VPS y Datacenter confiables y personalizadas. ¡Contáctanos hoy para más información!
+  </Fragment>
+</CallToAction>
+
+
+<FAQs
+title="Preguntas Frecuentes"
+items={[
+  {
+    title: '¿Qué es un servidor VPS?',
+    description:
+      'Un servidor VPS (Virtual Private Server) es un entorno virtualizado que te proporciona recursos dedicados dentro de un servidor físico, garantizando un rendimiento constante y escalabilidad.',
+  },
+  {
+    title: '¿Cómo puedo escalar los recursos de mi VPS?',
+    description:
+      'Nuestros VPS están diseñados para ser flexibles. Puedes aumentar o reducir los recursos asignados (CPU, RAM, almacenamiento) sin afectar la operación de tus aplicaciones.',
+  },
+  {
+    title: '¿Qué tipo de seguridad ofrece su Datacenter?',
+    description:
+      'Nuestro datacenter cuenta con seguridad de última generación, incluyendo firewalls avanzados, monitoreo constante y control de acceso físico a los servidores.',
+  },
+  {
+    title: '¿Cómo gestionan el monitoreo de los VPS?',
+    description:
+      'Monitoreamos todos nuestros VPS en tiempo real, con alertas automáticas y personal especializado para intervenir inmediatamente ante cualquier eventualidad.',
+  },
+  {
+    title: '¿Ofrecen soporte técnico para la configuración de mi VPS?',
+    description:
+      'Sí, nuestro equipo técnico te asistirá en la configuración inicial y cualquier ajuste o mejora que necesites a lo largo del uso de tu servidor VPS.',
+  },
+]}
+/>
+
+</Layout>

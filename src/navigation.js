@@ -15,11 +15,11 @@ export const headerData = {
       links: [
         {
           text: 'Paginas Web',
-          href: '/services/webpage',
+          href: '/services/web-page',
         },
         {
           text: 'Marketing Digital',
-          href: '/services/community-manager',
+          href: '/services/marketing-digital',
         },
         {
           text: 'Optimización de Procesos',
@@ -35,11 +35,11 @@ export const headerData = {
         },
         {
           text: 'VPS, Datacenter',
-          href: '/services/hosting',
+          href: '/services/datacenter',
         },
         {
           text: 'Telemarketing y Cobranzas',
-          href: '/services/hosting',
+          href: '/services/telemarketing-cobranzas',
         },
       ]
     },
@@ -195,49 +195,65 @@ export const headerData = {
 export const footerData = {
   links: [
     {
-      title: 'Product',
+      title: 'Servicios',
       links: [
-        { text: 'Features', href: '#' },
-        { text: 'Security', href: '#' },
-        { text: 'Team', href: '#' },
-        { text: 'Enterprise', href: '#' },
-        { text: 'Customer stories', href: '#' },
-        { text: 'Pricing', href: '#' },
-        { text: 'Resources', href: '#' },
-      ],
+        {
+          text: 'Paginas Web',
+          href: '/services/web-page',
+        },
+        {
+          text: 'Marketing Digital',
+          href: '/services/community-manager',
+        },
+        {
+          text: 'Optimización de Procesos',
+          href: '/services/optimizacion-procesos',
+        },
+        {
+          text: 'Mantencion',
+          href: '/services/mantencion',
+        },
+        {
+          text: 'Hosting',
+          href: '/services/hosting',
+        },
+        {
+          text: 'VPS, Datacenter',
+          href: '/services/hosting',
+        },
+        {
+          text: 'Telemarketing y Cobranzas',
+          href: '/services/hosting',
+        },
+      ]
     },
     {
-      title: 'Platform',
+      title: 'Productos',
       links: [
-        { text: 'Developer API', href: '#' },
-        { text: 'Partners', href: '#' },
-        { text: 'Atom', href: '#' },
-        { text: 'Electron', href: '#' },
-        { text: 'AstroWind Desktop', href: '#' },
-      ],
+        {
+          text: 'Mailing',
+          href: '/product/mailing',
+        },
+        {
+          text: 'SMS',
+          href: '/product/sms',
+        },
+        {
+          text: 'Telefonia IP',
+          href: '/product/voip',
+        },
+        {
+          text: 'CRM Fenix',
+          href: '/product/fenix',
+        },
+        {
+          text: 'ERP',
+          href: '/product/erp',
+        },
+        
+      ]
     },
-    {
-      title: 'Support',
-      links: [
-        { text: 'Docs', href: '#' },
-        { text: 'Community Forum', href: '#' },
-        { text: 'Professional Services', href: '#' },
-        { text: 'Skills', href: '#' },
-        { text: 'Status', href: '#' },
-      ],
-    },
-    {
-      title: 'Company',
-      links: [
-        { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
-        { text: 'Careers', href: '#' },
-        { text: 'Press', href: '#' },
-        { text: 'Inclusion', href: '#' },
-        { text: 'Social Impact', href: '#' },
-        { text: 'Shop', href: '#' },
-      ],
-    },
+    
   ],
   secondaryLinks: [
     { text: 'Terms', href: getPermalink('/terms') },
@@ -251,7 +267,6 @@ export const footerData = {
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
   ],
   footNote: `
-    <img class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="https://onwidget.com/favicon/favicon-32x32.png" alt="onWidget logo" loading="lazy"></img>
-    Made by <a class="text-blue-600 underline dark:text-muted" href="https://onwidget.com/"> onWidget</a> · All rights reserved.
+    Made by <a class="text-blue-600 underline dark:text-muted" href="https://neighbour.cl/"> Neighbour</a> · All rights reserved.
   `,
 };

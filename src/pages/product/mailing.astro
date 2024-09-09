@@ -1,0 +1,153 @@
+---
+import Layout from '~/layouts/LandingLayoutProduct.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import Features2 from '~/components/widgets/Features2.astro';
+import Features from '~/components/widgets/Features.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Brands from '~/components/widgets/Brands.astro';
+
+import HeroImagen from '~/assets/images/mailing.jpg';
+
+const metadata = {
+  title: 'Campañas de Mailing Personalizadas',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Conecta con tu Audiencia"
+    title="Campañas de Mailing Personalizadas"
+    subtitle="Creamos campañas de mailing efectivas que te permiten comunicarte directamente con tu audiencia, fidelizar a tus clientes y aumentar tus conversiones."
+    actions={[
+      { variant: 'primary', text: 'Contáctanos', href: 'https://wa.me/56963238857?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20mailing', icon: 'tabler:square-rounded-arrow-right' },
+      { text: 'Descubre más', href: '/' },
+    ]}
+    image={{
+      src: HeroImagen,
+      alt: 'Campañas de mailing personalizadas',
+    }}
+  />
+
+   <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Quiénes Somos"
+    subtitle="Con experiencia en el diseño de campañas de mailing, ayudamos a empresas a conectar con su audiencia mediante estrategias personalizadas que generan resultados tangibles."
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+ 
+
+ <!-- Stats Widget ****************** -->
+
+  <Stats
+    title="Resultados de Nuestras Campañas de Mailing"
+    subtitle="Estos resultados reflejan el impacto positivo de nuestras soluciones de mailing en la comunicación y conversión de nuestros clientes."
+    stats={[
+      { title: 'Emails Enviados', amount: '500K+' },
+      { title: 'Tasa de Apertura', amount: '40%' },
+      { title: 'Tasa de Conversión', amount: '25%' },
+      { title: 'Clientes Satisfechos', amount: '200+' },
+    ]}
+  />
+
+ <!-- Features Widget *************** -->
+
+ <Features
+  id="features"
+  title="Características de Nuestras Campañas de Mailing"
+  subtitle="Nuestras campañas de mailing están diseñadas para generar impacto y resultados medibles."
+  columns={3}
+  items={[
+    {
+      title: 'Segmentación Personalizada',
+      description:
+        'Creamos listas segmentadas para que puedas enviar el mensaje correcto al público adecuado en el momento oportuno.',
+      icon: 'tabler:users',
+    },
+    {
+      title: 'Automatización de Emails',
+      description:
+        'Automatizamos tus envíos, asegurando que tus campañas lleguen a tus clientes en los momentos más relevantes.',
+      icon: 'tabler:clock',
+    },
+    {
+      title: 'Análisis de Resultados',
+      description:
+        'Te proporcionamos reportes detallados sobre la tasa de apertura, clics y conversiones para que puedas medir el éxito de cada campaña.',
+      icon: 'tabler:chart-bar',
+    },
+    {
+      title: 'Diseños Atractivos',
+      description: 
+        'Nuestros emails están diseñados para captar la atención, optimizados para todos los dispositivos y con un enfoque en la conversión.',
+      icon: 'tabler:layout-dashboard',
+    },
+    {
+      title: 'Soporte Técnico',
+      description:
+        'Te ofrecemos soporte continuo para que tus campañas de mailing siempre estén en marcha y funcionando al 100%.',
+      icon: 'tabler:headset',
+    },
+  ]}
+/>
+
+<CallToAction
+  actions={[
+    {
+      variant: 'primary',
+      target: '_blank',
+      text: 'Inicia tu Campaña de Mailing',
+      href: 'https://wa.me/56963238857?text=Quiero%20iniciar%20una%20campaña%20de%20mailing',
+      icon: 'tabler:message-circle',
+    },
+  ]}
+>
+  <Fragment slot="title">Conecta directamente con tus clientes</Fragment>
+
+  <Fragment slot="subtitle">
+    Con nuestras campañas de mailing, optimizas la comunicación con tus clientes y aumentas tus ventas. ¡Contáctanos para comenzar!
+  </Fragment>
+</CallToAction>
+
+
+<FAQs
+title="Preguntas Frecuentes"
+items={[
+  {
+    title: '¿Qué es una campaña de mailing?',
+    description:
+      'Una campaña de mailing es una estrategia de comunicación directa mediante correo electrónico que te permite enviar mensajes personalizados a tus clientes o potenciales clientes para fomentar la fidelización y aumentar las ventas.',
+  },
+  {
+    title: '¿Cómo aseguran una alta tasa de apertura?',
+    description:
+      'Nos enfocamos en la segmentación precisa, diseño atractivo y tiempos óptimos de envío para asegurar que nuestros emails lleguen a las bandejas de entrada y sean abiertos.',
+  },
+  {
+    title: '¿Puedo automatizar mis campañas?',
+    description:
+      'Sí, ofrecemos automatización completa de tus campañas de mailing para que los emails se envíen de forma automática según los comportamientos de tus clientes o eventos predefinidos.',
+  },
+  {
+    title: '¿Cómo puedo medir los resultados?',
+    description:
+      'Te proporcionamos reportes detallados con métricas como tasa de apertura, clics y conversiones para que puedas evaluar el rendimiento de cada campaña.',
+  },
+  {
+    title: '¿Qué necesito para empezar una campaña?',
+    description:
+      'Solo necesitas tu lista de contactos y un objetivo claro para tu campaña. Nosotros nos encargamos del resto, desde el diseño hasta el análisis de resultados.',
+  },
+]}
+/>
+
+</Layout>

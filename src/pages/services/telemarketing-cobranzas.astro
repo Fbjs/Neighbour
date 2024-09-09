@@ -1,0 +1,141 @@
+---
+import Layout from '~/layouts/LandingLayoutServices.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import Features2 from '~/components/widgets/Features2.astro';
+import Features from '~/components/widgets/Features.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Brands from '~/components/widgets/Brands.astro';
+
+import HeroImagen from '~/assets/images/telemarketing.jpg';
+
+const metadata = {
+  title: 'Campañas de Telemarketing y Cobranzas',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Maximiza el Contacto con Tus Clientes"
+    title="Soluciones de Telemarketing y Cobranzas"
+    subtitle="Ofrecemos campañas efectivas de telemarketing y cobranzas, diseñadas para aumentar tus ventas y mejorar la gestión de cobros, asegurando resultados medibles y una experiencia profesional."
+    actions={[
+      { variant: 'primary', text: 'Contáctanos', href: 'https://wa.me/56963238857?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20telemarketing%20y%20cobranzas', icon: 'tabler:square-rounded-arrow-right' },
+      { text: 'Descubre más', href: '/' },
+    ]}
+    image={{
+      src: HeroImagen,
+      alt: 'Campañas de telemarketing y cobranzas',
+    }}
+  />
+
+   <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Nuestras Campañas"
+    subtitle="Nos especializamos en diseñar campañas de telemarketing y cobranzas adaptadas a las necesidades de cada cliente, con una estructura eficiente y un equipo profesional capacitado para obtener los mejores resultados."
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+ 
+
+ <!-- Stats Widget ****************** -->
+
+  <Stats
+    title="Resultados de Nuestras Campañas"
+    subtitle="Aquí te mostramos algunos de los resultados alcanzados gracias a nuestras soluciones de telemarketing y cobranzas."
+    stats={[
+      { title: 'Ventas Incrementadas', amount: '30%' },
+      { title: 'Tasa de Cobros Efectivos', amount: '95%' },
+      { title: 'Clientes Satisfechos', amount: '150+' },
+      { title: 'Contactos Realizados por Día', amount: '10K+' },
+    ]}
+  />
+
+ <!-- Features Widget *************** -->
+
+ <Features
+  id="features"
+  title="¿Qué Ofrecemos en Nuestras Campañas?"
+  subtitle="Ofrecemos un enfoque integral para campañas de telemarketing y cobranzas, diseñadas para adaptarse a las necesidades específicas de tu empresa."
+  columns={3}
+  items={[
+    {
+      title: 'Telemarketing Efectivo',
+      description:
+        'Diseñamos estrategias para contactar a tus clientes potenciales y convertir esos contactos en ventas efectivas.',
+      icon: 'tabler:phone',
+    },
+    {
+      title: 'Gestión de Cobranzas',
+      description:
+        'Nos encargamos de gestionar tus cobros de manera profesional, manteniendo una comunicación clara y efectiva con tus clientes.',
+      icon: 'tabler:currency-dollar',
+    },
+    {
+      title: 'Reporte en Tiempo Real',
+      description:
+        'Ofrecemos reportes detallados y en tiempo real sobre el rendimiento de tus campañas de telemarketing y cobranzas.',
+      icon: 'tabler:chart-bar',
+    },
+  ]}
+/>
+
+<CallToAction
+  actions={[
+    {
+      variant: 'primary',
+      target: '_blank',
+      text: 'Inicia tu Campaña Hoy',
+      href: 'https://wa.me/56963238857?text=Quiero%20iniciar%20una%20campaña%20de%20telemarketing%20o%20cobranzas',
+      icon: 'tabler:message-circle',
+    },
+  ]}
+>
+  <Fragment slot="title">Mejora tus ventas y cobros con nuestras campañas</Fragment>
+
+  <Fragment slot="subtitle">
+    Con nuestras soluciones de telemarketing y cobranzas, optimizamos el contacto con tus clientes y aseguramos una mayor tasa de éxito en ventas y cobros.
+  </Fragment>
+</CallToAction>
+
+
+<FAQs
+title="Preguntas Frecuentes"
+items={[
+  {
+    title: '¿Cómo funciona una campaña de telemarketing?',
+    description:
+      'Diseñamos una estrategia para contactar a tus clientes potenciales o actuales, con el objetivo de generar más ventas o mantener relaciones duraderas, utilizando nuestros equipos capacitados para garantizar resultados positivos.',
+  },
+  {
+    title: '¿Qué incluye una campaña de cobranzas?',
+    description:
+      'Nos encargamos de gestionar el proceso de cobro, manteniendo contacto con tus clientes para asegurar el pago de sus deudas de manera efectiva y profesional.',
+  },
+  {
+    title: '¿Puedo personalizar mi campaña?',
+    description:
+      'Sí, todas nuestras campañas de telemarketing y cobranzas son personalizables para adaptarse a las necesidades específicas de tu empresa, asegurando que logres los resultados que esperas.',
+  },
+  {
+    title: '¿Cómo monitorean el progreso de las campañas?',
+    description:
+      'Ofrecemos reportes en tiempo real sobre los contactos realizados, ventas concretadas, y cobros efectuados, para que siempre tengas visibilidad sobre el progreso de tu campaña.',
+  },
+  {
+    title: '¿Qué tan rápido puedo ver resultados?',
+    description:
+      'Dependiendo del tipo de campaña, los resultados pueden ser visibles en las primeras semanas, con incrementos en ventas y un mejor flujo de cobros.',
+  },
+]}
+/>
+
+</Layout>

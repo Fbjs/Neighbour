@@ -1,0 +1,141 @@
+---
+import Layout from '~/layouts/LandingLayoutServices.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import Features2 from '~/components/widgets/Features2.astro';
+import Features from '~/components/widgets/Features.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Brands from '~/components/widgets/Brands.astro';
+
+import HeroImagen from '~/assets/images/hosting.jpg';
+
+const metadata = {
+  title: 'Servicios de Hosting Personalizado',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Hosting Seguro y Rápido"
+    title="Servicios de Hosting con y sin Administración de Correos"
+    subtitle="Te ofrecemos soluciones de hosting confiables, con la opción de administrar tus correos electrónicos, garantizando seguridad, velocidad y escalabilidad."
+    actions={[
+      { variant: 'primary', text: 'Contáctanos', href: 'https://wa.me/56963238857?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20hosting', icon: 'tabler:square-rounded-arrow-right' },
+      { text: 'Descubre más', href: '/' },
+    ]}
+    image={{
+      src: HeroImagen,
+      alt: 'Servicios de hosting',
+    }}
+  />
+
+   <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Nuestros Servicios de Hosting"
+    subtitle="Ofrecemos planes de hosting para cubrir tus necesidades empresariales, con opciones flexibles de administración de correos y soporte técnico continuo. Ideal para proyectos de cualquier tamaño."
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+ 
+
+ <!-- Stats Widget ****************** -->
+
+  <Stats
+    title="Resultados de Nuestro Servicio de Hosting"
+    subtitle="A continuación, algunos de los resultados obtenidos por nuestros clientes tras utilizar nuestros servicios de hosting personalizados."
+    stats={[
+      { title: 'Sitios Web Hospedados', amount: '1000+' },
+      { title: 'Correo Electrónico Administrado', amount: '800+' },
+      { title: 'Clientes Satisfechos', amount: '500+' },
+      { title: 'Tiempos de Inactividad', amount: '0.1%' },
+    ]}
+  />
+
+ <!-- Features Widget *************** -->
+
+ <Features
+  id="features"
+  title="¿Qué Incluye Nuestros Servicios de Hosting?"
+  subtitle="Brindamos soluciones completas para la gestión de hosting, con opciones para administración de correos según tus necesidades."
+  columns={3}
+  items={[
+    {
+      title: 'Hosting Seguro y Rápido',
+      description:
+        'Aseguramos que tu sitio web esté siempre disponible con tiempos de carga rápidos, certificados SSL y medidas de seguridad avanzadas.',
+      icon: 'tabler:shield-check',
+    },
+    {
+      title: 'Administración de Correos Electrónicos',
+      description:
+        'Administramos tus correos electrónicos, asegurando almacenamiento, accesibilidad y seguridad óptima para tus comunicaciones.',
+      icon: 'tabler:mail',
+    },
+    {
+      title: 'Soporte Técnico Continuo',
+      description:
+        'Nuestro equipo está disponible 24/7 para resolver cualquier problema técnico relacionado con tu servicio de hosting.',
+      icon: 'tabler:headset',
+    },
+  ]}
+/>
+
+<CallToAction
+  actions={[
+    {
+      variant: 'primary',
+      target: '_blank',
+      text: 'Solicita tu plan de hosting',
+      href: 'https://wa.me/56963238857?text=Quiero%20solicitar%20un%20plan%20de%20hosting',
+      icon: 'tabler:message-circle',
+    },
+  ]}
+>
+  <Fragment slot="title">Asegura tu presencia en línea con nuestro hosting</Fragment>
+
+  <Fragment slot="subtitle">
+    Ofrecemos servicios de hosting con opciones flexibles, ya sea que necesites o no administración de correos. ¡Contáctanos hoy para más información!
+  </Fragment>
+</CallToAction>
+
+
+<FAQs
+title="Preguntas Frecuentes"
+items={[
+  {
+    title: '¿Qué incluye el servicio de hosting?',
+    description:
+      'Nuestro servicio de hosting incluye espacio en servidores, certificados SSL, medidas de seguridad avanzadas y soporte técnico continuo para asegurar que tu sitio web siempre esté en funcionamiento.',
+  },
+  {
+    title: '¿Cuál es la diferencia entre hosting con y sin administración de correos?',
+    description:
+      'El hosting con administración de correos incluye la configuración, mantenimiento y soporte técnico para cuentas de correo electrónico, mientras que el servicio sin administración de correos se centra solo en el alojamiento del sitio web.',
+  },
+  {
+    title: '¿Cómo funciona la administración de correos?',
+    description:
+      'Nos encargamos de la configuración y gestión de cuentas de correo electrónico, así como la resolución de problemas y el aseguramiento del buen funcionamiento de los servidores de correo.',
+  },
+  {
+    title: '¿Qué seguridad ofrecen para el hosting?',
+    description:
+      'Implementamos medidas avanzadas de seguridad, incluyendo certificados SSL, cortafuegos, backups automáticos y monitorización constante para proteger tus datos.',
+  },
+  {
+    title: '¿Puedo escalar mi plan de hosting?',
+    description:
+      'Sí, ofrecemos planes escalables que te permiten aumentar los recursos según crezcan las necesidades de tu proyecto, sin tiempos de inactividad.',
+  },
+]}
+/>
+
+</Layout>

@@ -1,0 +1,155 @@
+---
+import Layout from '~/layouts/LandingLayoutServices.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import Features2 from '~/components/widgets/Features2.astro';
+import Features from '~/components/widgets/Features.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Brands from '~/components/widgets/Brands.astro';
+
+import HeroImagen from '~/assets/images/marketing-digital.jpg';
+
+const metadata = {
+  title: 'Marketing Digital Personalizado',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Marketing Digital que Impulsa tu Marca"
+    title="Estrategias de Marketing Digital Personalizadas"
+    subtitle="Desarrollamos campañas digitales diseñadas para aumentar tu visibilidad, atraer a más clientes y hacer crecer tu negocio en el entorno digital."
+    actions={[
+      { variant: 'primary', text: 'Contáctanos', href: 'https://wa.me/56963238857?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20marketing%20digital', icon: 'tabler:square-rounded-arrow-right' },
+      { text: 'Descubre más', href: '/' },
+    ]}
+    image={{
+      src: HeroImagen,
+      alt: 'Marketing Digital Personalizado',
+    }}
+  />
+
+   <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Quiénes Somos"
+    subtitle="Somos un equipo de expertos en marketing digital, enfocados en crear campañas innovadoras y efectivas que ayuden a las empresas a alcanzar sus objetivos. Trabajamos contigo para construir una estrategia digital personalizada que realmente funcione."
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+ 
+
+ <!-- Stats Widget ****************** -->
+
+  <Stats
+    title="Resultados de Nuestras Campañas"
+    subtitle="Las siguientes cifras destacan el impacto que nuestras campañas de marketing digital han tenido en nuestros clientes."
+    stats={[
+      { title: 'Campañas Ejecutadas', amount: '300+' },
+      { title: 'Clientes Satisfechos', amount: '250+' },
+      { title: 'Aumento de Visibilidad', amount: '80%' },
+      { title: 'Tasa de Conversión', amount: '35%' },
+    ]}
+  />
+
+ <!-- Features Widget *************** -->
+
+ <Features
+  id="features"
+  title="Características de Nuestras Estrategias de Marketing"
+  subtitle="Ofrecemos un enfoque integral que cubre todas las áreas clave para lograr resultados medibles."
+  columns={3}
+  items={[
+    {
+      title: 'SEO y Posicionamiento',
+      description:
+        'Optimizamos tu presencia en buscadores para que tu marca aparezca en los primeros resultados y atraiga tráfico de calidad.',
+      icon: 'tabler:search',
+    },
+    {
+      title: 'Gestión de Redes Sociales',
+      description:
+        'Creamos y gestionamos contenido estratégico para aumentar tu presencia en redes sociales y conectar con tu audiencia.',
+      icon: 'tabler:brand-facebook',
+    },
+    {
+      title: 'Publicidad Digital (PPC)',
+      description:
+        'Diseñamos campañas de pago por clic en plataformas como Google Ads y Facebook Ads para atraer leads de calidad.',
+      icon: 'tabler:credit-card',
+    },
+    {
+      title: 'Email Marketing',
+      description: 
+        'Implementamos estrategias de email marketing para fidelizar a tus clientes y generar nuevas oportunidades de negocio.',
+      icon: 'tabler:mail',
+    },
+    {
+      title: 'Análisis y Optimización',
+      description: 
+        'Monitorizamos los resultados de cada campaña y realizamos ajustes continuos para optimizar el rendimiento.',
+      icon: 'tabler:chart-bar',
+    },
+    {
+      title: 'Soporte Continuo',
+      description:
+        'Te acompañamos en cada etapa del proceso, brindando soporte técnico y asesoría constante.',
+      icon: 'tabler:headset',
+    },
+  ]}
+/>
+
+<CallToAction
+  actions={[
+    {
+      variant: 'primary',
+      target: '_blank',
+      text: 'Solicita tu estrategia de marketing',
+      href: 'https://wa.me/56963238857?text=Quiero%20solicitar%20una%20estrategia%20de%20marketing%20digital%20personalizada',
+      icon: 'tabler:message-circle',
+    },
+  ]}
+>
+  <Fragment slot="title">Potencia tu marca en el mundo digital</Fragment>
+
+  <Fragment slot="subtitle">
+    Con nuestras estrategias de marketing digital personalizadas, te ayudamos a destacar en el entorno digital, atraer a más clientes y hacer crecer tu negocio.
+  </Fragment>
+</CallToAction>
+
+
+<FAQs
+title="Preguntas Frecuentes"
+items={[
+  {
+    title: '¿Qué incluye una estrategia de marketing digital?',
+    description:
+      'Nuestra estrategia incluye SEO, publicidad digital, gestión de redes sociales, email marketing y análisis de datos, todo personalizado para tu negocio.',
+  },
+  {
+    title: '¿Cuánto tiempo toma ver resultados?',
+    description:
+      'Dependiendo de la estrategia y los objetivos, los primeros resultados pueden verse en 1 a 3 meses. Campañas pagas, como Google Ads, pueden generar resultados más rápidos.',
+  },
+  {
+    title: '¿Pueden gestionar mis redes sociales?',
+    description:
+      'Sí, nos encargamos de crear y gestionar contenido relevante para tus redes sociales, ayudando a aumentar tu interacción y seguidores.',
+  },
+  {
+    title: '¿Cómo medimos el éxito de la estrategia?',
+    description:
+      'Utilizamos métricas clave como tráfico web, conversiones, tasa de clics y retorno de inversión (ROI) para medir el éxito y optimizar las campañas.',
+  },
+]}
+/>
+
+</Layout>
