@@ -29,21 +29,21 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
-  <div class="bg-fondo">
+  <div class="bg-fondo  text-white">
     <Hero
       tagline="Sobre Nosotros"
       image={{
         src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-        alt: 'Caos Image',
+        alt: 'Office Image',
       }}
     >
       <Fragment slot="title">
         Potencia tu presencia en línea con nuestras <br />
-        <span class="text-accent dark:text-white highlight"> Soluciones Tecnológicas Innovadoras</span>
+        <span class="text-accent"> Soluciones Tecnológicas Innovadoras</span>
       </Fragment>
 
       <Fragment slot="subtitle">
-        Neighbour Technology SpA es una empresa líder en soluciones tecnológicas, especializada en el desarrollo de aplicaciones y sistemas de información. Nos destacamos por nuestra metodología centrada en la mejora continua, la sinergia y la creatividad colaborativa.
+        <span class="text-white">Neighbour Technology SpA es una empresa líder en soluciones tecnológicas, especializada en el desarrollo de aplicaciones y sistemas de información. Nos destacamos por nuestra metodología centrada en la mejora continua, la sinergia y la creatividad colaborativa.</span>
       </Fragment>
     </Hero>
   </div>
@@ -59,82 +59,7 @@ const metadata = {
     ]}
   />
 
-  <!-- Features3 Widget ************** -->
-
-
-  
-  <Features3
-    title="Nuestros Servicios"
-    subtitle="Ofrecemos una amplia gama de servicios tecnológicos para satisfacer las necesidades de nuestros clientes."
-    columns={3}
-    isBeforeContent={true}
-    items={[
-      {
-        title: 'Mantenimiento y Reparación de Hardware',
-        description:
-          'Mantenimiento preventivo, reparaciones, actualizaciones, gestión de inventario y optimización de recursos.',
-        icon: 'tabler:tool',
-      },
-      {
-        title: 'Desarrollo de Software y Sistemas Informáticos',
-        description:
-          'Desarrollos web, intranet, sistemas de inventario, plataformas e-commerce, control documental y automatización de procesos.',
-        icon: 'tabler:code',
-      },
-      {
-        title: 'Outsourcing de Especialistas de Tecnología',
-        description:
-          'BackOffice, analista de datos, soporte técnico, desarrolladores, gestión de redes y consultoría TI.',
-        icon: 'tabler:users',
-      },
-    ]}
-  />
-
-  <!-- Features3 Widget ************** -->
-  <Features3
-    columns={3}
-    isAfterContent={true}
-    items={[
-      {
-        title: 'CRM Fénix Contact Center Suite',
-        description:
-          'Solución multicanal para mejorar la eficiencia, satisfacción del cliente y resultados empresariales.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Marketing Digital',
-        description:
-          'Campañas de generación de LEADS, Landing Pages y chatbots con análisis en tiempo real.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Data Center',
-        description:
-          'Infraestructura de vanguardia, conectividad ultrarrápida, y servicios de nube confiables.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Servicios TELCO',
-        description:
-          'Soluciones integrales de telecomunicaciones con telefonía IP y SMS eficientes.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Expertos en VICIdial y Asterisk',
-        description:
-          'Optimización de comunicaciones con soluciones líderes en telefonía IP.',
-        icon: 'tabler:template',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Colorful Image',
-    }}
-  />
-
-  <!-- Steps2 Widget ****************** -->
-  <div class="bg-fondo">
-    <Steps2
+  <Steps2
       title="Nuestros Valores"
       subtitle="En Neighbour Technology SpA, nos guiamos por los siguientes principios fundamentales."
       items={[
@@ -186,7 +111,81 @@ const metadata = {
       ]}
     />
 
-    <!-- Features2 Widget ************** -->
+  <!-- Features3 Widget ************** -->
+
+
+  
+ <!-- <Features3
+    title="Nuestros Servicios"
+    subtitle="Ofrecemos una amplia gama de servicios tecnológicos para satisfacer las necesidades de nuestros clientes."
+    columns={3}
+    isBeforeContent={true}
+    items={[
+      {
+        title: 'Mantenimiento y Reparación de Hardware',
+        description:
+          'Mantenimiento preventivo, reparaciones, actualizaciones, gestión de inventario y optimización de recursos.',
+        icon: 'tabler:tool',
+      },
+      {
+        title: 'Desarrollo de Software y Sistemas Informáticos',
+        description:
+          'Desarrollos web, intranet, sistemas de inventario, plataformas e-commerce, control documental y automatización de procesos.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Outsourcing de Especialistas de Tecnología',
+        description:
+          'BackOffice, analista de datos, soporte técnico, desarrolladores, gestión de redes y consultoría TI.',
+        icon: 'tabler:users',
+      },
+    ]}
+  />
+
+   Features3 Widget ************** 
+    columns={3}
+    isAfterContent={true}
+    items={[
+      {
+        title: 'CRM Fénix Contact Center Suite',
+        description:
+          'Solución multicanal para mejorar la eficiencia, satisfacción del cliente y resultados empresariales.',
+        icon: 'tabler:template',
+      },
+      {
+        title: 'Marketing Digital',
+        description:
+          'Campañas de generación de LEADS, Landing Pages y chatbots con análisis en tiempo real.',
+        icon: 'tabler:template',
+      },
+      {
+        title: 'Data Center',
+        description:
+          'Infraestructura de vanguardia, conectividad ultrarrápida, y servicios de nube confiables.',
+        icon: 'tabler:template',
+      },
+      {
+        title: 'Servicios TELCO',
+        description:
+          'Soluciones integrales de telecomunicaciones con telefonía IP y SMS eficientes.',
+        icon: 'tabler:template',
+      },
+      {
+        title: 'Expertos en VICIdial y Asterisk',
+        description:
+          'Optimización de comunicaciones con soluciones líderes en telefonía IP.',
+        icon: 'tabler:template',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Colorful Image',
+    }}
+  />----->
+
+  <!-- Steps2 Widget ****************** -->
+  <!-- <div class="bg-fondo">
+    
     <Features2
       title="Nuestras Ubicaciones"
       tagline="Encuéntranos en"
@@ -210,6 +209,6 @@ const metadata = {
         },
       ]}
     />
-  </div>
+  </div>-->
   
 </Layout>

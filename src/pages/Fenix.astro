@@ -1,0 +1,153 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'FENIX Contact Center Suite',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="FENIX Contact Center Suite"
+    title="Optimiza tus campañas desde cualquier lugar con nuestro software 100% en la nube"
+    subtitle="Gestiona campañas INBOUND y OUTBOUND con una solución informática robusta, diseñada para maximizar la eficacia y eficiencia de tu call center."
+    actions={[{ variant: 'primary', target: '_blank', text: 'Solicita una demo', href: 'https://fenix.neighbour.cl/' }]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
+      alt: 'FENIX Hero Image',
+    }}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Características de FENIX"
+    subtitle="Nuestra plataforma ofrece herramientas avanzadas para optimizar la gestión y supervisión de tus campañas."
+    columns={3}
+    items={[
+      {
+        title: 'Administración de Campañas',
+        description:
+          'Configura y administra campañas, ajustando cada etapa según las necesidades del negocio. Incluye módulos para la gestión de bases de datos, asignación de tareas y más.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Estadísticas en Tiempo Real',
+        description:
+          'Fortalece el control y supervisión gracias a las gráficas en tiempo real del módulo de estadística. Optimiza los contactos y gestiona las bases de datos de manera eficiente.',
+        icon: 'tabler:chart-bar',
+      },
+      {
+        title: 'Asignación de Recursos',
+        description:
+          'Gestiona la asignación de tareas y recursos, permitiendo bloquear accesos, cargar bases de datos, y personalizar canales de comunicación como SMS, Email, y WhatsApp.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Teleoperador',
+        description:
+          'Simplifica la administración y comunicación de los teleoperadores a través de herramientas como agenda de llamadas, historial de gestiones, teléfono web y WhatsApp.',
+        icon: 'tabler:phone',
+      },
+      {
+        title: 'Supervisión en Tiempo Real',
+        description:
+          'Permite a los supervisores visualizar en tiempo real las conexiones y gestiones de los teleoperadores, optimizando la calidad de las campañas.',
+        icon: 'tabler:eye',
+      },
+      {
+        title: 'Auditoría y Control de Calidad',
+        description:
+          'Administra perfiles de auditor, valida registros en tiempo real y descarga grabaciones para asegurar la calidad del servicio.',
+        icon: 'tabler:clipboard-check',
+      },
+    ]}
+  />
+
+  <!-- Content Widget - Administración **************** -->
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Módulo de Administración',
+        description:
+          'El módulo de administración permite configurar y gestionar las bases de datos de manera personalizada, optimizando los recursos y mejorando la eficiencia de las campañas.',
+        icon: 'tabler:database',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+      alt: 'Administración Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Administración</h3>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget - Estadísticas **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Estadísticas en Tiempo Real',
+        description:
+          'Visualiza y analiza el rendimiento de tus campañas con gráficos en tiempo real, permitiendo tomar decisiones informadas y ajustar estrategias rápidamente.',
+        icon: 'tabler:chart-line',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1552664688-cf412ec27db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      alt: 'Estadísticas Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Estadísticas</h3>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget - Teleoperador **************** -->
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Teleoperador',
+        description:
+          'Facilita la gestión de los teleoperadores con herramientas integradas para administrar llamadas, historial de gestiones, y comunicación vía WhatsApp y teléfono web.',
+        icon: 'tabler:headset',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+      alt: 'Teleoperador Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Teleoperador</h3>
+    </Fragment>
+  </Content>
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Solicita más información',
+        href: 'https://fenix.neighbour.cl/',
+      },
+    ]}
+    title="Descubre todo lo que FENIX tiene para ofrecer"
+    subtitle="Optimiza la gestión de tu call center con nuestra suite completa de herramientas y funcionalidades avanzadas."
+  />
+</Layout>

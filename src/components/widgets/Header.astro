@@ -58,7 +58,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
   {...id ? { id } : {}}
 >
   <div class="absolute inset-0"></div>
-  <div
+  <div id="fadeInMoveRight"
     class:list={[
       'relative text-default py-1 px-3 md:px-6 mx-auto w-full',
       {

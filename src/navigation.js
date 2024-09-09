@@ -14,17 +14,59 @@ export const headerData = {
       text: 'Servicios',
       links: [
         {
-          text: 'Fenix Contact Center Suite',
-          href: getPermalink('/services'),
+          text: 'Paginas Web',
+          href: '/services/webpage',
         },
         {
-          text: 'LeadSync Suite',
-          href: getPermalink('/landing/product'),
+          text: 'Marketing Digital',
+          href: '/services/community-manager',
         },
         {
-          text: 'Web Design',
-          href: getBlogPermalink(),
+          text: 'Optimización de Procesos',
+          href: '/services/optimizacion-procesos',
         },
+        {
+          text: 'Mantencion',
+          href: '/services/mantencion',
+        },
+        {
+          text: 'Hosting',
+          href: '/services/hosting',
+        },
+        {
+          text: 'VPS, Datacenter',
+          href: '/services/hosting',
+        },
+        {
+          text: 'Telemarketing y Cobranzas',
+          href: '/services/hosting',
+        },
+      ]
+    },
+    {
+      text: 'Productos',
+      links: [
+        {
+          text: 'Mailing',
+          href: '/product/mailing',
+        },
+        {
+          text: 'SMS',
+          href: '/product/sms',
+        },
+        {
+          text: 'Telefonia IP',
+          href: '/product/voip',
+        },
+        {
+          text: 'CRM Fenix',
+          href: '/product/fenix',
+        },
+        {
+          text: 'ERP',
+          href: '/product/erp',
+        },
+        
       ]
     },
     {
