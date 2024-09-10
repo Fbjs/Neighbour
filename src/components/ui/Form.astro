@@ -2,10 +2,11 @@
 import type { Form as Props } from '~/types';
 import Button from '~/components/ui/Button.astro';
 
-const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } = Astro.props;
+const { inputs, textarea, disclaimer, button = 'Enviar', description = '' } = Astro.props;
 ---
 
-<form>
+<form action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="be189844-e76c-45c7-b324-032897ee8890">
   {
     inputs &&
       inputs.map(
