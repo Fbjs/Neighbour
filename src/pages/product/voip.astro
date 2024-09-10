@@ -1,0 +1,141 @@
+---
+import Layout from '~/layouts/LandingLayoutProduct.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import Features2 from '~/components/widgets/Features2.astro';
+import Features from '~/components/widgets/Features.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Brands from '~/components/widgets/Brands.astro';
+
+import HeroImagen from '~/assets/images/voip.jpg';
+
+const metadata = {
+  title: 'Servicios de Telefonía IP y Contestadoras',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Comunicación Empresarial Eficiente"
+    title="Telefonía IP, Números Entrantes y Contestadoras"
+    subtitle="Ofrecemos soluciones de telefonía IP, números entrantes de llamadas y sistemas de contestadoras para optimizar la gestión de comunicaciones de tu empresa."
+    actions={[
+      { variant: 'primary', text: 'Contáctanos', href: 'https://wa.me/56963238857?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20telefonía%20IP%2C%20números%20entrantes%20y%20contestadoras', icon: 'tabler:square-rounded-arrow-right' },
+      { text: 'Descubre más', href: '/' },
+    ]}
+    image={{
+      src: HeroImagen,
+      alt: 'Servicios de Telefonía IP y Contestadoras',
+    }}
+  />
+
+   <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Quiénes Somos"
+    subtitle="Con experiencia en el sector de comunicaciones, proporcionamos soluciones de telefonía IP, números entrantes y contestadoras diseñadas para mejorar la eficiencia y productividad de tu empresa."
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+ 
+
+ <!-- Stats Widget ****************** -->
+
+  <Stats
+    title="Resultados de Nuestras Soluciones de Telefonía"
+    subtitle="Estos resultados destacan el impacto de nuestras soluciones en la mejora de la comunicación interna y externa de nuestros clientes."
+    stats={[
+      { title: 'Llamadas Gestionadas Mensualmente', amount: '50K+' },
+      { title: 'Clientes Empresariales', amount: '300+' },
+      { title: 'Tasa de Satisfacción', amount: '98%' },
+      { title: 'Tiempo de Respuesta', amount: '24/7' },
+    ]}
+  />
+
+ <!-- Features Widget *************** -->
+
+ <Features
+  id="features"
+  title="Características de Nuestras Soluciones de Telefonía IP"
+  subtitle="Nuestras soluciones de telefonía IP están diseñadas para optimizar la comunicación empresarial."
+  columns={3}
+  items={[
+    {
+      title: 'Telefonía IP',
+      description:
+        'Proveemos sistemas de telefonía IP para que tu empresa disfrute de llamadas económicas, flexibles y de alta calidad desde cualquier dispositivo.',
+      icon: 'tabler:phone-call',
+    },
+    {
+      title: 'Números Entrantes Personalizados',
+      description:
+        'Te ofrecemos números de contacto exclusivos, permitiendo que tus clientes te llamen de forma directa, mejorando la gestión de llamadas entrantes.',
+      icon: 'tabler:hash',
+    },
+    {
+      title: 'Sistemas de Contestadoras',
+      description:
+        'Implementamos contestadoras automáticas para manejar las llamadas de manera eficiente, mejorando la experiencia del cliente y optimizando la atención.',
+      icon: 'tabler:message-circle',
+    },
+  ]}
+/>
+
+<CallToAction
+  actions={[
+    {
+      variant: 'primary',
+      target: '_blank',
+      text: 'Solicita tu Servicio de Telefonía IP',
+      href: 'https://wa.me/56963238857?text=Quiero%20solicitar%20un%20servicio%20de%20telefonía%20IP%20y%20contestadoras',
+      icon: 'tabler:message-circle',
+    },
+  ]}
+>
+  <Fragment slot="title">Optimiza tus comunicaciones empresariales</Fragment>
+
+  <Fragment slot="subtitle">
+    Nuestras soluciones de telefonía IP y sistemas de contestadoras permiten a tu empresa manejar las comunicaciones de manera eficiente. ¡Contáctanos para comenzar!
+  </Fragment>
+</CallToAction>
+
+
+<FAQs
+title="Preguntas Frecuentes"
+items={[
+  {
+    title: '¿Qué es la telefonía IP?',
+    description:
+      'La telefonía IP permite realizar llamadas telefónicas a través de internet, ofreciendo una alternativa más económica y flexible a los sistemas tradicionales.',
+  },
+  {
+    title: '¿Qué ventajas ofrecen los números entrantes?',
+    description:
+      'Tener un número de contacto entrante exclusivo mejora la profesionalidad de tu empresa y facilita que tus clientes puedan contactarte fácilmente.',
+  },
+  {
+    title: '¿Cómo funcionan las contestadoras automáticas?',
+    description:
+      'Las contestadoras automáticas permiten gestionar de manera eficiente las llamadas entrantes, proporcionando mensajes pregrabados y opciones para redirigir a los clientes al área adecuada.',
+  },
+  {
+    title: '¿Qué necesito para implementar telefonía IP en mi empresa?',
+    description:
+      'Solo necesitas una conexión a internet estable y nuestro equipo se encargará de instalar y configurar el sistema para que puedas empezar a usarlo de inmediato.',
+  },
+  {
+    title: '¿Cómo se pueden integrar estos servicios con mi negocio?',
+    description:
+      'Nuestras soluciones son flexibles y se integran con cualquier sistema empresarial, permitiéndote manejar las comunicaciones de manera efectiva desde cualquier lugar.',
+  },
+]}
+/>
+
+</Layout>

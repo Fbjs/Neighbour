@@ -1,0 +1,153 @@
+---
+import Layout from '~/layouts/LandingLayoutProduct.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import Features2 from '~/components/widgets/Features2.astro';
+import Features from '~/components/widgets/Features.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Brands from '~/components/widgets/Brands.astro';
+
+import HeroImagen from '~/assets/images/sms-marketing.jpg';
+
+const metadata = {
+  title: 'Campañas de SMS Personalizadas',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Comunicación Instantánea y Efectiva"
+    title="Campañas de SMS Personalizadas"
+    subtitle="Creamos campañas de SMS efectivas para que puedas comunicarte instantáneamente con tu audiencia, aumentar tus conversiones y generar resultados inmediatos."
+    actions={[
+      { variant: 'primary', text: 'Contáctanos', href: 'https://wa.me/56963238857?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20SMS', icon: 'tabler:square-rounded-arrow-right' },
+      { text: 'Descubre más', href: '/' },
+    ]}
+    image={{
+      src: HeroImagen,
+      alt: 'Campañas de SMS personalizadas',
+    }}
+  />
+
+   <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Quiénes Somos"
+    subtitle="Con experiencia en la creación de campañas de SMS, ayudamos a empresas a llegar a sus clientes con mensajes personalizados que generan una respuesta rápida y directa."
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+ 
+
+ <!-- Stats Widget ****************** -->
+
+  <Stats
+    title="Resultados de Nuestras Campañas de SMS"
+    subtitle="Estos resultados reflejan el impacto positivo de nuestras campañas de SMS en la interacción y conversión de nuestros clientes."
+    stats={[
+      { title: 'Mensajes Enviados', amount: '1M+' },
+      { title: 'Tasa de Apertura', amount: '98%' },
+      { title: 'Tasa de Respuesta', amount: '45%' },
+      { title: 'Clientes Satisfechos', amount: '300+' },
+    ]}
+  />
+
+ <!-- Features Widget *************** -->
+
+ <Features
+  id="features"
+  title="Características de Nuestras Campañas de SMS"
+  subtitle="Nuestras campañas de SMS están diseñadas para ser rápidas, directas y efectivas."
+  columns={3}
+  items={[
+    {
+      title: 'Segmentación Precisa',
+      description:
+        'Creamos listas segmentadas para que puedas enviar mensajes relevantes a tu público objetivo en el momento ideal.',
+      icon: 'tabler:users',
+    },
+    {
+      title: 'Automatización de Mensajes',
+      description:
+        'Automatizamos tus campañas de SMS para que se envíen en momentos clave, maximizando el impacto y la efectividad.',
+      icon: 'tabler:clock',
+    },
+    {
+      title: 'Análisis de Resultados',
+      description:
+        'Te proporcionamos reportes detallados sobre la tasa de apertura, respuestas y conversiones para medir el éxito de cada campaña.',
+      icon: 'tabler:chart-bar',
+    },
+    {
+      title: 'Entrega Inmediata',
+      description: 
+        'Garantizamos la entrega inmediata de tus mensajes a tu audiencia, asegurando que lleguen en el momento preciso.',
+      icon: 'tabler:message-circle',
+    },
+    {
+      title: 'Soporte Técnico',
+      description:
+        'Te ofrecemos soporte continuo para que tus campañas de SMS siempre estén funcionando sin interrupciones.',
+      icon: 'tabler:headset',
+    },
+  ]}
+/>
+
+<CallToAction
+  actions={[
+    {
+      variant: 'primary',
+      target: '_blank',
+      text: 'Inicia tu Campaña de SMS',
+      href: 'https://wa.me/56963238857?text=Quiero%20iniciar%20una%20campaña%20de%20SMS',
+      icon: 'tabler:message-circle',
+    },
+  ]}
+>
+  <Fragment slot="title">Llega a tus clientes en tiempo real</Fragment>
+
+  <Fragment slot="subtitle">
+    Nuestras campañas de SMS te permiten comunicarte instantáneamente con tus clientes y obtener resultados rápidos. ¡Contáctanos para empezar!
+  </Fragment>
+</CallToAction>
+
+
+<FAQs
+title="Preguntas Frecuentes"
+items={[
+  {
+    title: '¿Qué es una campaña de SMS?',
+    description:
+      'Una campaña de SMS es una estrategia de comunicación directa mediante mensajes de texto, diseñada para enviar información relevante o promociones a tus clientes de manera instantánea.',
+  },
+  {
+    title: '¿Cómo aseguran una alta tasa de respuesta?',
+    description:
+      'La segmentación precisa y los mensajes personalizados son clave para asegurar que tus clientes abran y respondan a los SMS rápidamente.',
+  },
+  {
+    title: '¿Puedo automatizar mis campañas?',
+    description:
+      'Sí, ofrecemos automatización completa para que los mensajes se envíen en momentos clave, maximizando el impacto en tus clientes.',
+  },
+  {
+    title: '¿Cómo puedo medir los resultados?',
+    description:
+      'Te proporcionamos reportes detallados que incluyen la tasa de apertura, tasa de respuesta y conversiones para que puedas medir el éxito de cada campaña.',
+  },
+  {
+    title: '¿Qué necesito para empezar una campaña?',
+    description:
+      'Solo necesitas tu lista de contactos y el mensaje que deseas enviar. Nosotros nos encargamos de todo el proceso, desde el envío hasta el análisis de resultados.',
+  },
+]}
+/>
+
+</Layout>

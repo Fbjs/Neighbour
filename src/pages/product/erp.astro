@@ -1,0 +1,153 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/LandingLayoutProduct.astro';
+
+const metadata = {
+  title: 'ERP a la Medida',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="ERP Personalizado para tu Negocio"
+    title="Controla cada aspecto de tu negocio con nuestro ERP a la medida"
+    subtitle="Gestión total de tu empresa con funcionalidades avanzadas como punto de venta, control de stock, ticketera, agenda de horas, gestor de contenido y cartas QR."
+    actions={[{ variant: 'primary', target: '_blank', text: 'Solicita una demo', href: 'https://erp.neighbour.cl/' }]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1581092580497-579e6423a49a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
+      alt: 'ERP Hero Image',
+    }}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Características del ERP a la Medida"
+    subtitle="Nuestro ERP está diseñado para ofrecerte todas las herramientas que necesitas para gestionar tu negocio desde un solo lugar."
+    columns={3}
+    items={[
+      {
+        title: 'Punto de Venta (POS)',
+        description:
+          'Gestión eficiente de ventas con herramientas de facturación, generación de tickets y múltiples formas de pago. Ideal para cualquier tipo de comercio.',
+        icon: 'tabler:cash-register',
+      },
+      {
+        title: 'Control de Stock',
+        description:
+          'Monitorea tus inventarios en tiempo real, controla el stock disponible y genera alertas automáticas cuando los productos lleguen a niveles mínimos.',
+        icon: 'tabler:box',
+      },
+      {
+        title: 'Agenda de Horas',
+        description:
+          'Administra citas y reservas con una agenda inteligente que permite gestionar los tiempos de atención para tu negocio de manera eficiente.',
+        icon: 'tabler:calendar',
+      },
+      {
+        title: 'Gestor de Contenidos',
+        description:
+          'Administra el contenido de tu sitio web o tienda en línea de forma rápida y sencilla. Ideal para gestionar productos, promociones y más.',
+        icon: 'tabler:edit',
+      },
+      {
+        title: 'Ticketera y Facturación',
+        description:
+          'Genera tickets y facturas de manera automática y con total personalización, asegurando un proceso rápido y eficiente en el punto de venta.',
+        icon: 'tabler:receipt',
+      },
+      {
+        title: 'Cartas QR Digitales',
+        description:
+          'Diseña y administra menús o catálogos digitales con códigos QR personalizados para que tus clientes accedan a ellos desde cualquier dispositivo.',
+        icon: 'tabler:qrcode',
+      },
+    ]}
+  />
+
+  <!-- Content Widget - Punto de Venta **************** -->
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Punto de Venta (POS)',
+        description:
+          'Nuestro sistema POS está diseñado para facilitar tus ventas, con un flujo rápido de facturación, generación de tickets y soporte para múltiples formas de pago.',
+        icon: 'tabler:shopping-cart',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1556742400-b5b7c512f3d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+      alt: 'Punto de Venta Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Punto de Venta (POS)</h3>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget - Control de Stock **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Control de Stock',
+        description:
+          'Controla tus inventarios en tiempo real y mantén siempre tu negocio abastecido. Nuestro sistema de control de stock te alertará cuando los productos necesiten ser reabastecidos.',
+        icon: 'tabler:box',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1592998430230-3149f4e93748?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      alt: 'Control de Stock Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Control de Stock</h3>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget - Agenda de Horas **************** -->
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Agenda de Horas',
+        description:
+          'Facilita la gestión de citas y reservas con nuestra agenda inteligente, permitiendo que administres el tiempo de tu negocio de manera efectiva y sin complicaciones.',
+        icon: 'tabler:clock',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1553456558-aff63285bdd0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      alt: 'Agenda de Horas Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Agenda de Horas</h3>
+    </Fragment>
+  </Content>
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Solicita más información',
+        href: 'https://erp.neighbour.cl/',
+      },
+    ]}
+    title="Descubre cómo nuestro ERP puede transformar tu negocio"
+    subtitle="Gestiona cada aspecto de tu negocio desde un solo lugar con nuestro ERP personalizado y optimizado para tu industria."
+  />
+</Layout>

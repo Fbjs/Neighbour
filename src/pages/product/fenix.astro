@@ -2,9 +2,13 @@
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features2 from '~/components/widgets/Features2.astro';
-import Hero from '~/components/widgets/Hero.astro';
+import Hero from '~/components/widgets/Hero2.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
-import Layout from '~/layouts/PageLayout.astro';
+import Layout from '~/layouts/LandingLayoutProduct.astro';
+
+
+import HeroImagen from '~/assets/images/fenix_crm.png';
+
 
 const metadata = {
   title: 'FENIX Contact Center Suite',
@@ -13,14 +17,13 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
-
   <Hero
     tagline="FENIX Contact Center Suite"
     title="Optimiza tus campañas desde cualquier lugar con nuestro software 100% en la nube"
     subtitle="Gestiona campañas INBOUND y OUTBOUND con una solución informática robusta, diseñada para maximizar la eficacia y eficiencia de tu call center."
     actions={[{ variant: 'primary', target: '_blank', text: 'Solicita una demo', href: 'https://fenix.neighbour.cl/' }]}
     image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
+      src: HeroImagen,
       alt: 'FENIX Hero Image',
     }}
   />

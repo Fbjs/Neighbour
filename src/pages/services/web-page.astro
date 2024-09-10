@@ -10,12 +10,160 @@ import Stats from '~/components/widgets/Stats.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Brands from '~/components/widgets/Brands.astro';
-
+import Prices from '~/components/widgets/Pricing.astro';
+import Card from '~/components/widgets/Card.astro';
+import Content from '~/components/widgets/Content.astro';
 import HeroImagen from '~/assets/images/web-development.jpg';
+import Headline from '~/components/ui/Headline.astro';
+
+
+import MallorcaHogar from '~/assets/images/MallorcaHogar.jpeg';
+import AloAbogados from '~/assets/images/AloAbogados.jpeg';
+import AsesoriaDefensaDeudas from '~/assets/images/AsesoriaDefensaDeudas.jpeg';
+import PatagoniaInsular from '~/assets/images/PatagoniaInsular.png';
+import SunEnergyGreen from '~/assets/images/SunEnergyGreen.png';
+import VozPublica from '~/assets/images/VozPublica.png';
+
+import Herederos from '~/assets/images/Herederos.png';
+import MundoPacifico from '~/assets/images/MundoPacifico.png';
+import Wom from '~/assets/images/Wom.png';
+import TrustMarket from '~/assets/images/TrustMarket.png';
+import PuntoMX from '~/assets/images/PuntoMX.png';
+import DPyAsociados from '~/assets/images/DPyAsociados.png';
+import Grudinor from '~/assets/images/Grudinor.png';
+import RgsGroup from '~/assets/images/RgsGroup.png';
+import PircasQuilapilun from '~/assets/images/PircasQuilapilun.png';
+
+
+
 
 const metadata = {
   title: 'Creación de Páginas Web Personalizadas',
 };
+
+const properties = [
+  {
+    title: "Mallorca Hogar",
+    location: "Chile",
+    description: "E-commerce especializado en muebles y decoración para el hogar. Diseño elegante y navegación intuitiva para una mejor experiencia de usuario.",
+    imageUrl: MallorcaHogar, // Coloca una imagen de vista previa adecuada aquí
+    rating: "4.7",
+    link: "https://mallorcahogar.neighbour.cl/",
+  },
+  {
+    title: "Alo Abogado",
+    location: "Chile",
+    description: "Portal de asesoría legal online. Los usuarios pueden agendar consultas y acceder a soluciones jurídicas rápidas y efectivas.",
+    imageUrl: AloAbogados, // Coloca una imagen de vista previa adecuada aquí
+    rating: "4.6",
+    link: "https://aloabogado.neighbour.cl/",
+  },
+  {
+    title: "Pircas de Quilapilún",
+    location: "Chile",
+    description: "Carta QR de un restaurante en la zona de Quilapilún, destacando la belleza natural y las comodidades del proyecto.",
+    imageUrl: PircasQuilapilun, // Coloca una imagen de vista previa adecuada aquí
+    rating: "4.8",
+    link: "https://pircas-de-quilapilun.vercel.app/",
+  },
+  {
+    title: "Asesoría y Defensa de Deudas",
+    location: "Chile",
+    description: "Servicios especializados en asesoría financiera y defensa contra deudas. Ofrece asistencia personalizada a clientes con problemas financieros.",
+    imageUrl: AsesoriaDefensaDeudas, // Coloca una imagen de vista previa adecuada aquí
+    rating: "4.9",
+    link: "https://asesoriaydefensadeudas.cl/",
+  },
+  {
+    title: "Sun Energy Green",
+    location: "Chile",
+    description: "Empresa enfocada en soluciones energéticas sostenibles, especializada en la instalación de paneles solares y tecnologías limpias.",
+    imageUrl: SunEnergyGreen, // Coloca una imagen de vista previa adecuada aquí
+    rating: "5.0",
+    link: "https://sunenergygreen.cl/",
+  },
+  {
+    title: "Patagonia Insular",
+    location: "Chile",
+    description: "Portal inmobiliario con propiedades exclusivas en la región de la Patagonia, ofreciendo acceso a tierras vírgenes y proyectos ecológicos.",
+    imageUrl: PatagoniaInsular, // Coloca una imagen de vista previa adecuada aquí
+    rating: "4.7",
+    link: "https://realestate.neighbour.cl/",
+  },
+  {
+    title: "Herederos",
+    location: "Chile",
+    description: "Plataforma dedicada a la gestión de herencias y sucesiones, ofreciendo asesoría legal y financiera a familias y empresas.",
+    imageUrl: Herederos, // Coloca una imagen de vista previa adecuada aquí
+    rating: "4.5",
+    link: "https://herederos.neighbour.cl/",
+  },
+  {
+    title: "Mundo Pacífico",
+    location: "Chile",
+    description: "Portal web de una compañía de telecomunicaciones líder en Chile, ofreciendo servicios de internet, telefonía y televisión.",
+    imageUrl: MundoPacifico, // Coloca una imagen de vista previa adecuada aquí
+    rating: "4.6",
+    link: "https://mundopacifico.neighbour.cl/",
+  },
+  {
+    title: "WOM",
+    location: "Chile",
+    description: "Portal corporativo de WOM, una de las compañías de telecomunicaciones más importantes de Chile, especializada en servicios de telefonía móvil.",
+    imageUrl: Wom, // Coloca una imagen de vista previa adecuada aquí
+    rating: "4.8",
+    link: "https://wom.neighbour.cl/",
+  },
+  {
+    title: "TrustMarket",
+    location: "Chile",
+    description: "E-commerce especializado en productos tecnológicos, ofreciendo una amplia variedad de dispositivos con envío a todo el país.",
+    imageUrl: TrustMarket, // Coloca una imagen de vista previa adecuada aquí
+    rating: "4.7",
+    link: "https://trustmarket.neighbour.cl/",
+  },
+  {
+    title: "Punto MX",
+    location: "Chile",
+    description: "Asistente de reservas de una Restorante mexicano",
+    imageUrl: PuntoMX, // Coloca una imagen de vista previa adecuada aquí
+    rating: "4.6",
+    link: "https://puntomx.neighbour.cl/",
+  },
+  {
+    title: "Fundación Voz Pública",
+    location: "Chile",
+    description: "Plataforma de una fundación que trabaja en iniciativas para promover la participación ciudadana y la transparencia en el gobierno.",
+    imageUrl: VozPublica, // Coloca una imagen de vista previa adecuada aquí
+    rating: "4.9",
+    link: "https://vozpublica.neighbour.cl/",
+  },
+  {
+    title: "DP y Asociados",
+    location: "Chile",
+    description: "Empresa de consultoría legal y financiera, ofreciendo servicios especializados en la gestión de patrimonios y asesoría corporativa.",
+    imageUrl: DPyAsociados, // Coloca una imagen de vista previa adecuada aquí
+    rating: "4.8",
+    link: "https://dpyasociados.neighbour.cl/",
+  },
+  {
+    title: "Grudinor",
+    location: "Chile",
+    description: "Plataforma web para una compañía que se dedica a la importación y distribución de productos industriales en Chile.",
+    imageUrl: Grudinor, // Coloca una imagen de vista previa adecuada aquí
+    rating: "4.6",
+    link: "https://grudinor.neighbour.cl/",
+  },
+  {
+    title: "RGS Group",
+    location: "Chile",
+    description: "Página corporativa de una empresa dedicada a la gestión y administración de proyectos de infraestructura en Chile.",
+    imageUrl: RgsGroup, // Coloca una imagen de vista previa adecuada aquí
+    rating: "4.7",
+    link: "https://rgsgroup.cl/",
+  },
+];
+
 ---
 
 <Layout metadata={metadata}>
@@ -107,6 +255,98 @@ const metadata = {
   ]}
 />
 
+<Prices
+    title="Nuestros Planes"
+    subtitle="Elige el plan que mejor se ajuste a tu negocio"
+    prices={[
+      {
+        title: 'Básico',
+        subtitle: 'Ideal para pequeñas empresas o sitios personales',
+        price: '257.000',
+        period: 'Una vez',
+        items: [
+          {
+            description: 'Diseño web personalizado',
+          },
+          {
+            description: 'Hasta 5 páginas',
+          },
+          {
+            description: 'Optimización básica de SEO',
+          },
+          {
+            description: 'Compatibilidad con dispositivos móviles',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Empezar',
+          href: '#',
+        },
+      },
+      {
+        title: 'Estándar',
+        subtitle: 'Perfecto para negocios en crecimiento',
+        price: '515.000',
+        period: 'Una vez',
+        items: [
+          {
+            description: 'Diseño web personalizado avanzado',
+          },
+          {
+            description: 'Hasta 10 páginas',
+          },
+          {
+            description: 'Optimización avanzada de SEO',
+          },
+          {
+            description: 'Integración con redes sociales',
+          },
+          {
+            description: 'Formulario de contacto y blog',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Empezar',
+          href: '#',
+        },
+        hasRibbon: true,
+        ribbonTitle: 'Más Popular',
+      },
+      {
+        title: 'Premium',
+        subtitle: 'La mejor opción para empresas consolidadas',
+        price: '859.000',
+        period: 'Una vez',
+        items: [
+          {
+            description: 'Diseño web totalmente personalizado',
+          },
+          {
+            description: 'Páginas ilimitadas',
+          },
+          {
+            description: 'Optimización SEO profesional',
+          },
+          {
+            description: 'Integración con e-commerce y CRM',
+          },
+          {
+            description: 'Soporte técnico prioritario',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Empezar',
+          href: '#',
+        },
+      },
+    ]}
+/>
+
+
+
 <CallToAction
   actions={[
     {
@@ -124,6 +364,18 @@ const metadata = {
     Nuestras páginas web personalizadas están diseñadas para atraer, convertir y retener a tus clientes. ¡Contáctanos hoy para empezar!
   </Fragment>
 </CallToAction>
+
+
+
+<div class="max-w-7xl mx-auto">
+  <Headline title="Nuestro Portafolio" subtitle="Conoce algunos de nuestros proyectos destacados" tagline="Nuestras Páginas Web" />
+
+  <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
+    {properties.map((property) => (
+      <Card {...property} />
+    ))}
+  </div>
+</div>
 
 
 <FAQs

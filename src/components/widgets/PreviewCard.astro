@@ -1,0 +1,77 @@
+---
+// LinkPreview.astro
+import { onMount } from 'astro/jsx-runtime';
+
+const { url, apiKey } = Astro.props;
+let previewData = {
+  title: 'Cargando...',
+  description: 'Cargando descripción...',
+  image: '',
+  url: url,
+};
+
+onMount(async () => {
+  try {
+    const response = await fetch(`https://api.linkpreview.net?key=${apiKey}&q=${url}`);
+    const data = await response.json();
+    previewData = {
+      title: data.title || 'Sin título',
+      description: data.description || 'Sin descripción',
+      image: data.image || '/images/default-placeholder.png', // Puedes poner una imagen por defecto
+      url: data.url || url,
+    };
+  } catch (error) {
+    console.error('Error fetching link preview:', error);
+    previewData = {
+      title: 'Error al cargar',
+      description: 'No se pudo obtener la vista previa del enlace.',
+      image: '/images/error-placeholder.png',
+      url: url,
+    };
+  }
+});
+---
+
+<div class="link-preview">
+  <img src={previewData.image} alt={`Vista previa de ${previewData.title}`} class="preview-image" />
+  <div class="preview-content">
+    <h3><a href={previewData.url} target="_blank" rel="noopener">{previewData.title}</a></h3>
+    <p>{previewData.description}</p>
+  </div>
+</div>
+
+<style>
+  .link-preview {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 400px;
+    transition: box-shadow 0.2s ease;
+  }
+
+  .link-preview:hover {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .preview-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .preview-content {
+    padding: 16px;
+  }
+
+  .preview-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+  }
+
+  .preview-content p {
+    font-size: 1rem;
+    color: #555;
+  }
+</style>

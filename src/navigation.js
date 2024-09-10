@@ -52,7 +52,7 @@ export const headerData = {
         },
         {
           text: 'SMS',
-          href: '/product/sms',
+          href: '/product/sms-marketing',
         },
         {
           text: 'Telefonia IP',
@@ -203,7 +203,7 @@ export const footerData = {
         },
         {
           text: 'Marketing Digital',
-          href: '/services/community-manager',
+          href: '/services/marketing-digital',
         },
         {
           text: 'Optimización de Procesos',
@@ -219,11 +219,11 @@ export const footerData = {
         },
         {
           text: 'VPS, Datacenter',
-          href: '/services/hosting',
+          href: '/services/datacenter',
         },
         {
           text: 'Telemarketing y Cobranzas',
-          href: '/services/hosting',
+          href: '/services/telemarketing-cobranzas',
         },
       ]
     },
@@ -236,7 +236,7 @@ export const footerData = {
         },
         {
           text: 'SMS',
-          href: '/product/sms',
+          href: '/product/sms-marketing',
         },
         {
           text: 'Telefonia IP',
