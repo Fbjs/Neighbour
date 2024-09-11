@@ -10,106 +10,112 @@ const closeModal = () => {
   modal.classList.add('hidden');
   modal.classList.remove('flex'); // Ocultamos el modal cuando se cierra
 };
+
 ---
 
 <!-- Botón que abre el modal -->
-<button
+<!--button
+  id="open-modal-btn"
   class="btn-primary"
-  on:click={() => openModal()}
 >
   Contact Us
-</button>
+</button-->
+
+<!-- Botón que abre el modal -->
+<!--button id="open-modal-btn" class="btn-primary">
+  Contact Us
+</button-->
 
 <!-- Modal -->
 <div id="contact-modal" class="hidden fixed z-50 inset-0 overflow-y-auto">
-  <div class="flex items-center justify-center min-h-screen">
-    <!-- Fondo oscuro semi-transparente -->
-    <div class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75"></div>
+  <!-- Fondo oscuro semi-transparente -->
+  <div class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75"></div>
 
-    <!-- Contenido del modal -->
-    <div class="bg-white dark:bg-slate-900 rounded-lg overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
-      <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-        <div class="sm:flex sm:items-start">
-          <div class="text-center sm:ml-4 sm:text-left">
-            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white" id="modal-title">
-              Contact Form
-            </h3>
-            <div class="mt-2">
-              <p class="text-sm text-gray-500 dark:text-gray-300">
-                Fill out the form below to send us a message.
-              </p>
-            </div>
-          </div>
+  <!-- Contenido del modal -->
+  <div class="flex items-center justify-center min-h-screen">
+    <div class="bg-white dark:bg-slate-900 rounded-lg overflow-hidden shadow-xl transform transition-all max-w-md w-full">
+      <div class="px-6 py-4">
+        <div class="text-center sm:text-left">
+          <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white" id="modal-title">
+            Formulario de Contacto
+          </h3>
+          <p class="mt-2 text-sm text-gray-500 dark:text-gray-300">
+            Fill out the form below to send us a message.
+          </p>
         </div>
-      </div>
-      <div class="px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-        <!-- Aquí va el formulario -->
-        <form action="https://api.web3forms.com/submit" method="POST">
+
+        <form action="https://api.web3forms.com/submit" method="POST" class="mt-4">
           <input type="hidden" name="access_key" value="be189844-e76c-45c7-b324-032897ee8890" />
 
           <!-- Nombre -->
-          <div class="mb-6">
-            <label for="name" class="block text-sm font-medium text-gray-700">Nombre</label>
+          <div class="mb-4">
+            <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Nombre</label>
             <input
               type="text"
               name="name"
               id="name"
               autocomplete="on"
-              placeholder=""
-              class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+              class="py-2 px-3 mt-1 block w-full text-md rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              required
             />
           </div>
 
           <!-- Email -->
-          <div class="mb-6">
-            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+          <div class="mb-4">
+            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
             <input
               type="email"
               name="email"
               id="email"
               autocomplete="on"
-              placeholder=""
-              class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+              class="py-2 px-3 mt-1 block w-full text-md rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              required
             />
           </div>
 
           <!-- Mensaje -->
-          <div class="mb-6">
-            <label for="message" class="block text-sm font-medium text-gray-700">Mensaje</label>
+          <div class="mb-4">
+            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Mensaje</label>
             <textarea
               id="message"
               name="message"
               rows="4"
-              class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+              class="py-2 px-3 mt-1 block w-full text-md rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              required
             ></textarea>
           </div>
 
-          <!-- Enviar -->
-          <div class="flex items-center justify-end">
+          <!-- Botones -->
+          <div class="flex items-center justify-end space-x-3">
             <button type="submit" class="btn-primary">
               Enviar
             </button>
+            <button
+              id="close-modal-btn"
+              type="button"
+              class="rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700"
+            >
+              Cerrar
+            </button>
           </div>
         </form>
-
-        <!-- Botón para cerrar el modal -->
-        <button
-          type="button"
-          class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
-          on:click={() => closeModal()}
-        >
-          Cerrar
-        </button>
       </div>
     </div>
   </div>
 </div>
 
-<style>
-  .hidden {
-    display: none;
-  }
-  .flex {
-    display: flex;
-  }
-</style>
+
+<script>
+  const openModal = () => {
+    const modal = document.getElementById('contact-modal');
+    modal.classList.remove('hidden');
+  };
+
+  const closeModal = () => {
+    const modal = document.getElementById('contact-modal');
+    modal.classList.add('hidden');
+  };
+
+  document.getElementById('open-modal-btn').addEventListener('click', openModal);
+  document.getElementById('close-modal-btn').addEventListener('click', closeModal);
+</script>
