@@ -6,9 +6,7 @@ import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
 import ItemGrid from '../ui/ItemGrid.astro';
 
-
 import tex5 from '~/assets/images/tex5.jpg';
-
 
 const {
   title = await Astro.slots.render('title'),
@@ -19,9 +17,9 @@ const {
   items = [],
   columns,
   image = await Astro.slots.render('image'),
+  video = await Astro.slots.render('video'),  // Nueva propiedad para video
   isReversed = false,
   isAfterContent = false,
-
   id,
   isDark = false,
   classes = {},
@@ -74,7 +72,7 @@ const {
       </div>
       <div aria-hidden="true" class="mt-10 md:mt-0 md:basis-1/2">
         {
-          image && (
+          image && !video && (
             <div class="relative m-auto max-w-4xl">
               {typeof image === 'string' ? (
                 <Fragment set:html={image} />
@@ -92,10 +90,23 @@ const {
             </div>
           )
         }
+        {
+          video && (
+            <div class="relative m-auto max-w-4xl">
+              <video
+                class="mx-auto w-full rounded-lg shadow-lg"
+                controls
+                autoplay
+                muted
+                width="500"
+              >
+                <source src={video.src} type={video.type} />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          )
+        }
       </div>
     </div>
   </div>
 </WidgetWrapper>
-
-
-
