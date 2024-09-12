@@ -10,6 +10,8 @@ import Stats from '~/components/widgets/Stats.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Brands from '~/components/widgets/Brands.astro';
 
+import ContactUs from '~/components/widgets/ContactForm.astro';
+import Button from '~/components/ui/Button.astro';
 import HeroImagen from '~/assets/images/mailing.jpg';
 
 const metadata = {
@@ -24,16 +26,25 @@ const metadata = {
     tagline="Conecta con tu Audiencia"
     title="Campañas de Mailing Personalizadas"
     subtitle="Creamos campañas de mailing efectivas que te permiten comunicarte directamente con tu audiencia, fidelizar a tus clientes y aumentar tus conversiones."
-    actions={[
-      { variant: 'primary', text: 'Contáctanos', href: 'https://wa.me/56963238857?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20mailing', icon: 'tabler:square-rounded-arrow-right' },
-      { text: 'Descubre más', href: '/' },
-    ]}
     image={{
       src: HeroImagen,
       alt: 'Campañas de mailing personalizadas',
     }}
-  />
-
+  >
+    <Fragment slot="boton">
+      <Button variant="primary" class="open-modal-btn">
+        Cotiza tu Envío
+      </Button>
+      <a href="https://wa.me/56963238857?text=Hola,%20me%20gustaría%20recibir%20más%20información" target="_blank" class="flex items-center w-auto justify-center font-semibold bg-[#25D366] text-white border-[#25D366] px-8 py-2 rounded-full space-x-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+          <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+        </svg>
+        <span>Chatea con un Asesor</span>
+      </a>
+    </Fragment>
+  </Hero2>
    <!-- Features2 Widget ************** -->
 
   <Features2
@@ -115,6 +126,12 @@ const metadata = {
 
   <Fragment slot="subtitle">
     Con nuestras campañas de mailing, optimizas la comunicación con tus clientes y aumentas tus ventas. ¡Contáctanos para comenzar!
+  </Fragment>
+  <Fragment slot="boton">
+    <Button variant="primary" class="open-modal-btn">
+      Cotiza tu Envío
+    </Button>
+    
   </Fragment>
 </CallToAction>
 

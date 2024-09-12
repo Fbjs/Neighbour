@@ -63,6 +63,9 @@ const {
               </div>
             )
           }
+          <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap sm:flex-row sm:justify-center gap-4 lg:justify-start lg:m-0 lg:max-w-7xl">
+            <slot name="boton"></slot>
+          </div>
         </div>
         {content && <Fragment set:html={content} />}
       </div>

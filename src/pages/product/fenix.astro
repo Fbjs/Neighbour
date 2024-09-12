@@ -14,6 +14,8 @@ import TeleoperadorVideo from '~/assets/images/Teleoperador.mp4';
 import AuditoriaVideo from '~/assets/images/Auditoria.mp4';
 import SupervisorVideo from '~/assets/images/Supervisor.mp4';
 import Brands from '~/components/widgets/Brands.astro';
+import ContactUs from '~/components/widgets/ContactForm.astro';
+import Button from '~/components/ui/Button.astro';
 
 import Santander from '~/assets/images/Santander.jpg';
 import Regalariza from '~/assets/images/regalariza.jpg';
@@ -39,12 +41,25 @@ const metadata = {
     tagline="FENIX Contact Center Suite"
     title="Optimiza tus campañas desde cualquier lugar con nuestro software 100% en la nube"
     subtitle="Gestiona campañas INBOUND y OUTBOUND con una solución informática robusta, diseñada para maximizar la eficacia y eficiencia de tu call center."
-    actions={[{ variant: 'primary', target: '_blank', text: 'Solicita una demo', href: 'https://fenix.neighbour.cl/' }]}
     image={{
       src: HeroImagen,
       alt: 'FENIX Hero Image',
     }}
-  />
+  >
+    <Fragment slot="boton">
+      <Button variant="primary" class="open-modal-btn">
+        Solicita tu DEMO 
+      </Button>
+      <a href="https://wa.me/56963238857?text=Hola,%20me%20gustaría%20recibir%20más%20información" target="_blank" class="flex items-center w-auto justify-center font-semibold bg-[#25D366] text-white border-[#25D366] px-8 py-2 rounded-full space-x-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+          <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+        </svg>
+        <span>Chatea con un Asesor</span>
+      </a>
+    </Fragment>
+  </Hero2>
 
   <!-- Features2 Widget ************** -->
 
@@ -236,17 +251,30 @@ const metadata = {
 
   <!-- CallToAction Widget *********** -->
 
+
   <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Solicita más información',
-        href: 'https://fenix.neighbour.cl/',
-      },
-    ]}
-    title="Descubre todo lo que FENIX tiene para ofrecer"
-    subtitle="Optimiza la gestión de tu call center con nuestra suite completa de herramientas y funcionalidades avanzadas."
-  />
+  actions={[
+    {
+      variant: 'primary',
+      target: '_blank',
+      text: 'Solicita más información',
+      href: 'https://wa.me/56963238857?text=Quiero%20solicitar%20un%20servicio%20de%20telefonía%20IP%20y%20contestadoras',
+      icon: 'tabler:message-circle',
+    },
+  ]}
+>
+  <Fragment slot="title">Descubre todo lo que FENIX tiene para ofrecer</Fragment>
+
+  <Fragment slot="subtitle">
+    Optimiza la gestión de tu call center con nuestra suite completa de herramientas y funcionalidades avanzadas.
+  </Fragment>
+  <Fragment slot="boton">
+    <Button variant="primary" class="open-modal-btn">
+      Solicita tu DEMO
+    </Button>
+    
+  </Fragment>
+</CallToAction>
 
   <Brands
   title="Instituciones que Confían en Fénix"
