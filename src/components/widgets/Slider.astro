@@ -8,11 +8,6 @@ import ContactUs from '~/components/widgets/ContactForm.astro';
 <div class="w-full mx-auto">
   <ContactUs
   inputs={[
-    {
-       type: 'text',
-       name: 'asunto',
-       value: 'Bienvenida',
-     },
      {
        type: 'text',
        name: 'name',
@@ -149,19 +144,25 @@ import ContactUs from '~/components/widgets/ContactForm.astro';
 
     const items = Array.from(carousel.querySelectorAll('[data-carousel-item]'));
     const indicators = Array.from(carousel.querySelectorAll('[data-carousel-slide-to]'));
+    const prevButton = carousel.querySelector('[data-carousel-prev]');
+    const nextButton = carousel.querySelector('[data-carousel-next]');
+
+    if (items.length === 0) {
+      console.error('No se encontraron elementos del carrusel.');
+      return;
+    }
+
     let currentIndex = 0;
 
     function showItem(index) {
       items.forEach((item, i) => {
-        const htmlItem = item;
-        htmlItem.style.opacity = i === index ? '1' : '0';
-        htmlItem.style.zIndex = i === index ? '1' : '0';
+        item.style.opacity = i === index ? '1' : '0';
+        item.style.zIndex = i === index ? '1' : '0';
       });
 
       indicators.forEach((indicator, i) => {
-        const htmlIndicator = indicator;
-        htmlIndicator.classList.toggle('bg-white', i === index);
-        htmlIndicator.classList.toggle('bg-white/60', i !== index);
+        indicator.classList.toggle('bg-white', i === index);
+        indicator.classList.toggle('bg-white/60', i !== index);
       });
     }
 
@@ -180,34 +181,50 @@ import ContactUs from '~/components/widgets/ContactForm.astro';
       showItem(currentIndex);
     }
 
-    // Auto-play every 5 seconds
-    const intervalId = setInterval(showNextItem, 5000);
+    let intervalId = setInterval(showNextItem, 5000);
 
-    // Event listeners for indicators
+    function resetInterval() {
+      clearInterval(intervalId);
+      intervalId = setInterval(showNextItem, 5000);
+    }
+
     indicators.forEach((indicator, i) => {
       indicator.addEventListener('click', () => {
-        clearInterval(intervalId); // Stop auto-play when user interacts
         goToItem(i);
+        resetInterval();
       });
     });
 
-    // Event listeners for Previous/Next buttons
-    const prevButton = carousel.querySelector('[data-carousel-prev]');
-    const nextButton = carousel.querySelector('[data-carousel-next]');
-
-    if (prevButton && nextButton) {
+    if (prevButton) {
       prevButton.addEventListener('click', () => {
-        clearInterval(intervalId); // Stop auto-play when user interacts
         showPreviousItem();
-      });
-
-      nextButton.addEventListener('click', () => {
-        clearInterval(intervalId); // Stop auto-play when user interacts
-        showNextItem();
+        resetInterval();
       });
     }
 
-    // Initialize first item
+    if (nextButton) {
+      nextButton.addEventListener('click', () => {
+        showNextItem();
+        resetInterval();
+      });
+    }
+
     showItem(currentIndex);
+
+    // Cleanup function to be called when the carousel is no longer needed
+    function cleanup() {
+      clearInterval(intervalId);
+      items.forEach(item => {
+        item.style.opacity = '';
+        item.style.zIndex = '';
+      });
+      indicators.forEach(indicator => {
+        indicator.classList.remove('bg-white', 'bg-white/60');
+      });
+    }
+
+    // Example: Call cleanup() if you dynamically remove the carousel element
+    // cleanup();
   });
 </script>
+

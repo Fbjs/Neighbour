@@ -2,7 +2,7 @@
 import type { Form as Props } from '~/types';
 import Button from '~/components/ui/Button.astro';
 
-const { inputs, textarea, disclaimer, button = 'Enviar', description = '' } = Astro.props;
+const { inputs, textarea, disclaimer, button = 'Enviar', description = '' , asunto} = Astro.props;
 ---
 
 <!-- Botón(es) que abren el modal -->
@@ -30,7 +30,7 @@ const { inputs, textarea, disclaimer, button = 'Enviar', description = '' } = As
 
         <form action="https://api.web3forms.com/submit" method="POST" class="mt-4">
           <input type="hidden" name="access_key" value="be189844-e76c-45c7-b324-032897ee8890" />
-          <input type="hidden" name="asunto" value="Asunto del mensaje" />
+          <input type="hidden" name="asunto" value={asunto} />
 
           {inputs &&
             inputs.map(({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '' }) =>
