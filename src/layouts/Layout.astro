@@ -41,8 +41,8 @@ const { language, textDirection } = I18N;
     <Analytics />
 
     <!-- Comment the line below to disable View Transitions -->
-    <ViewTransitions fallback="swap" />
-    <script src="//unpkg.com/alpinejs" defer></script>
+    <!--ViewTransitions fallback="swap" />
+    <script src="//unpkg.com/alpinejs" defer></script-->
 
   </head>
 
@@ -58,3 +58,137 @@ const { language, textDirection } = I18N;
     </style>
   </body>
 </html>
+
+
+<script>
+  import { gsap } from "gsap";
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  /*type AnimationSettings = {
+    autoAlpha?: number;
+    y?: number;
+    x?: number;
+    willChange?: string;
+  };
+
+  function setElementAnimationDefaults(
+    id: string,
+    settings: AnimationSettings
+  ) {
+    gsap.set(id, settings);
+  }
+
+  setElementAnimationDefaults("#fadeText", {
+    autoAlpha: 0,
+    y: 50,
+    willChange: "transform, opacity",
+  });
+
+  setElementAnimationDefaults("#fadeInUp", {
+    autoAlpha: 0,
+    y: 50,
+    willChange: "transform, opacity",
+  });
+
+  setElementAnimationDefaults("#fadeInMoveRight", {
+    autoAlpha: 0,
+    x: 300,
+    willChange: "transform, opacity",
+  });
+
+  let timeline = gsap.timeline({ defaults: { overwrite: "auto" } });
+
+  timeline.to("#fadeText", {
+    duration: 0.5,
+    autoAlpha: 1,
+    y: 0,
+    delay: 0.5,
+    ease: "power2.out",
+  });
+
+  timeline.to(
+    "#fadeInUp",
+    { duration: 1.5, autoAlpha: 1, y: 0, ease: "power2.out" },
+    "-=1.2"
+  );
+
+  timeline.to(
+    "#fadeInMoveRight",
+    { duration: 1.5, autoAlpha: 1, x: 0, ease: "power2.inOut" },
+    "-=1.4"
+  );
+
+  timeline.to("#overlay", { duration: 1, autoAlpha: 0, delay: 0.2 });
+*/
+
+
+
+  gsap.registerPlugin(ScrollTrigger) 
+
+  // ------------------------- Slider -------------------------
+  gsap.fromTo('.entry-effect-1',
+    {
+      opacity: 0,
+      scale: 0.5,  // Comienza más pequeño
+      transformOrigin: 'center center', // Escala desde el centro
+    },
+    {
+      opacity: 1,
+      scale: 1,    // Crece hasta el tamaño normal
+      duration: 1.5,
+      ease: 'back.out(1.7)',  // Efecto de rebote al final
+      delay: 0,     // Sin retraso
+      stagger: 0    // Sin retraso entre elementos
+    }
+  );
+
+  // ------------------------- Slider -------------------------
+
+
+  // ------------------------- Features  -------------------------
+  const tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.subtittle', // Se dispara con el subtítulo
+    start: 'top 70%',      // Inicia cuando el subtítulo apenas entra en el viewport
+    end: 'top 55%',        // Termina más rápido para que no haya tanto scroll
+    scrub: 2,              // Suaviza un poco, pero hace la animación más rápida
+    markers: true,         // Para visualizar (puedes quitarlo)
+    toggleActions: 'play none none reverse'
+  }
+});
+
+// Animación del subtítulo (subtittle)
+tl.fromTo('.subtittle', 
+  { opacity: 0, y: -100 },  // Inicia más arriba y con opacidad 0 (puedes reducir el desplazamiento)
+  { 
+    opacity: 1,   // Se hace visible
+    y: 0,         // Termina en su posición original
+    duration: 2   // Duración de la animación más rápida
+  }
+);
+
+// Animación del título (tittle) después del subtítulo
+tl.fromTo('.tittle', 
+  { opacity: 0, y: -100 },  // Inicia más arriba y con opacidad 0
+  { 
+    opacity: 1,   // Se hace visible
+    y: 0,         // Termina en su posición original
+    duration: 2   // Duración de la animación más rápida
+  }, 
+  '+=0.2'         // Retraso pequeño para separar las animaciones
+);
+
+// Animación del tag después del título
+tl.fromTo('.tag', 
+  { opacity: 0, y: -100 },  // Inicia más arriba y con opacidad 0
+  { 
+    opacity: 1,   // Se hace visible
+    y: 0,         // Termina en su posición original
+    duration: 2   // Duración de la animación más rápida
+  }, 
+  '+=0.2'         // Retraso pequeño para separar las animaciones
+);
+
+  // ------------------------- Features -------------------------
+</script>
