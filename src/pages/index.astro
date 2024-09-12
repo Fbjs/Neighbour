@@ -17,7 +17,6 @@ import Slider from '~/components/widgets/Slider.astro';
 import image2 from '~/assets/images/FENIX_contact_center.png';
 import ContactForm from '~/components/widgets/ContactForm.astro';
 import Brands from '~/components/widgets/Brands.astro';
-import ContactUs from '~/components/widgets/ContactForm.astro';
 import Button from '~/components/ui/Button.astro';
 
 import Santander from '~/assets/images/Santander.jpg';
@@ -257,27 +256,9 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="boton">
-      <ContactUs
-        inputs={[
-          {
-            type: 'text',
-            name: 'name',
-            label: 'Nombre',
-            placeholder: 'Victor Rubilar',
-          },
-          {
-            type: 'email',
-            name: 'mail',
-            label: 'Correo',
-            placeholder: 'victor.rubilar@neighbour.cl',
-          },
-        ]}
-        textarea={{
-          label: 'Mensaje',
-          placeholder: 'Necesito optimizar las ganancias de mi negocio.'
-        }}
-        description="Nuestro equipo te responderá en menos de 24hrs."
-      />
+      <Button variant="primary" class="open-modal-btn">
+        Cotiza tu Proyecto
+      </Button>
     </Fragment>
 
   </CallToAction>

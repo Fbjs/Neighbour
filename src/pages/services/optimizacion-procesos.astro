@@ -11,6 +11,10 @@ import Features3 from '~/components/widgets/Features3.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Brands from '~/components/widgets/Brands.astro';
 
+
+import ContactUs from '~/components/widgets/ContactForm.astro';
+import Button from '~/components/ui/Button.astro';
+
 import HeroImagen from '~/assets/images/optimizacion-procesos.jpg';
 
 const metadata = {
@@ -25,15 +29,27 @@ const metadata = {
     tagline="Soluciones Personalizadas"
     title="Software a la medida que impulsa tu crecimiento"
     subtitle="Creamos soluciones de software personalizadas para automatizar, optimizar y hacer crecer tu negocio, adaptándonos a tus necesidades únicas."
-    actions={[
-      { variant: 'primary', text: 'Contáctanos', href: 'https://wa.me/56963238857?text=Hola%2C%20estoy%20interesado%20en%20sus%20soluciones%20de%20software%20a%20la%20medida', icon: 'tabler:square-rounded-arrow-right' },
-      { text: 'Descubre más', href: '/' },
-    ]}
+    
     image={{
       src: HeroImagen,
       alt: 'Soluciones de software a la medida',
     }}
-  />
+  >
+    <Fragment slot="boton">
+      <Button variant="primary" class="open-modal-btn">
+        Cotiza tu Proyecto
+      </Button>
+      <a href="https://wa.me/56963238857?text=Hola,%20me%20gustaría%20recibir%20más%20información" target="_blank" class="flex items-center w-auto justify-center font-semibold bg-[#25D366] text-white border-[#25D366] px-8 py-2 rounded-full space-x-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+          <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+        </svg>
+        <span>Chatea con un Asesor</span>
+      </a>
+    </Fragment>
+
+  </Hero2>
 
    <!-- Features2 Widget ************** -->
 
@@ -107,6 +123,12 @@ const metadata = {
 
   <Fragment slot="subtitle">
     Nuestras soluciones de software a medida están diseñadas para adaptarse a tu negocio y llevarlo al siguiente nivel de eficiencia y crecimiento.
+  </Fragment>
+  <Fragment slot="boton">
+    <Button variant="primary" class="open-modal-btn">
+      Cotiza tu Proyecto
+    </Button>
+    
   </Fragment>
 </CallToAction>
 

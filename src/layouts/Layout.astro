@@ -11,6 +11,7 @@ import Metadata from '~/components/common/Metadata.astro';
 import SiteVerification from '~/components/common/SiteVerification.astro';
 import Analytics from '~/components/common/Analytics.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
+import ContactUs from '~/components/widgets/ContactForm.astro';
 
 // Comment the line below to disable View Transitions
 import { ViewTransitions } from 'astro:transitions';
@@ -48,6 +49,27 @@ const { language, textDirection } = I18N;
 
   <body class="antialiased text-default bg-page tracking-tight">
     <slot />
+    <ContactUs
+        inputs={[
+          {
+            type: 'text',
+            name: 'name',
+            label: 'Nombre',
+            placeholder: 'Tu Nombre',
+          },
+          {
+            type: 'email',
+            name: 'mail',
+            label: 'Correo',
+            placeholder: 'Tu Email',
+          },
+        ]}
+        textarea={{
+          label: 'Mensaje',
+          placeholder: 'Tu Mensaje'
+        }}
+        description="Nuestro equipo te responderá en menos de 24hrs."
+      />
 
     <BasicScripts />
 
