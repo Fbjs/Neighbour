@@ -10,7 +10,7 @@ import image2 from '~/assets/images/FENIX_contact_center.png';
 
 
 const metadata = {
-  title: 'Sobre Nosotros - Neighbour Technology SpA',
+  title: 'Sobre Nosotros - Neighbour Technology',
 };
 ---
 
@@ -28,8 +28,9 @@ const metadata = {
 
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-  <div class="bg-fondo  text-white">
+
+
+  <div class="bg-fondo text-white">
     <Hero
       tagline="Sobre Nosotros"
       image={{
@@ -38,15 +39,17 @@ const metadata = {
       }}
     >
       <Fragment slot="title">
-        Potencia tu presencia en línea con nuestras <br />
-        <span class="text-accent"> Soluciones Tecnológicas Innovadoras</span>
+        ¡Impulsa tu negocio al siguiente nivel! <br />
+        <span class="text-accent"> Soluciones Tecnológicas que Transforman</span>
       </Fragment>
 
       <Fragment slot="subtitle">
-        <span class="text-white">Neighbour Technology SpA es una empresa líder en soluciones tecnológicas, especializada en el desarrollo de aplicaciones y sistemas de información. Nos destacamos por nuestra metodología centrada en la mejora continua, la sinergia y la creatividad colaborativa.</span>
+        <span class="text-white">En Neighbour Technology, vamos más allá del desarrollo tecnológico: diseñamos soluciones innovadoras que transforman tu negocio y potencian su crecimiento. Con una sólida experiencia en la creación de aplicaciones y sistemas de información, nos especializamos en enfrentar tus desafíos más exigentes y convertirlos en oportunidades de éxito. Nuestra filosofía se basa en la excelencia, la mejora continua y un enfoque colaborativo que garantiza que cada proyecto sea único y adaptado a tus necesidades.</span>
       </Fragment>
     </Hero>
   </div>
+
+
   
   <!-- Stats Widget ****************** -->
   <Stats
@@ -61,7 +64,7 @@ const metadata = {
 
   <Steps2
       title="Nuestros Valores"
-      subtitle="En Neighbour Technology SpA, nos guiamos por los siguientes principios fundamentales."
+      subtitle="En Neighbour Technology, nos guiamos por los siguientes principios fundamentales."
       items={[
         {
           title: 'Enfoque centrado en el cliente',
@@ -82,34 +85,7 @@ const metadata = {
     />
 
     <!-- Steps2 Widget ****************** -->
-    <Steps2
-      title="Logros"
-      subtitle="Nos enorgullece haber alcanzado estos hitos clave."
-      isReversed={true}
-      callToAction={{
-        text: 'Ver más',
-        href: '/',
-      }}
-      items={[
-        {
-          title: 'Alcance global',
-          description: 'Hemos ampliado nuestras operaciones a múltiples países y continentes.',
-          icon: 'tabler:globe',
-        },
-        {
-          title: 'Comentarios positivos de clientes',
-          description:
-            'Nuestros clientes valoran la calidad y eficacia de nuestros servicios.',
-          icon: 'tabler:message-star',
-        },
-        {
-          title: 'Premios y reconocimientos',
-          description:
-            'Hemos sido galardonados como expertos en la industria tecnológica.',
-          icon: 'tabler:award',
-        },
-      ]}
-    />
+    
 
   <!-- Features3 Widget ************** -->
 

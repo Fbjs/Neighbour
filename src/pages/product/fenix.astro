@@ -10,6 +10,16 @@ import Layout from '~/layouts/LandingLayoutProduct.astro';
 import HeroImagen from '~/assets/images/fenix_crm.png';
 
 import EstadisticaVideo from '~/assets/images/Estadistica.mp4';
+import CampaniaVideo from '~/assets/images/Campania.mp4';
+import AsignacionVideo from '~/assets/images/Asignacion.mp4';
+import ListasVideo from '~/assets/images/Lista.mp4';
+import TeleoperadorVideo from '~/assets/images/Teleoperador.mp4';
+import AuditoriaVideo from '~/assets/images/Auditoria.mp4';
+import SupervisorVideo from '~/assets/images/Supervisor.mp4';
+
+
+
+
 
 
 
@@ -83,10 +93,10 @@ const metadata = {
     isReversed
     items={[
       {
-        title: 'Módulo de Administración',
+        title: 'Módulo de Estadísticas',
         description:
-          'El módulo de administración permite configurar y gestionar las bases de datos de manera personalizada, optimizando los recursos y mejorando la eficiencia de las campañas.',
-        icon: 'tabler:database',
+          'Fortalece el control y supervisión gracias a las gráficas en tiempo real del módulo de estadística, optimiza el trabajo de las carteras de contacto para televentas y telecobranzas. Visualiza la cantidad de gestiones, clientes en cada una de las campañas, asignaciones y listas, personaliza los parámetros y reportes de control según las necesidades de cada base de datos, descarga y sincroniza informes a diario o por rango de fecha según los formatos y exigencia del negocio.',
+        icon: 'tabler:chart-line',
       },
     ]}
     video={{
@@ -94,9 +104,7 @@ const metadata = {
       type: 'video/mp4',
     }}
   >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Administración</h3>
-    </Fragment>
+
   </Content>
 
   <!-- Content Widget - Estadísticas **************** -->
@@ -105,20 +113,18 @@ const metadata = {
     isAfterContent
     items={[
       {
-        title: 'Estadísticas en Tiempo Real',
+        title: 'Módulo de Campañas',
         description:
-          'Visualiza y analiza el rendimiento de tus campañas con gráficos en tiempo real, permitiendo tomar decisiones informadas y ajustar estrategias rápidamente.',
-        icon: 'tabler:chart-line',
+          'El módulo “administrar campañas” permite confeccionar campañas de clientes y condiciona el árbol de gestión masiva o individualmente. Configura los usuarios, anexos e IVR´S (Bot, para llamadas y gestiones automatizadas) según las necesidades de cada cartera. Redirecciona llamadas entrantes INBOUND en el módulo “colas de atención” según el usuario que corresponda y en “lista negra” controla el bloqueo de números de teléfonos discados en el sistema. El módulo “grabaciones” centraliza los registros de audios de la central telefónica, permitiendo verificar mediante un reproductor la correcta entrega de información a los clientes.',
+        icon: 'tabler:database',
       },
     ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1552664688-cf412ec27db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-      alt: 'Estadísticas Image',
+    video={{
+      src: CampaniaVideo,
+      type: 'video/mp4',
     }}
   >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Estadísticas</h3>
-    </Fragment>
+ 
   </Content>
 
   <!-- Content Widget - Teleoperador **************** -->
@@ -127,20 +133,100 @@ const metadata = {
     isReversed
     items={[
       {
-        title: 'Teleoperador',
+        title: 'Módulo Asignación',
         description:
-          'Facilita la gestión de los teleoperadores con herramientas integradas para administrar llamadas, historial de gestiones, y comunicación vía WhatsApp y teléfono web.',
+          'Gestiona las carteras (base de datos) mensual para cada una de las campañas, permite bloquear el ingreso de teleoperadores y editar la información. La función principal del módulo es el proceso de carga ya que se puede realizar de 3 formas diferentes, principalmente de manera “automatizada” desde un sitio compartido o FTP, la segunda una carga “avanzada” la cual funciona con las bases de origen para escoger las columnas que se incorporaran al sistema, finalmente el proceso “manual” se debe descargar los formatos estándar, modificar y cargar de vuelta al módulo correspondiente. Visualiza gráficamente el avance de cada una de las asignaciones las cuales permiten descargar reportes de avance de la cartera.',
         icon: 'tabler:headset',
       },
     ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
-      alt: 'Teleoperador Image',
+    video={{
+      src: AsignacionVideo,
+      type: 'video/mp4',
     }}
   >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Teleoperador</h3>
-    </Fragment>
+
+  </Content>
+
+    <!-- Content Widget - Estadísticas **************** -->
+
+    <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Módulo de Listas',
+        description:
+          'Asigna y vincula teleoperadores con “listas” para el funcionamiento del discador manual, herramienta que permite filtrar los registros por rango de fecha, compromiso, contacto, gestiones y actividades. Las “listas de recorrido” permiten configurara el funcionamiento del discador predictivo, cuenta con 3 modalidades “DISCADOR” (Llamadas automatizadas según agentes conectados), “IVR SILENCIOSO” (Bot, para validación telefónica), “IVR INTERACTIVO (Bot, para llamadas y gestiones automatizadas), para cada uno de los casos se puede revisar los reportes de avance y gestión.',
+        icon: 'tabler:database',
+      },
+    ]}
+    video={{
+      src: ListasVideo,
+      type: 'video/mp4',
+    }}
+  >
+ 
+  </Content>
+
+
+  <!-- Content Widget - Teleoperador **************** -->
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Módulo de Teleoperador',
+        description:
+          'EL agente tiene la posibilidad de trabajar en dos modalidades según las instrucciones, “MANUAL” permitiendo filtrar listas por, Rut, nombre, gestiones y número de teléfono en la cual puedes discar según la selección. “DISCADOR PREDICTIVO” permite que los teleoperadores se conecten a las listas habilitadas y automáticamente los conecten con una llamada para gestionar.',
+        icon: 'tabler:headset',
+      },
+    ]}
+    video={{
+      src: TeleoperadorVideo,
+      type: 'video/mp4',
+    }}
+  >
+
+  </Content>
+
+    <!-- Content Widget - Estadísticas **************** -->
+
+    <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Módulo de Supervisor',
+        description:
+          'Visualización en tiempo real de las conexiones teleoperador y las gestiones realizadas por sesión, facilitando las decisiones y permitiendo aplicar estrategias para maximizar el rendimiento del equipo y las carteras trabajadas. Registros, es un mecanismo de búsqueda avanzado de registros del sistema enfocado en los supervisores permitiendo buscar registros de diversas maneras en campañas, asignaciones, mejor gestión, ultima gestión, Rut y número de teléfono.',
+        icon: 'tabler:database',
+      },
+    ]}
+    video={{
+      src: SupervisorVideo,
+      type: 'video/mp4',
+    }}
+  >
+ 
+  </Content>
+
+
+    <!-- Content Widget - Teleoperador **************** -->
+
+    <Content
+    isReversed
+    items={[
+      {
+        title: 'Módulo de Auditorias',
+        description:
+          'Auditoria de ventas es un proceso crítico que asegura la precisión y la integridad de los registros de ventas de una empresa. Se compone de tres componentes clave: la administración de perfiles de auditor, el control y la validación de ventas en tiempo real, y la recuperación de ventas y la descarga de grabaciones. Es importante administrar cuidadosamente los perfiles de auditor para garantizar el acceso solo a personas autorizadas, validar las transacciones en tiempo real y recuperar grabaciones para resolver problemas y disputas de manera eficiente.',
+        icon: 'tabler:headset',
+      },
+    ]}
+    video={{
+      src: AuditoriaVideo,
+      type: 'video/mp4',
+    }}
+  >
+
   </Content>
 
   <!-- CallToAction Widget *********** -->
