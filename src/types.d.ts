@@ -182,7 +182,7 @@ export interface Disclaimer {
 
 // COMPONENTS
 export interface CallToAction extends Omit<HTMLAttributes<'a'>, 'slot'> {
-  variant?: 'primary' | 'secondary' | 'tertiary' | 'link';
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'link' | 'whatsapp';
   text?: string;
   icon?: string;
   classes?: Record<string, string>;
@@ -277,6 +277,7 @@ export interface Steps extends Omit<Headline, 'classes'>, Widget {
 export interface Content extends Omit<Headline, 'classes'>, Widget {
   content?: string;
   image?: string | unknown;
+  video?: string | unknown;
   items?: Array<Item>;
   columns?: number;
   isReversed?: boolean;

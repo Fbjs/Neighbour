@@ -17,6 +17,22 @@ import Slider from '~/components/widgets/Slider.astro';
 import image2 from '~/assets/images/FENIX_contact_center.png';
 import ContactForm from '~/components/widgets/ContactForm.astro';
 import Brands from '~/components/widgets/Brands.astro';
+import ContactUs from '~/components/widgets/ContactForm.astro';
+import Button from '~/components/ui/Button.astro';
+
+import Santander from '~/assets/images/Santander.jpg';
+import Regalariza from '~/assets/images/regalariza.jpg';
+import MundoCreditos from '~/assets/images/Mundo_creditos.jpg';
+import MarubeniCredit from '~/assets/images/Marubeni_credit.png';
+import MAF from '~/assets/images/MAF.jpg';
+import IACC from '~/assets/images/IACC.png';
+import IPLACEX from '~/assets/images/IPLACEX.png';
+import GrupoMok from '~/assets/images/grupo_mok.png';
+import Falabella from '~/assets/images/fallabella.png';
+import ClinicaLasCondes from '~/assets/images/Clinica-Las-Condes.jpg';
+import ClinicaCordillera from '~/assets/images/clinica-cordillera.jpg';
+import Clinica_U_de_los_andes from '~/assets/images/Clinica_U_de_los_andes.png';
+
 
 
 
@@ -44,15 +60,31 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!----HeroCarousel />----->
-  <Slider />
-
+  <Slider>
+    <Fragment slot="boton">
+      
+      <Button variant="primary" class="open-modal-btn">
+        Cotiza tu Proyecto
+      </Button>
+      <a href="https://wa.me/56963238857?text=Hola,%20me%20gustaría%20recibir%20más%20información" target="_blank" class="flex items-center justify-center font-semibold bg-[#25D366] text-white border-[#25D366] px-8 py-2 rounded-full space-x-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+          <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+        </svg>
+        <span>Chatea con un Asesor</span>
+      </a>
+      
+      
+    </Fragment>
+  </Slider>
 
 
   <Note />
 
   <!-- Features Widget *************** -->
 
-  <ContactForm/>
+  
 
 
   <Features
@@ -146,50 +178,61 @@ const metadata = {
 
 
 
- <Brands
- title="Partnerships & Collaborations"
- subtitle="At Astrowind, we believe in the power of collaboration to drive innovation and create exceptional experiences."
- icons={[]}
- images={[
-   {
-     src: 'https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_1280.png',
-     alt: 'Paypal',
-   },
-   {
-     src: 'https://cdn.pixabay.com/photo/2021/12/06/13/48/visa-6850402_1280.png',
-     alt: 'Visa',
-   },
-   {
-     src: 'https://cdn.pixabay.com/photo/2013/10/01/10/29/ebay-189064_1280.png',
-     alt: 'Ebay',
-   },
-
-   {
-     src: 'https://cdn.pixabay.com/photo/2015/04/13/17/45/icon-720944_1280.png',
-     alt: 'Youtube',
-   },
-   {
-     src: 'https://cdn.pixabay.com/photo/2013/02/12/09/07/microsoft-80658_1280.png',
-     alt: 'Microsoft',
-   },
-   {
-     src: 'https://cdn.pixabay.com/photo/2015/04/23/17/41/node-js-736399_1280.png',
-     alt: 'Node JS',
-   },
-   {
-     src: 'https://cdn.pixabay.com/photo/2015/10/31/12/54/google-1015751_1280.png',
-     alt: 'Google',
-   },
-   {
-     src: 'https://cdn.pixabay.com/photo/2021/12/06/13/45/meta-6850393_1280.png',
-     alt: 'Meta',
-   },
-   {
-     src: 'https://cdn.pixabay.com/photo/2013/01/29/22/53/yahoo-76684_1280.png',
-     alt: 'Yahoo',
-   },
- ]}
-/>
+    <Brands
+    title="Instituciones que Confían en Neighbour Technology"
+    subtitle="En Neighbour Technology, colaboramos con estas organizaciones para ofrecer soluciones tecnológicas a medida, mejorando su infraestructura y optimizando procesos."
+    icons={[]}
+    images={[
+      {
+        src: Santander.src,
+        alt: 'Santander',
+      },
+      {
+        src: Regalariza.src,
+        alt: 'Regalariza',
+      },
+      {
+        src: MundoCreditos.src,
+        alt: 'MundoCreditos',
+      },
+      {
+        src: MarubeniCredit.src,
+        alt: 'MarubeniCredit',
+      },
+      {
+        src: MAF.src,
+        alt: 'MAF',
+      },
+      {
+        src: IACC.src,
+        alt: 'IACC',
+      },
+      {
+        src: IPLACEX.src,
+        alt: 'IPLACEX',
+      },
+      {
+        src: GrupoMok.src,
+        alt: 'GrupoMok',
+      },
+      {
+        src: Falabella.src,
+        alt: 'Falabella',
+      },
+      {
+        src: ClinicaLasCondes.src,
+        alt: 'ClinicaLasCondes',
+      },
+      {
+        src: ClinicaCordillera.src,
+        alt: 'ClinicaCordillera',
+      },
+      {
+        src: Clinica_U_de_los_andes.src,
+        alt: 'Clinica_U_de_los_andes',
+      },
+    ]}
+  />
   </div>
   
 
@@ -212,6 +255,31 @@ const metadata = {
     <Fragment slot="subtitle">
       Contacta con nosotros para más información sobre nuestros servicios y soluciones tecnológicas.
     </Fragment>
+
+    <Fragment slot="boton">
+      <ContactUs
+        inputs={[
+          {
+            type: 'text',
+            name: 'name',
+            label: 'Nombre',
+            placeholder: 'Victor Rubilar',
+          },
+          {
+            type: 'email',
+            name: 'mail',
+            label: 'Correo',
+            placeholder: 'victor.rubilar@neighbour.cl',
+          },
+        ]}
+        textarea={{
+          label: 'Mensaje',
+          placeholder: 'Necesito optimizar las ganancias de mi negocio.'
+        }}
+        description="Nuestro equipo te responderá en menos de 24hrs."
+      />
+    </Fragment>
+
   </CallToAction>
 
 </div>

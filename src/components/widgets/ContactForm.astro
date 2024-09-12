@@ -6,9 +6,9 @@ const { inputs, textarea, disclaimer, button = 'Enviar', description = '' , asun
 ---
 
 <!-- Botón(es) que abren el modal -->
-<!--Button variant="primary" class="open-modal-btn">
-  Contact Us
-</Button-->
+<Button variant="primary" class="open-modal-btn">
+  Cotiza tu Proyecto
+</Button>
 
 <!-- Modal -->
 <div id="contact-modal" class="hidden fixed z-50 inset-0 overflow-y-auto">
@@ -28,7 +28,7 @@ const { inputs, textarea, disclaimer, button = 'Enviar', description = '' , asun
           </p>
         </div>
 
-        <form action="https://api.web3forms.com/submit" method="POST" class="mt-4">
+        <form action="https://api.web3forms.com/submit" method="POST" class="mt-4 text-left">
           <input type="hidden" name="access_key" value="be189844-e76c-45c7-b324-032897ee8890" />
           <input type="hidden" name="asunto" value={asunto} />
 

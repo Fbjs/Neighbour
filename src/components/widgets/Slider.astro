@@ -6,27 +6,7 @@ import ContactUs from '~/components/widgets/ContactForm.astro';
 ---
 
 <div class="w-full mx-auto">
-  <ContactUs
-  inputs={[
-     {
-       type: 'text',
-       name: 'name',
-       label: 'Nombre',
-       placeholder: 'Victor Rubilar',
-     },
-     {
-       type: 'email',
-       name: 'mail',
-       label: 'Correo',
-       placeholder: 'victor.rubilar@neighbour.cl',
-     },
-   ]}
-   textarea={{
-     label: 'Mensaje',
-     placeholder: 'Necesito optimizar las ganancias de mi negocio.'
-   }}
-   description="Nuestro equipo te responderá en menos de 24hrs."
- />
+  
   <div id="default-carousel" class="relative overflow-hidden" data-carousel="static">
     <div class="relative h-[700px]">
       <!-- Carousel Item 1 -->
@@ -42,19 +22,6 @@ import ContactUs from '~/components/widgets/ContactForm.astro';
             Optimización de recursos y creación de herramientas digitales innovadoras para garantizar la máxima satisfacción y eficiencia.
           </p>
           <div class="flex space-x-4">
-            <a href="#conocenos" class="px-6 py-3 bg-blue-600 rounded-full text-white hover:bg-blue-700 transition">
-              Conócenos <i class="fas fa-info-circle"></i>
-            </a>
-
-
-            <!-- Botón que abre el modal -->
-            <button class="btn-primary open-modal-btn">
-              Contact Us
-            </button>
-
-            <!--a href="#contactanos" class="px-6 py-3 bg-gray-600 rounded-full text-white hover:bg-gray-700 transition">
-              Contáctanos
-            </a-->
           </div>
         </div>
       </div>
@@ -71,19 +38,6 @@ import ContactUs from '~/components/widgets/ContactForm.astro';
             En Neighbour Technology SpA nos destacamos por nuestra metodología centrada en la mejora continua, la sinergia y la creatividad colaborativa.
           </p>
           <div class="flex space-x-4">
-            <a href="#conocenos" class="px-6 py-3 bg-blue-600 rounded-full text-white hover:bg-blue-700 transition">
-              Conócenos <i class="fas fa-info-circle"></i>
-            </a>
-
-
-            <!-- Botón que abre el modal -->
-            <button id="open-modal-btn" class="btn-primary open-modal-btn">
-              Contact Us
-            </button>
-
-            <!--a href="#contactanos" class="px-6 py-3 bg-gray-600 rounded-full text-white hover:bg-gray-700 transition">
-              Contáctanos
-            </a-->
           </div>
         </div>
       </div>
@@ -99,20 +53,7 @@ import ContactUs from '~/components/widgets/ContactForm.astro';
           <p class="text-lg mb-6 container">
             Nuestro enfoque en la calidad y eficiencia garantiza resultados excepcionales y la satisfacción de nuestros clientes.
           </p>
-          <div class="flex space-x-4">
-            <a href="#conocenos" class="px-6 py-3 bg-blue-600 rounded-full text-white hover:bg-blue-700 transition">
-              Conócenos <i class="fas fa-info-circle"></i>
-            </a>
-
-            <!-- Botón que abre el modal -->
-            <button id="open-modal-btn" class="btn-primary open-modal-btn">
-              Contact Us
-            </button>
-
-            <!--a href="#contactanos" class="px-6 py-3 bg-gray-600 rounded-full text-white hover:bg-gray-700 transition">
-              Contáctanos
-            </a-->
-          </div>
+          
         </div>
       </div>
     </div>
@@ -130,6 +71,10 @@ import ContactUs from '~/components/widgets/ContactForm.astro';
       <button type="button" class="w-4 h-4 rounded-full bg-white/60 hover:bg-white transition-shadow duration-300 shadow-md" aria-label="Slide 1" data-carousel-slide-to="0"></button>
       <button type="button" class="w-4 h-4 rounded-full bg-white/60 hover:bg-white transition-shadow duration-300 shadow-md" aria-label="Slide 2" data-carousel-slide-to="1"></button>
       <button type="button" class="w-4 h-4 rounded-full bg-white/60 hover:bg-white transition-shadow duration-300 shadow-md" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+    </div>
+
+    <div class="flex space-x-4 absolute bottom-20 left-1/2 -translate-x-1/2 z-30">
+      <slot name="boton"></slot>            
     </div>
   </div>
 </div>

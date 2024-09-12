@@ -11,6 +11,7 @@ module.exports = {
         primary: 'var(--aw-color-primary)',
         secondary: 'var(--aw-color-secondary)',
         accent: 'var(--aw-color-accent)',
+        whatsapp: 'var(--aw-color-whatsapp)',
         default: 'var(--aw-color-text-default)',
         muted: 'var(--aw-color-text-muted)',
       },
