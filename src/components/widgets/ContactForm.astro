@@ -1,35 +1,19 @@
 ---
-const openModal = () => {
-  const modal = document.getElementById('contact-modal');
-  modal.classList.remove('hidden');
-  modal.classList.add('flex'); // Aseguramos que el modal sea visible
-};
+import type { Form as Props } from '~/types';
+import Button from '~/components/ui/Button.astro';
 
-const closeModal = () => {
-  const modal = document.getElementById('contact-modal');
-  modal.classList.add('hidden');
-  modal.classList.remove('flex'); // Ocultamos el modal cuando se cierra
-};
-
+const { inputs, textarea, disclaimer, button = 'Enviar', description = '' } = Astro.props;
 ---
 
-<!-- Botón que abre el modal -->
-<!--button
-  id="open-modal-btn"
-  class="btn-primary"
->
+<!-- Botón(es) que abren el modal -->
+<!--Button variant="primary" class="open-modal-btn">
   Contact Us
-</button-->
-
-<!-- Botón que abre el modal -->
-<!--button id="open-modal-btn" class="btn-primary">
-  Contact Us
-</button-->
+</Button-->
 
 <!-- Modal -->
 <div id="contact-modal" class="hidden fixed z-50 inset-0 overflow-y-auto">
   <!-- Fondo oscuro semi-transparente -->
-  <div class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75"></div>
+  <div class="fixed inset-0 transition-opacity bg-slate-900 bg-opacity-75"></div>
 
   <!-- Contenido del modal -->
   <div class="flex items-center justify-center min-h-screen">
@@ -40,82 +24,111 @@ const closeModal = () => {
             Formulario de Contacto
           </h3>
           <p class="mt-2 text-sm text-gray-500 dark:text-gray-300">
-            Fill out the form below to send us a message.
+            Rellene el siguiente formulario para enviarnos un mensaje.
           </p>
         </div>
 
         <form action="https://api.web3forms.com/submit" method="POST" class="mt-4">
           <input type="hidden" name="access_key" value="be189844-e76c-45c7-b324-032897ee8890" />
+          <input type="hidden" name="asunto" value="Asunto del mensaje" />
 
-          <!-- Nombre -->
-          <div class="mb-4">
-            <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Nombre</label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              autocomplete="on"
-              class="py-2 px-3 mt-1 block w-full text-md rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              required
-            />
-          </div>
+          {inputs &&
+            inputs.map(({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '' }) =>
+              name && (
+                <div class="mb-6">
+                  {label && (
+                    <label for={name} class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                      {label}
+                    </label>
+                  )}
+                  <input
+                    type={type}
+                    name={name}
+                    id={name}
+                    autocomplete={autocomplete}
+                    placeholder={placeholder}
+                    class="py-3 px-4 block w-full text-md rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    required
+                  />
+                </div>
+              )
+            )}
 
-          <!-- Email -->
-          <div class="mb-4">
-            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              autocomplete="on"
-              class="py-2 px-3 mt-1 block w-full text-md rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              required
-            />
-          </div>
+          {textarea && (
+            <div class="mb-4">
+              <label for="textarea" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                {textarea.label}
+              </label>
+              <textarea
+                id="textarea"
+                name={textarea.name || 'message'}
+                rows={textarea.rows || 4}
+                placeholder={textarea.placeholder}
+                class="py-2 px-3 mt-1 block w-full text-md rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                required
+              />
+            </div>
+          )}
 
-          <!-- Mensaje -->
-          <div class="mb-4">
-            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Mensaje</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="4"
-              class="py-2 px-3 mt-1 block w-full text-md rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              required
-            ></textarea>
-          </div>
+          {disclaimer && (
+            <div class="mt-3 flex items-start">
+              <div class="flex mt-0.5">
+                <input
+                  id="disclaimer"
+                  name="disclaimer"
+                  type="checkbox"
+                  class="cursor-pointer mt-1 py-3 px-4 block w-full text-md rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-900"
+                />
+              </div>
+              <div class="ml-3">
+                <label for="disclaimer" class="cursor-pointer select-none text-sm text-gray-600 dark:text-gray-400">
+                  {disclaimer.label}
+                </label>
+              </div>
+            </div>
+          )}
 
-          <!-- Botones -->
           <div class="flex items-center justify-end space-x-3">
-            <button type="submit" class="btn-primary">
-              Enviar
-            </button>
+            <Button variant="primary" type="submit">
+              {button}
+            </Button>
             <button
-              id="close-modal-btn"
               type="button"
-              class="rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700"
+              class="close-modal-btn rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700"
             >
               Cerrar
             </button>
           </div>
+
+          {description && (
+            <div class="mt-3 text-center">
+              <p class="text-sm text-gray-600 dark:text-gray-400">{description}</p>
+            </div>
+          )}
         </form>
       </div>
     </div>
   </div>
 </div>
 
-
 <script>
-  const openModal = () => {
+  document.addEventListener('DOMContentLoaded', function() {
+    const openModalBtns = document.querySelectorAll('.open-modal-btn');
+    const closeModalBtns = document.querySelectorAll('.close-modal-btn');
     const modal = document.getElementById('contact-modal');
-    modal.classList.remove('hidden');
-  };
 
-  const closeModal = () => {
-    const modal = document.getElementById('contact-modal');
-    modal.classList.add('hidden');
-  };
+    if (openModalBtns.length && closeModalBtns.length && modal) {
+      openModalBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          modal.classList.remove('hidden');
+        });
+      });
 
-  document.getElementById('open-modal-btn').addEventListener('click', openModal);
-  document.getElementById('close-modal-btn').addEventListener('click', closeModal);
+      closeModalBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          modal.classList.add('hidden');
+        });
+      });
+    }
+  });
 </script>
