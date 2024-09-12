@@ -9,6 +9,8 @@ import Features from '~/components/widgets/Features.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Brands from '~/components/widgets/Brands.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+
 
 import HeroImagen from '~/assets/images/mantencion.jpg';
 
@@ -87,6 +89,104 @@ const metadata = {
     },
   ]}
 />
+
+<Prices
+    title="Nuestros Planes de Mantenimiento"
+    subtitle="Elige el plan que mejor se ajuste a las necesidades de tu infraestructura tecnológica"
+    prices={[
+      {
+        title: 'Básico',
+        subtitle: 'Ideal para pequeñas empresas o negocios con infraestructura sencilla',
+        price: '250.000',
+        period: 'desde',
+        items: [
+          {
+            description: 'Mantenimiento preventivo de redes (1 vez al mes)',
+          },
+          {
+            description: 'Soporte de software básico',
+          },
+          {
+            description: 'Revisión de hardware (1 vez al mes)',
+          },
+          {
+            description: 'Optimización de rendimiento',
+          },
+          {
+            description: 'Informe mensual de mantenimiento',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Solicitar',
+          href: '#',
+        },
+      },
+      {
+        title: 'Estándar',
+        subtitle: 'Perfecto para empresas en crecimiento con infraestructura más compleja',
+        price: '450.000',
+        period: 'desde',
+        items: [
+          {
+            description: 'Mantenimiento preventivo y correctivo de redes (2 veces al mes)',
+          },
+          {
+            description: 'Soporte de software avanzado',
+          },
+          {
+            description: 'Revisión de hardware (2 veces al mes)',
+          },
+          {
+            description: 'Resolución de incidencias de hardware y software',
+          },
+          {
+            description: 'Informe quincenal de mantenimiento',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Solicitar',
+          href: '#',
+        },
+        hasRibbon: true,
+        ribbonTitle: 'Más Popular',
+      },
+      {
+        title: 'Premium',
+        subtitle: 'La mejor opción para grandes empresas con necesidades críticas',
+        price: '750.000',
+        period: 'desde',
+        items: [
+          {
+            description: 'Mantenimiento preventivo y correctivo de redes (4 veces al mes)',
+          },
+          {
+            description: 'Soporte de software y hardware 24/7',
+          },
+          {
+            description: 'Revisión de hardware semanal',
+          },
+          {
+            description: 'Monitorización continua de sistemas',
+          },
+          {
+            description: 'Informe semanal y asesoría personalizada',
+          },
+          {
+            description: 'Soporte prioritario',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Solicitar',
+          href: '#',
+        },
+      },
+    ]}
+/>
+
+
 
 <CallToAction
   actions={[

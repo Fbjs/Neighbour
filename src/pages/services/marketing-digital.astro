@@ -10,6 +10,8 @@ import Stats from '~/components/widgets/Stats.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Brands from '~/components/widgets/Brands.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+
 
 import HeroImagen from '~/assets/images/marketing-digital.jpg';
 
@@ -56,7 +58,7 @@ const metadata = {
       { title: 'Campañas Ejecutadas', amount: '300+' },
       { title: 'Clientes Satisfechos', amount: '250+' },
       { title: 'Aumento de Visibilidad', amount: '80%' },
-      { title: 'Tasa de Conversión', amount: '35%' },
+      { title: 'Tasa de Conversión', amount: '40%' },
     ]}
   />
 
@@ -107,24 +109,127 @@ const metadata = {
   ]}
 />
 
+<!-- Aquí puedes insertar el componente de precios -->
+
+<Prices
+    title="Nuestros Planes de Community Manager"
+    subtitle="Elige el plan que mejor se ajuste a las necesidades de tu negocio"
+    prices={[
+      {
+        title: 'Básico',
+        subtitle: 'Ideal para negocios que recién empiezan en el marketing digital',
+        price: '349.000',
+        period: 'desde',
+        items: [
+          {
+            description: 'Gestión de redes sociales (1 plataforma)',
+          },
+          {
+            description: 'Optimización básica de SEO',
+          },
+          {
+            description: 'Informe mensual de rendimiento',
+          },
+          {
+            description: 'Publicidad digital Segun presupuesto del cliente',
+          },
+          {
+            description: 'Análisis básico de seguimiento web',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Empezar',
+          href: '#',
+        },
+      },
+      {
+        title: 'Estándar',
+        subtitle: 'Perfecto para negocios en crecimiento',
+        price: '518.000',
+        period: 'desde',
+        items: [
+          {
+            description: 'Gestión de redes sociales (hasta 3 plataformas)',
+          },
+          {
+            description: 'Optimización avanzada de SEO',
+          },
+          {
+            description: 'Informe quincenal de rendimiento',
+          },
+          {
+            description: 'Publicidad digital Segun presupuesto del cliente',
+          },
+          {
+            description: 'Análisis de seguimiento web',
+          },
+          {
+            description: 'Creación de contenido para blog (2 artículos al mes)',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Empezar',
+          href: '#',
+        },
+        hasRibbon: true,
+        ribbonTitle: 'Más Popular',
+      },
+      {
+        title: 'Premium',
+        subtitle: 'La opción más completa para empresas establecidas',
+        price: '869.000',
+        period: 'desde',
+        items: [
+          {
+            description: 'Gestión de redes sociales (plataformas ilimitadas)',
+          },
+          {
+            description: 'SEO profesional y análisis competitivo',
+          },
+          {
+            description: 'Informe semanal de rendimiento',
+          },
+          {
+            description: 'Publicidad digital Segun presupuesto del cliente',
+          },
+          {
+            description: 'Análisis avanzado de seguimiento web y optimización continua',
+          },
+          {
+            description: 'Creación de contenido para blog (4 artículos al mes)',
+          },
+          {
+            description: 'Soporte prioritario y asesoría personalizada',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Empezar',
+          href: '#',
+        },
+      },
+    ]}
+/>
+
 <CallToAction
   actions={[
     {
       variant: 'primary',
       target: '_blank',
-      text: 'Solicita tu estrategia de marketing',
-      href: 'https://wa.me/56963238857?text=Quiero%20solicitar%20una%20estrategia%20de%20marketing%20digital%20personalizada',
+      text: 'Cotiza tu plan a la medida',
+      href: 'https://wa.me/56963238857?text=Hola%2C%20me%20gustaría%20cotizar%20un%20plan%20de%20marketing%20digital%20a%20la%20medida%20según%20las%20necesidades%20de%20mi%20negocio',
       icon: 'tabler:message-circle',
     },
   ]}
 >
-  <Fragment slot="title">Potencia tu marca en el mundo digital</Fragment>
+  <Fragment slot="title">Diseña un plan de marketing digital a la medida</Fragment>
 
   <Fragment slot="subtitle">
-    Con nuestras estrategias de marketing digital personalizadas, te ayudamos a destacar en el entorno digital, atraer a más clientes y hacer crecer tu negocio.
+    Adaptamos nuestras estrategias de marketing digital para ajustarse perfectamente a las necesidades y objetivos específicos de tu negocio. Solicita una cotización personalizada y comienza a crecer.
   </Fragment>
 </CallToAction>
-
 
 <FAQs
 title="Preguntas Frecuentes"
