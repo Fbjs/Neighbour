@@ -1,7 +1,3 @@
----
-
----
-
 <div
   class="dark text-muted text-sm bg-black dark:bg-transparent dark:border-b dark:border-slate-800 dark:text-slate-400 hidden md:flex gap-1 overflow-hidden px-3 py-2 relative text-ellipsis whitespace-nowrap justify-between"
 >
@@ -43,13 +39,34 @@
 
   let currentIndex = 0;
   const dynamicLink = document.getElementById('dynamic-link');
+  let intervalId;
 
   function rotateNews() {
-    currentIndex = (currentIndex + 1) % news.length;
-    dynamicLink.textContent = news[currentIndex].text;
-    dynamicLink.href = news[currentIndex].link;
+    if (dynamicLink) {
+      currentIndex = (currentIndex + 1) % news.length;
+      dynamicLink.textContent = news[currentIndex].text;
+      dynamicLink.href = news[currentIndex].link;
+    }
   }
 
-  setInterval(rotateNews, 5000); // Cambiar noticia cada 5 segundos
-</script>
+  function startNewsRotation() {
+    intervalId = setInterval(rotateNews, 5000);
+  }
 
+  function stopNewsRotation() {
+    clearInterval(intervalId);
+  }
+
+  window.addEventListener('load', startNewsRotation);
+  window.addEventListener('beforeunload', stopNewsRotation);
+
+  // También puedes agregar esta comprobación para evitar que funcione si el elemento deja de existir
+  const observer = new MutationObserver(() => {
+    if (!document.getElementById('dynamic-link')) {
+      stopNewsRotation();
+      observer.disconnect(); // Detenemos el observer cuando ya no es necesario
+    }
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
+</script>
