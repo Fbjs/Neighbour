@@ -9,6 +9,8 @@ import Features from '~/components/widgets/Features.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Brands from '~/components/widgets/Brands.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+
 
 import HeroImagen from '~/assets/images/datacenter.jpg';
 
@@ -87,6 +89,118 @@ const metadata = {
     },
   ]}
 />
+
+<Prices
+  title="Nuestros Planes de VPS"
+  subtitle="Elige el plan que mejor se ajuste a las necesidades de tu infraestructura"
+  prices={[
+    {
+      title: 'Básico',
+      subtitle: 'Ideal para proyectos pequeños o servidores de desarrollo',
+      price: '30.000',
+      period: 'mensual',
+      items: [
+        {
+          description: '1 CPU vCore',
+        },
+        {
+          description: '2 GB de RAM',
+        },
+        {
+          description: '20 GB de almacenamiento SSD',
+        },
+        {
+          description: '1 IP dedicada',
+        },
+        {
+          description: 'Soporte técnico estándar',
+        },
+        {
+          description: 'Tráfico ilimitado (100 Mbps)',
+        },
+      ],
+      callToAction: {
+        target: '_blank',
+        text: 'Solicitar',
+        href: '#',
+      },
+    },
+    {
+      title: 'Estándar',
+      subtitle: 'Perfecto para servidores de producción y aplicaciones medianas',
+      price: '60.000',
+      period: 'mensual',
+      items: [
+        {
+          description: '2 CPU vCores',
+        },
+        {
+          description: '4 GB de RAM',
+        },
+        {
+          description: '50 GB de almacenamiento SSD',
+        },
+        {
+          description: '1 IP dedicada',
+        },
+        {
+          description: 'Soporte técnico avanzado',
+        },
+        {
+          description: 'Tráfico ilimitado (200 Mbps)',
+        },
+        {
+          description: 'Backups automáticos semanales',
+        },
+      ],
+      callToAction: {
+        target: '_blank',
+        text: 'Solicitar',
+        href: '#',
+      },
+      hasRibbon: true,
+      ribbonTitle: 'Más Popular',
+    },
+    {
+      title: 'Premium',
+      subtitle: 'La mejor opción para grandes proyectos y servidores con alto tráfico',
+      price: '120.000',
+      period: 'mensual',
+      items: [
+        {
+          description: '4 CPU vCores',
+        },
+        {
+          description: '8 GB de RAM',
+        },
+        {
+          description: '100 GB de almacenamiento SSD',
+        },
+        {
+          description: '2 IPs dedicadas',
+        },
+        {
+          description: 'Soporte técnico 24/7 prioritario',
+        },
+        {
+          description: 'Tráfico ilimitado (500 Mbps)',
+        },
+        {
+          description: 'Backups automáticos diarios',
+        },
+        {
+          description: 'Monitorización continua del servidor',
+        },
+      ],
+      callToAction: {
+        target: '_blank',
+        text: 'Solicitar',
+        href: '#',
+      },
+    },
+  ]}
+/>
+
 
 <CallToAction
   actions={[

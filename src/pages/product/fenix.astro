@@ -5,10 +5,7 @@ import Features2 from '~/components/widgets/Features2.astro';
 import Hero from '~/components/widgets/Hero2.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Layout from '~/layouts/LandingLayoutProduct.astro';
-
-
 import HeroImagen from '~/assets/images/fenix_crm.png';
-
 import EstadisticaVideo from '~/assets/images/Estadistica.mp4';
 import CampaniaVideo from '~/assets/images/Campania.mp4';
 import AsignacionVideo from '~/assets/images/Asignacion.mp4';
@@ -16,12 +13,20 @@ import ListasVideo from '~/assets/images/Lista.mp4';
 import TeleoperadorVideo from '~/assets/images/Teleoperador.mp4';
 import AuditoriaVideo from '~/assets/images/Auditoria.mp4';
 import SupervisorVideo from '~/assets/images/Supervisor.mp4';
+import Brands from '~/components/widgets/Brands.astro';
 
-
-
-
-
-
+import Santander from '~/assets/images/Santander.jpg';
+import Regalariza from '~/assets/images/regalariza.jpg';
+import MundoCreditos from '~/assets/images/Mundo_creditos.jpg';
+import MarubeniCredit from '~/assets/images/Marubeni_credit.png';
+import MAF from '~/assets/images/MAF.jpg';
+import IACC from '~/assets/images/IACC.png';
+import IPLACEX from '~/assets/images/IPLACEX.png';
+import GrupoMok from '~/assets/images/grupo_mok.png';
+import Falabella from '~/assets/images/fallabella.png';
+import ClinicaLasCondes from '~/assets/images/Clinica-Las-Condes.jpg';
+import ClinicaCordillera from '~/assets/images/clinica-cordillera.jpg';
+import Clinica_U_de_los_andes from '~/assets/images/Clinica_U_de_los_andes.png';
 
 const metadata = {
   title: 'FENIX Contact Center Suite',
@@ -242,4 +247,61 @@ const metadata = {
     title="Descubre todo lo que FENIX tiene para ofrecer"
     subtitle="Optimiza la gestión de tu call center con nuestra suite completa de herramientas y funcionalidades avanzadas."
   />
+
+  <Brands
+  title="Instituciones que Confían en Fénix"
+  subtitle="En Fénix Contact Center Suite, colaboramos con estas organizaciones para optimizar su infraestructura tecnológica y administrativa."
+  icons={[]}
+  images={[
+    {
+      src: Santander.src,
+      alt: 'Santander',
+    },
+    {
+      src: Regalariza.src,
+      alt: 'Regalariza',
+    },
+    {
+      src: MundoCreditos.src,
+      alt: 'MundoCreditos',
+    },
+    {
+      src: MarubeniCredit.src,
+      alt: 'MarubeniCredit',
+    },
+    {
+      src: MAF.src,
+      alt: 'MAF',
+    },
+    {
+      src: IACC.src,
+      alt: 'IACC',
+    },
+    {
+      src: IPLACEX.src,
+      alt: 'IPLACEX',
+    },
+    {
+      src: GrupoMok.src,
+      alt: 'GrupoMok',
+    },
+    {
+      src: Falabella.src,
+      alt: 'Falabella',
+    },
+    {
+      src: ClinicaLasCondes.src,
+      alt: 'ClinicaLasCondes',
+    },
+    {
+      src: ClinicaCordillera.src,
+      alt: 'ClinicaCordillera',
+    },
+    {
+      src: Clinica_U_de_los_andes.src,
+      alt: 'Clinica_U_de_los_andes',
+    },
+  ]}
+/>
+
 </Layout>

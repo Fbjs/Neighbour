@@ -9,6 +9,8 @@ import Features from '~/components/widgets/Features.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Brands from '~/components/widgets/Brands.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+
 
 import HeroImagen from '~/assets/images/hosting.jpg';
 
@@ -87,6 +89,110 @@ const metadata = {
     },
   ]}
 />
+
+
+<Prices
+  title="Nuestros Planes de Hosting"
+  subtitle="Elige el plan que mejor se ajuste a las necesidades de tu proyecto web"
+  prices={[
+    {
+      title: 'Básico',
+      subtitle: 'Ideal para sitios web pequeños o blogs personales',
+      price: '10.000',
+      period: 'mensual',
+      items: [
+        {
+          description: '1 dominio incluido',
+        },
+        {
+          description: '5 GB de almacenamiento SSD',
+        },
+        {
+          description: 'Certificado SSL gratuito',
+        },
+        {
+          description: 'Soporte técnico estándar',
+        },
+        {
+          description: '1 cuenta de correo profesional',
+        },
+      ],
+      callToAction: {
+        target: '_blank',
+        text: 'Solicitar',
+        href: '#',
+      },
+    },
+    {
+      title: 'Estándar',
+      subtitle: 'Perfecto para empresas en crecimiento con sitios web más complejos',
+      price: '25.000',
+      period: 'mensual',
+      items: [
+        {
+          description: '3 dominios incluidos',
+        },
+        {
+          description: '20 GB de almacenamiento SSD',
+        },
+        {
+          description: 'Certificado SSL gratuito',
+        },
+        {
+          description: 'Soporte técnico avanzado',
+        },
+        {
+          description: '5 cuentas de correo profesional',
+        },
+        {
+          description: 'Backups automáticos semanales',
+        },
+      ],
+      callToAction: {
+        target: '_blank',
+        text: 'Solicitar',
+        href: '#',
+      },
+      hasRibbon: true,
+      ribbonTitle: 'Más Popular',
+    },
+    {
+      title: 'Premium',
+      subtitle: 'La mejor opción para grandes proyectos o sitios web con alto tráfico',
+      price: '50.000',
+      period: 'mensual',
+      items: [
+        {
+          description: 'Dominios ilimitados',
+        },
+        {
+          description: '50 GB de almacenamiento SSD',
+        },
+        {
+          description: 'Certificado SSL gratuito',
+        },
+        {
+          description: 'Soporte técnico 24/7 prioritario',
+        },
+        {
+          description: 'Cuentas de correo ilimitadas',
+        },
+        {
+          description: 'Backups automáticos diarios',
+        },
+        {
+          description: 'Monitorización de uptime en tiempo real',
+        },
+      ],
+      callToAction: {
+        target: '_blank',
+        text: 'Solicitar',
+        href: '#',
+      },
+    },
+  ]}
+/>
+
 
 <CallToAction
   actions={[
