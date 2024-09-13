@@ -39,15 +39,15 @@ const {
               {(icon || defaultIcon) && (
                 <Icon
                   name={icon || defaultIcon}
-                  class={twMerge('w-7 h-7 mr-2 rtl:mr-0 rtl:ml-2', defaultIconClass, itemClasses?.icon)}
+                  class={twMerge('w-7 h-7 mr-2 rtl:mr-0 rtl:ml-2 elemento-izquierda', defaultIconClass, itemClasses?.icon)}
                 />
               )}
             </div>
             <div class="mt-0.5">
-              {title && <h3 class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)}>{title}</h3>}
+              {title && <h3 class={twMerge('text-xl font-bold elemento-derecha', titleClass, itemClasses?.title)}>{title}</h3>}
               {description && (
                 <p
-                  class={twMerge(`${title ? 'mt-3' : ''} text-muted`, descriptionClass, itemClasses?.description)}
+                  class={twMerge(`${title ? 'mt-3 elemento-derecha' : ''} text-muted`, descriptionClass, itemClasses?.description)}
                   set:html={description}
                 />
               )}
