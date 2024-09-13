@@ -22,72 +22,79 @@ const metadata = {
   }
 </style>
 
+
+
+
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
   <HeroText tagline="Contacto" title="¡Conectémonos!" />
-  <ContactUs
-      id="form"
-      title="¡Envíanos un mensaje hoy mismo!"
-      subtitle="Para respuestas más rápidas, explora nuestra sección de preguntas frecuentes. ¡Quizás encuentres la solución que buscas ahí! Si no, nuestro equipo de soporte estará encantado de ayudarte."
-      inputs={[
-        {
-          type: 'text',
-          name: 'name',
-          label: 'Nombre',
-        },
-        {
-          type: 'email',
-          name: 'email',
-          label: 'Correo Electrónico',
-        },
-      ]}
-      textarea={{
-        label: 'Mensaje',
-      }}
-      disclaimer={{
-        label:
-          'Al enviar este formulario de contacto, reconoces y aceptas la recopilación de tu información personal.',
-      }}
-      description="Nuestro equipo de soporte suele responder dentro de las 24 horas hábiles."
-    />
-  <div class="bg-mapa">
-    <!-- Features2 Widget ************** -->
 
-    <Features2
-      title="¡Estamos aquí para ayudarte!"
-      items={[
-        {
-          title: 'Soporte general',
-          description: `Chatea con nosotros para consultas relacionadas con la gestión de cuentas, navegación en el sitio web, problemas de pago o preguntas generales sobre el funcionamiento de nuestro sitio.`,
-        },
-        {
-          title: 'Contacto ventas',
-          description:
-            'Chatea con nosotros para preguntas sobre compras, opciones de personalización, licencias para uso comercial, o consultas sobre productos específicos.',
-        },
-        {
-          title: 'Soporte técnico',
-          description:
-            'Chatea con nosotros si tienes problemas de instalación, dificultades para editar, problemas de compatibilidad con software o errores de descarga, o cualquier desafío técnico relacionado con nuestros productos.',
-        },
-        {
-          title: 'Teléfono',
-          description: '+56 9 6323 8857',
-          icon: 'tabler:headset',
-        },
-        {
-          title: 'Correo electrónico',
-          description: 'contacto@neighbour.cl',
-          icon: 'tabler:mail',
-        },
-        {
-          title: 'Ubicación',
-          description: 'Av. Apoquindo 6410. Las Condes, Chile',
-          icon: 'tabler:map-pin',
-        },
-      ]}
-    />
-
+  <div class="relative bg-mapa">
+    <!-- Capa semi-transparente -->
+    <div class="absolute inset-0 bg-white dark:bg-slate-900 bg-opacity-50 dark:bg-opacity-50"></div>
+    
+    <!-- Contenido del div -->
+    <div class="relative z-10">
+      <ContactUs
+        id="form"
+        title="¡Envíanos un mensaje hoy mismo!"
+        subtitle="Para respuestas más rápidas, explora nuestra sección de preguntas frecuentes. ¡Quizás encuentres la solución que buscas ahí! Si no, nuestro equipo de soporte estará encantado de ayudarte."
+        inputs={[
+          {
+            type: 'text',
+            name: 'name',
+            label: 'Nombre',
+          },
+          {
+            type: 'email',
+            name: 'email',
+            label: 'Correo Electrónico',
+          },
+        ]}
+        textarea={{
+          label: 'Mensaje',
+        }}
+        disclaimer={{
+          label:
+            'Al enviar este formulario de contacto, reconoces y aceptas la recopilación de tu información personal.',
+        }}
+        description="Nuestro equipo de soporte suele responder dentro de las 24 horas hábiles."
+      />
+  
+      <Features2
+        title="¡Estamos aquí para ayudarte!"
+        items={[
+          {
+            title: 'Soporte general',
+            description: `Chatea con nosotros para consultas relacionadas con la gestión de cuentas, navegación en el sitio web, problemas de pago o preguntas generales sobre el funcionamiento de nuestro sitio.`,
+          },
+          {
+            title: 'Contacto ventas',
+            description:
+              'Chatea con nosotros para preguntas sobre compras, opciones de personalización, licencias para uso comercial, o consultas sobre productos específicos.',
+          },
+          {
+            title: 'Soporte técnico',
+            description:
+              'Chatea con nosotros si tienes problemas de instalación, dificultades para editar, problemas de compatibilidad con software o errores de descarga, o cualquier desafío técnico relacionado con nuestros productos.',
+          },
+          {
+            title: 'Teléfono',
+            description: '+56 9 6323 8857',
+            icon: 'tabler:headset',
+          },
+          {
+            title: 'Correo electrónico',
+            description: 'contacto@neighbour.cl',
+            icon: 'tabler:mail',
+          },
+          {
+            title: 'Ubicación',
+            description: 'Av. Apoquindo 6410. Las Condes, Chile',
+            icon: 'tabler:map-pin',
+          },
+        ]}
+      />
+    </div>
   </div>
 
   
