@@ -19,8 +19,8 @@ const {
 } = Astro.props;
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto f2${classes?.container ?? ''}`} bg={bg}>
-  <div class="rounded-lg bg-blue-50 dark:bg-dark p-6 my-8">
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto${classes?.container ?? ''}`} bg={bg}>
+  <div class="rounded-lg bg-blue-50 dark:bg-dark p-6 my-8 f2-title">
     <Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes?.headline as Record<string, string>} />
   </div>
   <!-- --<Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes?.headline as Record<string, string>} />--->
@@ -29,7 +29,7 @@ const {
     columns={columns}
     defaultIcon={defaultIcon}
     classes={{
-      container: 'gap-4 md:gap-6',
+      container: 'gap-4 md:gap-6 f2-mid',
       panel:
         'rounded-lg bg-blue-50 dark:bg-dark p-6',
       // panel:
