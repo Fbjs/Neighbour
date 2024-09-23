@@ -8,6 +8,8 @@ import type { Hero as Props } from '~/types';
 const {
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
+  subsubtitle = await Astro.slots.render('subsubtitle'),
+
   tagline,
 
   content = await Astro.slots.render('content'),
@@ -47,6 +49,7 @@ const {
         }
         <div class="max-w-3xl mx-auto lg:max-w-none">
           {subtitle && <p class="text-xl text-muted mb-6 dark:text-slate-300" set:html={subtitle} />}
+          {subsubtitle && <p class="text-xl text-muted mb-6 dark:text-slate-300" set:html={subsubtitle} />}
 
           {
             actions && (

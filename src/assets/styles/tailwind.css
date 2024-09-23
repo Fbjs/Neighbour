@@ -25,6 +25,16 @@
     background-position: center;
   }
 
+  .bg-marketing {
+    background-image: url('/src/assets/images/fondo_marketing.jpg'); /* Reemplaza con la ruta a tu imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+  }
+
   .bg-slider1-neighbour {
     background-image: url('~/assets/images/slider_1.mp4');
     background-size: cover;

@@ -1,0 +1,17 @@
+---
+import { SITE } from 'astrowind:config';
+import Logo from '~/assets/images/logo_smartmarketing.png';
+
+// Global declaration for gsap animation library
+declare global {
+  interface Window {
+    gsap: any;
+  }
+}
+
+---
+
+
+<span  class="flex self-center justify-center items-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white">
+  <img id="fadeInMoveRight" src={Logo?.src} alt="Logo Neighbour" class="w-24">
+</span>
