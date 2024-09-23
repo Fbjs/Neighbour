@@ -5,6 +5,7 @@ import type { Brands as Props } from '~/types';
 import Image from '~/components/common/Image.astro';
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+
 const {
   title = '',
   subtitle = '',
@@ -19,30 +20,79 @@ const {
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
-  <!--div class="tag">
-    <Headline tagline={tagline} />
-  </div-->
-
-  <div class="brand-title">
-    <Headline title={title} />
-  </div>
-
-  <div class="brand-subtitle">
-    <Headline subtitle={subtitle} />
+  <div class="text-center mb-6">
+    <div class="brand-title">
+      <Headline title={title} />
+    </div>
+    <div class="brand-subtitle">
+      <Headline subtitle={subtitle} />
+    </div>
   </div>
   
-  <div class="flex flex-wrap justify-center gap-x-6 sm:gap-x-12 lg:gap-x-24">
-    {icons && icons.map((icon) => <Icon name={icon} class="py-3 lg:py-5 w-12 h-auto mx-auto sm:mx-0 text-gray-500" />)}
-    {
-      images &&
-        images.map(
-          (image) =>
-            image.src && (
-              <div class="flex justify-center col-span-1 my-2 lg:my-4 py-1 px-3 rounded-md dark:bg-gray-200">
-                <Image src={image.src} alt={image.alt || ''} class="max-h-12" width={120} height={48} layout="fixed" />
-              </div>
-            )
-        )
-    }
+  <div class="overflow-hidden relative brand-img">
+    <div class="brand-container flex animate-scroll whitespace-nowrap">
+      {/* Duplicar los elementos para crear un bucle */}
+      {icons && icons.map((icon) => (
+        <div class="flex justify-center items-center mx-6">
+          <Icon name={icon} class="w-12 h-auto text-gray-500" />
+        </div>
+      ))}
+      {
+        images && images.map((image) => (
+          image.src && (
+            <div class="flex justify-center items-center mx-6">
+              <Image src={image.src} alt={image.alt || ''} class="max-w-[150px] h-auto" />
+            </div>
+          )
+        ))
+      }
+      {/* Repetir el contenido para el efecto de bucle */}
+      {icons && icons.map((icon) => (
+        <div class="flex justify-center items-center mx-6">
+          <Icon name={icon} class="w-12 h-auto text-gray-500" />
+        </div>
+      ))}
+      {
+        images && images.map((image) => (
+          image.src && (
+            <div class="flex justify-center items-center mx-6">
+              <Image src={image.src} alt={image.alt || ''} class="max-w-[150px] h-auto" />
+            </div>
+          )
+        ))
+      }
+    </div>
   </div>
 </WidgetWrapper>
+
+<style>
+  .brand-container {
+    width: calc(100% * 2); /* Duplica el ancho para el efecto de scroll */
+  }
+
+  .animate-scroll {
+    animation: scroll 30s linear infinite; /* Ajusta la duración según lo necesites */
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%); /* Cambia esto si tienes más contenido */
+    }
+  }
+
+  /* Mejoras visuales */
+  .brand-container div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; /* Espaciado interno */
+    transition: transform 0.3s ease; /* Efecto al pasar el mouse */
+  }
+
+  .brand-container div:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+  }
+</style>

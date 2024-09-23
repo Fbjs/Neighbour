@@ -9,7 +9,6 @@ const {
   subtitle = await Astro.slots.render('subtitle'),
   tagline,
   stats = [],
-
   id,
   isDark = false,
   classes = {},
@@ -29,11 +28,9 @@ const {
                 <Icon name={icon} class="w-10 h-10" />
               </div>
             )}
-            {amount && (
-              <div class="font-heading text-primary text-[2.6rem] font-bold dark:text-white lg:text-5xl xl:text-6xl">
-                {amount}
-              </div>
-            )}
+            <div class="font-heading text-primary text-[2.6rem] font-bold dark:text-white lg:text-5xl xl:text-6xl">
+              <span class="counter" data-target={amount.replace('+', '')}>0</span>+
+            </div>
             {title && (
               <div class="text-sm font-medium uppercase tracking-widest text-gray-800 dark:text-slate-400 lg:text-base">
                 {title}
@@ -44,3 +41,46 @@ const {
     }
   </div>
 </WidgetWrapper>
+
+<script>
+  // Función para el conteo
+  const counters = document.querySelectorAll('.counter');
+
+  const startCounting = (counter) => {
+    const target = +counter.getAttribute('data-target');
+    let count = 0;
+    const duration = 2000; // Duración del conteo en milisegundos
+    const incrementTime = duration / target;
+
+    const increment = () => {
+      if (count < target) {
+        count++;
+        counter.textContent = count;
+        setTimeout(increment, incrementTime);
+      } else {
+        counter.textContent = target; // Asegúrate de que muestre el valor final
+      }
+    };
+
+    increment();
+  };
+
+  const options = {
+    root: null, // Observa el viewport
+    threshold: 0.1, // Activar cuando el 10% del componente esté visible
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        counters.forEach(counter => startCounting(counter));
+        observer.unobserve(entry.target); // Dejar de observar una vez que se activa el conteo
+      }
+    });
+  }, options);
+
+  // Observa cada contador
+  counters.forEach(counter => {
+    observer.observe(counter);
+  });
+</script>

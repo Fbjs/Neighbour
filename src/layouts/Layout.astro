@@ -31,7 +31,7 @@ const { language, textDirection } = I18N;
 ---
 
 <!doctype html>
-<html lang={language} dir={textDirection} class="2xl:text-[20px]">
+<html lang={language} dir={textDirection} class="2xl:text-[20px] scrollbar-hide lenis lenis-smooth scroll-pt-16">
   <head>
     <CommonMeta />
     <Favicons />
@@ -83,30 +83,54 @@ const { language, textDirection } = I18N;
 
 
 <script>
+  import "../assets/scripts/lenisSmoothScroll.js";
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
   gsap.registerPlugin(ScrollTrigger) 
 
   // ------------------------- Slider -------------------------
-  gsap.fromTo('.entry-effect-1',
-    {
-      opacity: 0,
-      scale: 0.5,  // Comienza más pequeño
-      transformOrigin: 'center center', // Escala desde el centro
-    },
-    {
-      opacity: 1,
-      scale: 1,    // Crece hasta el tamaño normal
-      duration: 3,
-      ease: 'back.out(2)',  // Efecto de rebote al final
-      delay: 0,     // Sin retraso
-      stagger: 0    // Sin retraso entre elementos
-    }
-  );
+// Animación para que el elemento entre desde abajo lentamente
+gsap.fromTo('.entry-effect-1',
+  {
+    opacity: 0,      // Comienza invisible
+    y: 200,          // Desplazado hacia abajo fuera de la vista
+  },
+  {
+    opacity: 1,      // Se vuelve visible
+    y: 0,            // Se desliza hasta su posición original
+    duration: 2,     // Duración lenta para un efecto más suave
+    ease: 'power3.out', // Efecto suave con un ligero rebote al final
+    delay: 0.3       // Un ligero retraso antes de comenzar
+  }
+);
+
+
+
+// Animación para la entrada de la segunda parte
+gsap.fromTo('.entry-effect-2',
+  {
+    opacity: 0,
+    x: -50,        // Comienza desplazado hacia la izquierda
+    scale: 0.9,    // Comienza un poco más pequeño
+    rotate: -10,   // Comienza con una ligera rotación
+    transformOrigin: 'center center', // Escala y rota desde el centro
+  },
+  {
+    opacity: 1,
+    x: 0,          // Se mueve a la posición original
+    scale: 1,      // Vuelve a su tamaño normal
+    rotate: 0,     // Termina sin rotación
+    duration: 1.5, // Duración un poco más larga para más dramatismo
+    ease: 'power3.out', // Efecto suave y progresivo
+    delay: 1.2,    // Retraso para que entre después del primero
+    stagger: 0.2   // Un pequeño retraso entre elementos
+  }
+);
+
 
 // Animación para ambos botones al mismo tiempo
-gsap.fromTo(['.btn-slider-1', '.btn-slider-2'],
+gsap.fromTo('.btn-slider-1',
   {
     opacity: 0,  // Comienzan invisibles
     scale: 0.5,  // Comienzan más pequeños
@@ -119,7 +143,6 @@ gsap.fromTo(['.btn-slider-1', '.btn-slider-2'],
     delay: 0  // Sin retraso
   }
 );
-
   // ------------------------- Slider -------------------------
 
 
@@ -210,9 +233,9 @@ tlDerecha.from('.elemento-derecha', {
   // ------------------------- Features2 -------------------------
   const f2Timeline = gsap.timeline({
   scrollTrigger: {
-    trigger: '.f2-mid',      // Se dispara con el elemento f2-mid
-    start: 'top 50%',        // Inicia cuando f2-mid apenas entra en el viewport
-    end: 'top 40%',          // Termina más rápido para que no haya tanto scroll
+    trigger: '.f2-headline',      // Se dispara con el elemento f2-mid
+    start: 'top 60%',        // Inicia cuando f2-mid apenas entra en el viewport
+    end: 'top 20%',          // Termina más rápido para que no haya tanto scroll
     scrub: 2,                // Suaviza un poco, pero hace la animación más rápida
     markers: false,          // Para visualizar (puedes quitarlo)
     toggleActions: 'play none none reverse'
@@ -220,7 +243,7 @@ tlDerecha.from('.elemento-derecha', {
 });
 
 // Animación del f2-izq entrando desde la izquierda
-f2Timeline.fromTo('.f2-izq', 
+f2Timeline.fromTo('.f2-izq',
   { opacity: 0, x: -100 },  // Inicia desde la izquierda con opacidad 0
   { 
     opacity: 1,   // Se hace visible
@@ -283,34 +306,52 @@ gsap.from(".stat", {
 // ------------------------- Stats -------------------------
 
 // ------------------------- Brands -------------------------
+// Animación para el título (.brand-title)
 gsap.from(".brand-title", {
   scrollTrigger: {
-    trigger: '.brand-title', // Se dispara con el subtítulo
-    start: 'top 50%',      // Inicia cuando el subtítulo apenas entra en el viewport
-    end: 'top 40%',        // Termina más rápido para que no haya tanto scroll
-    scrub: 2,              // Suaviza un poco, pero hace la animación más rápida
-    markers: false,         // Para visualizar (puedes quitarlo)
+    trigger: '.brand-title', // Se dispara con el título
+    start: 'top 50%',        // Inicia cuando el título entra al viewport
+    end: 'top 40%',          // Termina más rápido para una animación suave
+    scrub: 2,                // Suaviza el desplazamiento
     toggleActions: 'play none none reverse'
   },
-  y: -100, // Desplazamiento inicial desde arriba
-  opacity: 0, // Comienza invisible
-  duration: 2, // Duración del efecto
-  ease: "power3.out", // Tipo de suavizado
+  y: -100,        // Desplazamiento inicial desde arriba
+  opacity: 0,     // Comienza invisible
+  duration: 2,    // Duración del efecto
+  ease: "power3.out" // Suavizado suave
 });
 
+// Animación para el subtítulo (.brand-subtitle)
 gsap.from(".brand-subtitle", {
   scrollTrigger: {
-    trigger: '.brand-subtitle',
+    trigger: '.brand-subtitle', // Se dispara con el subtítulo
     start: 'top 50%',  
     end: 'top 40%',    
     scrub: 2,
     toggleActions: 'play none none reverse'
   },
-  y: -100, // Similar desplazamiento desde arriba
-  opacity: 0, // Comienza invisible
-  duration: 2, // Duración del efecto
-  ease: "power3.out", // Tipo de suavizado
-  delay: 0.5 // Retraso para que aparezca después de .brand-title
+  y: -100,        // Desplazamiento similar desde arriba
+  opacity: 0,     // Comienza invisible
+  duration: 2,    // Duración del efecto
+  ease: "power3.out", 
+  delay: 0.5      // Retraso para que aparezca después del título
+});
+
+// Nueva animación para la imagen (.brand-img)
+gsap.from(".brand-img", {
+  scrollTrigger: {
+    trigger: '.brand-img', // Se dispara con la imagen
+    start: 'top 80%',  
+    end: 'top 60%',    
+    scrub: 2,
+    toggleActions: 'play none none reverse',
+    markers: false
+  },
+  y: 100,         // Desplazamiento desde abajo
+  opacity: 0,     // Comienza invisible
+  duration: 2.5,  // Un poco más lenta para crear un efecto fluido
+  ease: "power3.out", 
+  delay: 1        // Retraso para que aparezca después del subtítulo
 });
 
 // ------------------------- Brands -------------------------
@@ -320,8 +361,8 @@ gsap.from(".brand-subtitle", {
 const hlTimeline = gsap.timeline({
   scrollTrigger: {
     trigger: '.hl-subtitle', // Se dispara con el subtítulo
-    start: 'top 50%',        // Inicia cuando el subtítulo apenas entra en el viewport
-    end: 'top 40%',          // Termina más rápido para que no haya tanto scroll
+    start: 'top 60%',        // Inicia cuando el subtítulo apenas entra en el viewport
+    end: 'top 30%',          // Termina más rápido para que no haya tanto scroll
     scrub: 2,                // Suaviza un poco, pero hace la animación más rápida
     markers: false,          // Para visualizar (puedes quitarlo)
     toggleActions: 'play none none reverse'
