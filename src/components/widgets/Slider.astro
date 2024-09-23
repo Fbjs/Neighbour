@@ -1,152 +1,36 @@
 ---
-import slider_1 from '~/assets/images/slider_1.mp4';
-import slider_2 from '~/assets/images/slider_2.mp4';
-import slider_3 from '~/assets/images/slider_3.mp4';
-import ContactUs from '~/components/widgets/ContactForm.astro';
+// Importa el video de fondo
+import videoBackground from '~/assets/images/hero2.mp4'; // Asegúrate de tener el video en la ruta correcta
 ---
 
-<div class="w-full mx-auto">
-  <div id="default-carousel" class="relative overflow-hidden" data-carousel="static">
-    <div class="relative h-[700px]">
-      <!-- Carousel Item 1 (Entrada desde la Izquierda) -->
-      <div class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-100 entry-effect-1" data-carousel-item>
-        <video autoplay muted loop playsinline class="w-full h-full object-cover shadow-lg">
-          <source src={slider_1} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div class="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-30 text-white text-center p-8">
-          <h1 class="text-5xl font-bold mb-4 tittle1">Soluciones tecnológicas Innovadoras y Eficientes</h1>
-          <p class="text-lg mb-6 container">
-            Neighbour Technology SpA es una empresa líder en el desarrollo de aplicaciones y sistemas de información.
-            Optimización de recursos y creación de herramientas digitales innovadoras para garantizar la máxima satisfacción y eficiencia.
-          </p>
-          <div class="flex space-x-4">
-          </div>
-        </div>
-      </div>
-
-<!-- Carousel Item 2 (Entrada desde la Derecha) -->
-<!--div class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-100 entry-effect-2" data-carousel-item>
-  <video autoplay muted loop playsinline class="w-full h-full object-cover shadow-lg">
-    <source src={slider_2} type="video/mp4" />
-    Your browser does not support the video tag.
+<div class="relative w-full h-screen overflow-hidden entry-effect-1">
+  <!-- Video de fondo -->
+  <video autoplay muted loop class="absolute inset-0 object-cover w-full h-full z-0">
+    <source src={videoBackground} type="video/mp4" />
+    Tu navegador no soporta videos.
   </video>
-  <div class="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-50 text-white text-center p-8">
-    <h1 class="text-5xl font-bold mb-4">Innovación y Creatividad en cada Proyecto</h1>
-    <p class="text-lg mb-6 container">
-      En Neighbour Technology SpA nos destacamos por nuestra metodología centrada en la mejora continua, la sinergia y la creatividad colaborativa.
+
+  <!-- Contenedor del contenido -->
+  <div class="relative flex flex-col justify-center items-center h-full text-white text-center p-10 z-10 entry-effect-2">
+    <h1 class="text-5xl font-bold mb-4 drop-shadow-lg animate__animated animate__fadeInDown">
+      Innovación y Tecnología para Tu Éxito
+    </h1>
+    <p class="text-xl mb-6 drop-shadow-md max-w-3xl animate__animated animate__fadeInUp">
+      Descubre cómo nuestras soluciones avanzadas pueden transformar tu negocio y llevarlo al siguiente nivel.
     </p>
-    <div class="flex space-x-4">
-    </div>
-  </div>
-</div-->
-
-<!-- Carousel Item 3 (Entrada desde Arriba) -->
-<!--div class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-100 entry-effect-3" data-carousel-item>
-  <video autoplay muted loop playsinline class="w-full h-full object-cover shadow-lg">
-    <source src={slider_3} type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-  <div class="absolute inset-0 flex flex-col justify-center items-center text-white text-center p-8">
-    <h1 class="text-5xl font-bold mb-4">Soluciones Digitales de Alto Impacto</h1>
-    <p class="text-lg mb-6 container">
-      Nuestro enfoque en la calidad y eficiencia garantiza resultados excepcionales y la satisfacción de nuestros clientes.
-    </p>
-  </div>
-</div-->
-
-
-      <!-- Previous/Next Buttons -->
-      <button type="button" class="absolute z-30 top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full" aria-label="Anterior" data-carousel-prev>
-        &#10094;
+    
+    <!-- Botones -->
+    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 animate__animated animate__fadeIn">
+      <button class="open-modal-btn px-8 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition duration-300 text-white shadow-lg">
+        Empieza Ahora
       </button>
-      <button type="button" class="absolute z-30 top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full" aria-label="Siguiente" data-carousel-next>
-        &#10095;
-      </button>
-
-      <!-- Carousel Indicators -->
-      <div class="absolute bottom-4 left-1/2 flex -translate-x-1/2 space-x-3 z-30">
-        <button type="button" class="w-4 h-4 rounded-full bg-white/60 hover:bg-white transition-shadow duration-300 shadow-md" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-        <button type="button" class="w-4 h-4 rounded-full bg-white/60 hover:bg-white transition-shadow duration-300 shadow-md" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-        <button type="button" class="w-4 h-4 rounded-full bg-white/60 hover:bg-white transition-shadow duration-300 shadow-md" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-      </div>
-
-      <div class="flex space-x-4 absolute bottom-20 left-1/2 -translate-x-1/2 z-30">
-        <slot name="boton"></slot>            
-      </div>
+      <a href="https://wa.me/56963238857?text=Hola,%20me%20gustaría%20recibir%20más%20información" target="_blank" class="flex items-center justify-center bg-[#25D366] text-white px-4 py-3 rounded-lg transition duration-300 hover:bg-[#20B357] shadow-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="mr-2">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+          <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+        </svg>
+        <span>Contacta a un Asesor</span>
+      </a>
     </div>
   </div>
 </div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const carousel = document.getElementById('default-carousel');
-    if (!carousel) return;
-
-    const items = Array.from(carousel.querySelectorAll('[data-carousel-item]'));
-    const indicators = Array.from(carousel.querySelectorAll('[data-carousel-slide-to]'));
-    const prevButton = carousel.querySelector('[data-carousel-prev]');
-    const nextButton = carousel.querySelector('[data-carousel-next]');
-
-    if (items.length === 0) return;
-
-    let currentIndex = 0;
-    const intervalTime = 15000;
-    let intervalId = setInterval(showNextItem, intervalTime);
-
-    function showItem(index) {
-      items.forEach((item, i) => {
-        item.style.opacity = i === index ? '1' : '0';
-        item.style.zIndex = i === index ? '1' : '0';
-      });
-
-      indicators.forEach((indicator, i) => {
-        indicator.classList.toggle('bg-white', i === index);
-        indicator.classList.toggle('bg-white/60', i !== index);
-      });
-    }
-
-    function showNextItem() {
-      currentIndex = (currentIndex + 1) % items.length;
-      showItem(currentIndex);
-    }
-
-    function showPreviousItem() {
-      currentIndex = (currentIndex - 1 + items.length) % items.length;
-      showItem(currentIndex);
-    }
-
-    function goToItem(index) {
-      currentIndex = index;
-      showItem(currentIndex);
-    }
-
-    function resetInterval() {
-      clearInterval(intervalId);
-      intervalId = setInterval(showNextItem, intervalTime);
-    }
-
-    indicators.forEach((indicator, i) => {
-      indicator.addEventListener('click', () => {
-        goToItem(i);
-        resetInterval();
-      });
-    });
-
-    if (prevButton) {
-      prevButton.addEventListener('click', () => {
-        showPreviousItem();
-        resetInterval();
-      });
-    }
-
-    if (nextButton) {
-      nextButton.addEventListener('click', () => {
-        showNextItem();
-        resetInterval();
-      });
-    }
-
-    showItem(currentIndex);
-  });
-</script>

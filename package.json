@@ -27,6 +27,7 @@
     "astro-icon": "^1.1.0",
     "flowbite": "^2.5.1",
     "gsap": "^3.12.5",
+    "lenis": "^1.1.13",
     "limax": "4.1.0",
     "lodash.merge": "^4.6.2",
     "swiper": "^11.1.6",
