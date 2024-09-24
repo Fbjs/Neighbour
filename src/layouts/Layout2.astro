@@ -397,5 +397,14 @@ hlTimeline.fromTo('.hl-btn',
 );
 
 // ------------------------- CallToAction -------------------------
+gsap.to(".astronaut", {
+  y: () => gsap.utils.random(-30, 30), // Mueve la imagen en el eje Y de manera aleatoria
+  x: () => gsap.utils.random(-20, 20), // Mueve la imagen en el eje X de manera aleatoria
+  rotation: () => gsap.utils.random(-10, 10), // Aplica una ligera rotación aleatoria
+  repeat: -1, // Repite indefinidamente
+  yoyo: true, // Repite el movimiento de ida y vuelta
+  ease: "power1.inOut", // Transiciones suaves
+  duration: () => gsap.utils.random(2, 5) // Varía la duración entre 2 y 5 segundos para hacerlo más impredecible
+});
 
 </script>
