@@ -12,7 +12,7 @@ html.lenis body {
 }
 
 .lenis.lenis-stopped {
-    scroll-behavior: auto !important;
+    overflow: hidden;
 }
 
 .lenis.lenis-scrolling iframe {
