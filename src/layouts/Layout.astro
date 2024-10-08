@@ -413,4 +413,83 @@ hlTimeline.fromTo('.hl-btn',
 
 // ------------------------- CallToAction -------------------------
 
+
+// ------------------------- About -------------------------
+// Definir la animación GSAP sin Timeline para un efecto más simple y elegante
+gsap.from(".h-tagline", {
+  opacity: 0, // Comienza invisible
+  y: 30, // Desplazado 30px hacia abajo
+  duration: 1.5, // Duración de la animación
+  ease: "power2.out", // Efecto de suavizado elegante
+  delay: 0.3, // Ligero retraso para hacer que el efecto sea más gradual
+});
+
+gsap.from(".h-title", {
+  opacity: 0, 
+  y: 30, 
+  duration: 1.5, 
+  ease: "power2.out",
+  delay: 0.6, // Empieza un poco después que la tagline
+});
+
+gsap.from(".h-subtitle", {
+  opacity: 0, 
+  y: 30, 
+  duration: 1.5, 
+  ease: "power2.out",
+  delay: 0.9, // Empieza después de h-title para un efecto gradual
+});
+
+// Crear la animación para la imagen .h-img
+gsap.from(".h-img", {
+  opacity: 0, // Comienza invisible
+  y: 50, // Inicia 50px hacia abajo
+  duration: 1.5, // Duración de la animación
+  ease: "power2.out", // Efecto suave
+  scrollTrigger: {
+    trigger: ".h-img", // El punto donde empieza la animación (cuando .h-img entra en el viewport)
+    start: "top 50%", // Empieza cuando el top de .h-img está al 80% del viewport
+    end: "bottom 30%", // La animación termina cuando el bottom de .h-img sale al 20% del viewport
+    scrub: false, // La animación no se vincula con el scroll, simplemente se ejecuta
+    toggleActions: "play none none reverse", // Juega una vez y no se repite
+    markers: false, // Cambia a true si quieres visualizar los puntos de inicio y fin
+  },
+});
+
+// ------------------------- Steps2 -------------------------
+// Definir la constante s2Timeline para la animación con ScrollTrigger
+const s2Timeline = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".s2-title", // Punto de activación de la animación
+    start: "top 60%", // Empieza cuando el top de .s2-title está al 80% del viewport
+    end: "top 40%", // Termina cuando el bottom de .s2-icon sale del viewport
+    scrub: false, // No sincronizado con el scroll (se ejecuta automáticamente)
+    toggleActions: "play none none reverse", // Juega la animación hacia abajo, y la revierte hacia arriba
+    markers: false, // Ponlo en true para depuración, cambiar a false cuando ya no lo necesites
+  },
+});
+
+// Animación para s2-title
+s2Timeline.from(".s2-title", {
+  opacity: 0, // Empieza invisible
+  y: 50, // Desplazado 50px hacia abajo
+  duration: 1.5, // Duración de la animación
+  ease: "power2.out", // Suavizado
+})
+// Animación para s2-des, empieza después de s2-title
+.from(".s2-des", {
+  opacity: 0,
+  y: 50,
+  duration: 1.5,
+  ease: "power2.out",
+}, "-=1") // Empieza justo antes de que termine la animación de s2-title
+// Animación para s2-icon, empieza después de s2-des
+.from(".s2-icon", {
+  opacity: 0,
+  y: 50,
+  duration: 1.5,
+  ease: "power2.out",
+}, "-=1"); // Empieza justo antes de que termine la animación de s2-des
+// ------------------------- Steps2 -------------------------
+// ------------------------- About -------------------------
 </script>
