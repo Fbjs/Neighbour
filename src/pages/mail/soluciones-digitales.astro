@@ -1,65 +1,63 @@
----
-import Layout from '~/layouts/Layout.astro';
-
-const title = `Soluciones Digitales`;
-const imageUrl = "https://neighbour.cl/Linkedin-hoy.webp";
-const altText = "Imagen del contenido";
-const fallbackUrl = "https://neighbour.cl/Linkedin-hoy.webp";
-
----
-
-<Layout metadata={{ title }}>
-  <section id="theme-section" class="flex items-center h-screen bg-white dark:bg-dark">
-    <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
-      <div id="theme-container" class="max-w-lg text-center p-4 bg-slate-300 dark:bg-slate-700">
-        <div class="text-center mb-5">
-          <img src={imageUrl} alt={altText} class="w-full h-auto" />
-        </div>
-
-        <p class="text-center">
-          ¡Hola! Este es el contenido principal de tu correo. Aquí puedes añadir más información.
-        </p>
-
-        <div class="text-sm text-gray-500 text-center mt-5">
-          Si no puedes ver este mensaje correctamente, haz clic 
-          <a href={fallbackUrl} class="text-blue-500 underline">aquí</a> para verlo en tu navegador.
-        </div>
-      </div>
-    </div>
-    <button
-      id="theme-toggle"
-      class="fixed top-4 right-4 p-3 bg-blue-500 text-white rounded-full shadow-lg transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:bg-blue-600"
-      aria-label="Cambiar Tema"
-    >
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
-        <path d="M12 3l0 18" />
-        <path d="M12 9l4.65 -4.65" />
-        <path d="M12 14.3l7.37 -7.37" />
-        <path d="M12 19.6l8.85 -8.85" />
-      </svg>
-    </button>
-  </section>
-
-  <script>
-    // Función para alternar el tema
-    function toggleTheme() {
-      const currentTheme = localStorage.getItem('theme') || 'light';
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-      localStorage.setItem('theme', newTheme);
-      document.documentElement.classList.toggle('dark', newTheme === 'dark');
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soluciones Digitales</title>
+  <style>
+    /* Estilos básicos para correos */
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      background-color: #ffffff;
     }
+    .containerivo
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+      background-color: #f4f4f4;
+      border-radius: 8px;
+    }
+    .button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #007bff;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+    .footer-text {
+      font-size: 12px;
+      color: #666666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Soluciones Digitales</h1>
+    <p>¡Hola! Este es el contenido principal de tu correo. Aquí puedes añadir más información sobre los servicios que ofreces.</p>
 
-    // Inicializar el tema según la preferencia guardada
-    document.addEventListener('DOMContentLoaded', () => {
-      const savedTheme = localStorage.getItem('theme') || 'light';
-      if (savedTheme === 'dark') {
-        document.documentElement.classList.add('dark');
-      }
+    <!-- Imagen con enlace a WhatsApp -->
+    <a href="https://wa.me/56963238857?text=¡Hola!%20Estoy%20interesado/a%20en%20conocer%20más%20sobre%20sus%20servicios.%20¿Podrían%20darme%20más%20información%20sobre%20cómo%20pueden%20ayudarme%20a%20mejorar%20mi%20presencia%20digital%20y%20alcanzar%20mis%20objetivos?%20Gracias." target="_blank" rel="noopener noreferrer">
+      <img src="https://neighbour.cl/Linkedin-hoy.webp" alt="Imagen del contenido" style="width: 100%; height: auto; border-radius: 8px;" />
+    </a>
 
-      // Configurar el botón de cambio de tema
-      document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
-    });
-  </script>
-</Layout>
+    <p>
+      <a href="https://wa.me/56963238857?text=¡Hola!%20Estoy%20interesado/a%20en%20conocer%20más%20sobre%20sus%20servicios.%20¿Podrían%20darme%20más%20información%20sobre%20cómo%20pueden%20ayudarme%20a%20mejorar%20mi%20presencia%20digital%20y%20alcanzar%20mis%20objetivos?%20Gracias." class="button" target="_blank" rel="noopener noreferrer">
+        Solicitar Información en WhatsApp
+      </a>
+    </p>
+
+    <!-- Pie de página -->
+    <p class="footer-text">
+      Si no puedes ver este mensaje correctamente, haz clic 
+      <a href="https://neighbour.cl/Linkedin-hoy.webp" target="_blank" rel="noopener noreferrer">aquí</a> para verlo en tu navegador.
+    </p>
+  </div>
+</body>
+</html>
