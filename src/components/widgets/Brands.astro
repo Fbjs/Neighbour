@@ -30,57 +30,45 @@ const {
   </div>
   
   <div class="overflow-hidden relative brand-img">
-    <div class="brand-container flex animate-scroll whitespace-nowrap">
-      {/* Duplicar los elementos para crear un bucle */}
+    <div id="carouselTrack" class="brand-container flex whitespace-nowrap">
       {icons && icons.map((icon) => (
         <div class="flex justify-center items-center mx-6">
           <Icon name={icon} class="w-12 h-auto text-gray-500" />
         </div>
       ))}
-      {
-        images && images.map((image) => (
-          image.src && (
-            <div class="flex justify-center items-center mx-6">
-              <Image src={image.src} alt={image.alt || ''} class="max-w-[150px] h-auto" />
-            </div>
-          )
-        ))
-      }
-      {/* Repetir el contenido para el efecto de bucle */}
+      {images && images.map((image) => (
+        image.src && (
+          <div class="flex justify-center items-center mx-6">
+            <Image src={image.src} alt={image.alt || ''} class="max-w-[150px] h-auto" />
+          </div>
+        )
+      ))}
+      <!-- Duplicamos el contenido para lograr el efecto de desplazamiento infinito -->
       {icons && icons.map((icon) => (
         <div class="flex justify-center items-center mx-6">
           <Icon name={icon} class="w-12 h-auto text-gray-500" />
         </div>
       ))}
-      {
-        images && images.map((image) => (
-          image.src && (
-            <div class="flex justify-center items-center mx-6">
-              <Image src={image.src} alt={image.alt || ''} class="max-w-[150px] h-auto" />
-            </div>
-          )
-        ))
-      }
+      {images && images.map((image) => (
+        image.src && (
+          <div class="flex justify-center items-center mx-6">
+            <Image src={image.src} alt={image.alt || ''} class="max-w-[150px] h-auto" />
+          </div>
+        )
+      ))}
     </div>
   </div>
 </WidgetWrapper>
 
 <style>
   .brand-container {
-    width: calc(100% * 2); /* Duplica el ancho para el efecto de scroll */
+    display: flex;
+    transition: transform 0.1s linear;
   }
 
-  .animate-scroll {
-    animation: scroll 30s linear infinite; /* Ajusta la duración según lo necesites */
-  }
-
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%); /* Cambia esto si tienes más contenido */
-    }
+  .brand-img {
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   /* Mejoras visuales */
@@ -88,11 +76,28 @@ const {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px; /* Espaciado interno */
-    transition: transform 0.3s ease; /* Efecto al pasar el mouse */
+    padding: 9px;
+    transition: transform 0.3s ease;
   }
 
   .brand-container div:hover {
-    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+    transform: translateY(-5px);
   }
 </style>
+
+<script>
+  const carouselTrack = document.getElementById("carouselTrack");
+  let scrollAmount = 0;
+
+  function autoScroll() {
+    scrollAmount -= 1;
+    carouselTrack.style.transform = `translateX(${scrollAmount}px)`;
+
+    // Si el desplazamiento llega al final del contenido, reinicia el scroll
+    if (Math.abs(scrollAmount) >= carouselTrack.scrollWidth / 2) {
+      scrollAmount = 0;
+    }
+  }
+
+  setInterval(autoScroll, 20); // Controla la velocidad del desplazamiento
+</script>
