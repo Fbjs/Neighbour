@@ -63,7 +63,7 @@ export const headerData = {
           href: '/product/fenix',
         },
         {
-          text: 'ERP',
+          text: 'ERP Hydra',
           href: '/product/erp',
         },
         
