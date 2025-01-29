@@ -31,7 +31,7 @@ export const headerData = {
         },
         {
           text: 'Hosting y Datacenter',
-          href: '/services/hosting',
+          href: '/services/hosting-datacenter',
         },
         
       ]
@@ -200,7 +200,7 @@ export const footerData = {
         },
         {
           text: 'Hosting y Datacenter',
-          href: '/services/hosting',
+          href: '/services/hosting-datacenter',
         },
       ]
     },
