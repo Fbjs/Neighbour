@@ -14,49 +14,34 @@ export const headerData = {
       text: 'Servicios',
       links: [
         {
-          text: 'Paginas Web',
+          text: 'Landing Page',
           href: '/services/web-page',
         },
         {
-          text: 'Marketing Digital',
-          href: '/services/marketing-digital',
+          text: ' Agencia de Marketing',
+          href: 'https://smart360.cl',
         },
         {
-          text: 'Optimización de Procesos',
+          text: 'Soluciones Digitales',
           href: '/services/optimizacion-procesos',
         },
         {
-          text: 'Mantencion',
+          text: 'Mantencion y Soporte tecnico',
           href: '/services/mantencion',
         },
         {
-          text: 'Hosting',
+          text: 'Hosting y Datacenter',
           href: '/services/hosting',
         },
-        {
-          text: 'VPS, Datacenter',
-          href: '/services/datacenter',
-        },
-        {
-          text: 'Telemarketing y Cobranzas',
-          href: '/services/telemarketing-cobranzas',
-        },
+        
       ]
     },
     {
       text: 'Productos',
       links: [
         {
-          text: 'Mailing',
-          href: '/product/mailing',
-        },
-        {
-          text: 'SMS',
-          href: '/product/sms-marketing',
-        },
-        {
-          text: 'Telefonia IP',
-          href: '/product/voip',
+          text: 'Canales Digitales',
+          href: '/product/canales-digitales',
         },
         {
           text: 'CRM Fenix',
@@ -198,32 +183,24 @@ export const footerData = {
       title: 'Servicios',
       links: [
         {
-          text: 'Paginas Web',
+          text: 'Landing Page',
           href: '/services/web-page',
         },
         {
-          text: 'Marketing Digital',
-          href: '/services/marketing-digital',
+          text: 'Agencia de Marketing',
+          href: 'https://smart360.cl',
         },
         {
-          text: 'Optimización de Procesos',
+          text: 'Soluciones Digitales',
           href: '/services/optimizacion-procesos',
         },
         {
-          text: 'Mantencion',
+          text: 'Mantencion y Soporte Tecnico',
           href: '/services/mantencion',
         },
         {
-          text: 'Hosting',
+          text: 'Hosting y Datacenter',
           href: '/services/hosting',
-        },
-        {
-          text: 'VPS, Datacenter',
-          href: '/services/datacenter',
-        },
-        {
-          text: 'Telemarketing y Cobranzas',
-          href: '/services/telemarketing-cobranzas',
         },
       ]
     },
@@ -231,23 +208,15 @@ export const footerData = {
       title: 'Productos',
       links: [
         {
-          text: 'Mailing',
-          href: '/product/mailing',
-        },
-        {
-          text: 'SMS',
-          href: '/product/sms-marketing',
-        },
-        {
-          text: 'Telefonia IP',
-          href: '/product/voip',
+          text: 'Canales Digitales',
+          href: '/product/canales-digitales',
         },
         {
           text: 'CRM Fenix',
           href: '/product/fenix',
         },
         {
-          text: 'ERP',
+          text: 'ERP hydra',
           href: '/product/erp',
         },
         
