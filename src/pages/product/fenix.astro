@@ -10,6 +10,8 @@ import RegistroFenix from '~/assets/images/RegistroFenix.png';
 import DashboardFenix from '~/assets/images/DashboardFenix.png';
 import CrearContactoFenix from '~/assets/images/CrearContactoFenix.png';
 import GestionarFenix from '~/assets/images/GestionarFenix.png';
+import AsignacionFenix from '~/assets/images/AsignacionFenix.png';
+import ListaFenix from '~/assets/images/ListaFenix.png';
 
 
 //import EstadisticaVideo from '~/assets/images/Estadistica.mp4';
@@ -108,38 +110,35 @@ const metadata = {
     isReversed
     items={[
       {
-        title: 'Módulo de Estadísticas',
+        title: 'Regístrate y Descubre el Poder de FENIX',
         description:
-          'Fortalece el control y supervisión gracias a las gráficas en tiempo real del módulo de estadística, optimiza el trabajo de las carteras de contacto para televentas y telecobranzas. Visualiza la cantidad de gestiones, clientes en cada una de las campañas, asignaciones y listas, personaliza los parámetros y reportes de control según las necesidades de cada base de datos, descarga y sincroniza informes a diario o por rango de fecha según los formatos y exigencia del negocio.',
+          'Únete a FENIX y accede a herramientas avanzadas que transformarán la manera en que gestionas tus contactos. Con nuestro módulo de estadísticas en tiempo real, podrás supervisar y optimizar tus operaciones de televentas y telecobranzas de manera eficiente. Regístrate ahora y comienza a personalizar tus reportes, visualizar gestiones y descargar informes adaptados a las necesidades de tu negocio.',
         icon: 'tabler:chart-line',
       },
     ]}
     image={{
       src: RegistroFenix,
-      alt: 'FENIX Registro',
+      alt: 'Registro en FENIX',
     }}
   >
-
   </Content>
 
   <!-- Content Widget - Dashboard **************** -->
-
   <Content
     isAfterContent
     items={[
       {
-        title: 'Módulo de Campañas',
+        title: 'Descubre tu Dashboard Personalizado',
         description:
-          'El módulo “administrar campañas” permite confeccionar campañas de clientes y condiciona el árbol de gestión masiva o individualmente. Configura los usuarios, anexos e IVR´S (Bot, para llamadas y gestiones automatizadas) según las necesidades de cada cartera. Redirecciona llamadas entrantes INBOUND en el módulo “colas de atención” según el usuario que corresponda y en “lista negra” controla el bloqueo de números de teléfonos discados en el sistema. El módulo “grabaciones” centraliza los registros de audios de la central telefónica, permitiendo verificar mediante un reproductor la correcta entrega de información a los clientes.',
-        icon: 'tabler:database',
+          'Una vez registrado en FENIX, accede a tu Dashboard Personalizado y toma el control total de tus operaciones. Visualiza en tiempo real métricas clave como la asignación de tareas, el avance de gestiones, la contactabilidad y la intensidad de tus campañas. Monitorea la contactabilidad diaria y optimiza tus estrategias con datos precisos y actualizados. ¡Todo al alcance de un vistazo!',
+        icon: 'tabler:chart-line',
       },
     ]}
     image={{
       src: DashboardFenix,
-      alt: 'FENIX Dashboard',
+      alt: 'Dashboard de FENIX',
     }}
   >
- 
   </Content>
 
   <!-- Content Widget - Crear Contacto **************** -->
@@ -148,59 +147,55 @@ const metadata = {
     isReversed
     items={[
       {
-        title: 'Módulo Asignación',
+        title: 'Crea Contactos Manualmente con Facilidad',
         description:
-          'Gestiona las carteras (base de datos) mensual para cada una de las campañas, permite bloquear el ingreso de teleoperadores y editar la información. La función principal del módulo es el proceso de carga ya que se puede realizar de 3 formas diferentes, principalmente de manera “automatizada” desde un sitio compartido o FTP, la segunda una carga “avanzada” la cual funciona con las bases de origen para escoger las columnas que se incorporaran al sistema, finalmente el proceso “manual” se debe descargar los formatos estándar, modificar y cargar de vuelta al módulo correspondiente. Visualiza gráficamente el avance de cada una de las asignaciones las cuales permiten descargar reportes de avance de la cartera.',
-        icon: 'tabler:headset',
+          'Con FENIX, tienes la flexibilidad de crear y gestionar tus contactos o prospectos de cobranza y ventas de manera manual. Ingresa detalles clave como el RUT, nombre, apellidos, género, fecha de nacimiento, teléfono y correo electrónico. Esta funcionalidad te permite mantener tus bases de datos actualizadas y personalizadas, asegurando que cuentas con la información necesaria para optimizar tus estrategias de contacto. ¡Regístrate y comienza a gestionar tus contactos de manera eficiente hoy mismo!',
+        icon: 'tabler:user-plus',
       },
     ]}
     image={{
       src: CrearContactoFenix,
-      alt: 'FENIX Crear Contacto',
+      alt: 'Crear Contacto en FENIX',
     }}
   >
-
   </Content>
 
-    <!-- Content Widget - Estadísticas **************** -->
+  <!-- Content Widget - Gestionar **************** -->
 
-    <Content
+  <Content
     isAfterContent
     items={[
       {
-        title: 'Módulo de Listas',
+        title: 'Gestiona tus Contactos de Manera Eficiente',
         description:
-          'Asigna y vincula teleoperadores con “listas” para el funcionamiento del discador manual, herramienta que permite filtrar los registros por rango de fecha, compromiso, contacto, gestiones y actividades. Las “listas de recorrido” permiten configurara el funcionamiento del discador predictivo, cuenta con 3 modalidades “DISCADOR” (Llamadas automatizadas según agentes conectados), “IVR SILENCIOSO” (Bot, para validación telefónica), “IVR INTERACTIVO (Bot, para llamadas y gestiones automatizadas), para cada uno de los casos se puede revisar los reportes de avance y gestión.',
-        icon: 'tabler:database',
+          'Con FENIX, gestionar tus contactos nunca fue tan sencillo. Accede a la información detallada de cada cliente, incluyendo su RUT, nombre, estado, datos de contacto y más. Actualiza y organiza la información de tus clientes de manera manual, asegurándote de mantener tus bases de datos siempre actualizadas. Además, puedes revisar el historial de gestiones, fechas de llamadas y comentarios, lo que te permite tener un control completo sobre tus interacciones. ¡Regístrate y optimiza la gestión de tus contactos hoy mismo!',
+        icon: 'tabler:user-check',
       },
     ]}
-    video={{
-      src: ListasVideo,
-      type: 'video/mp4',
+    image={{
+      src: GestionarFenix,
+      alt: 'Gestionar Contactos en FENIX',
     }}
   >
- 
   </Content>
 
 
   <!-- Content Widget - Teleoperador **************** -->
-
   <Content
     isReversed
     items={[
       {
-        title: 'Módulo de Teleoperador',
+        title: 'Crea y Gestiona Asignaciones de Contactos',
         description:
-          'EL agente tiene la posibilidad de trabajar en dos modalidades según las instrucciones, “MANUAL” permitiendo filtrar listas por, Rut, nombre, gestiones y número de teléfono en la cual puedes discar según la selección. “DISCADOR PREDICTIVO” permite que los teleoperadores se conecten a las listas habilitadas y automáticamente los conecten con una llamada para gestionar.',
-        icon: 'tabler:headset',
+          'Con FENIX, puedes crear nuevas asignaciones y agregar contactos a tus campañas de manera sencilla. Organiza y administra tu base de datos de contactos asignándolos a diferentes campañas según tus necesidades. Visualiza y gestiona las asignaciones existentes, incluyendo detalles como el nombre de la campaña, la fecha de creación y el número de clientes asignados. Esta funcionalidad te permite mantener un control preciso sobre tus operaciones y optimizar la gestión de tus contactos. ¡Regístrate y comienza a gestionar tus asignaciones de manera eficiente hoy mismo!',
+        icon: 'tabler:list-check',
       },
     ]}
-    video={{
-      src: TeleoperadorVideo,
-      type: 'video/mp4',
+    image={{
+      src: AsignacionFenix,
+      alt: 'Asignación de Contactos en FENIX',
     }}
   >
-
   </Content>
 
     <!-- Content Widget - Estadísticas **************** -->
@@ -209,15 +204,14 @@ const metadata = {
     isAfterContent
     items={[
       {
-        title: 'Módulo de Supervisor',
-        description:
-          'Visualización en tiempo real de las conexiones teleoperador y las gestiones realizadas por sesión, facilitando las decisiones y permitiendo aplicar estrategias para maximizar el rendimiento del equipo y las carteras trabajadas. Registros, es un mecanismo de búsqueda avanzado de registros del sistema enfocado en los supervisores permitiendo buscar registros de diversas maneras en campañas, asignaciones, mejor gestión, ultima gestión, Rut y número de teléfono.',
+        title: 'Listas de Recorrido',
+        description: "Continuamos con la gestión de listas, teniendo en cuenta que podemos crear listas desde las asignaciones con funcionalidades como la gestión manual por defecto o detonar validaciones de teléfono, IVR, SMS, WhatsApp masivos y mailing. Estas listas permiten organizar y ejecutar campañas de contacto de manera eficiente, asegurando una comunicación efectiva y personalizada con los clientes.",
         icon: 'tabler:database',
       },
     ]}
-    video={{
-      src: SupervisorVideo,
-      type: 'video/mp4',
+    image={{
+      src: ListaFenix,
+      alt: 'FENIX ListaFenix',
     }}
   >
  
@@ -226,7 +220,7 @@ const metadata = {
 
     <!-- Content Widget - Teleoperador **************** -->
 
-    <Content
+  <!-- <Content
     isReversed
     items={[
       {
@@ -242,7 +236,7 @@ const metadata = {
     }}
   >
 
-  </Content>
+  </Content>-->
 
   <!-- CallToAction Widget *********** -->
 
@@ -261,7 +255,7 @@ const metadata = {
   <Fragment slot="title">Descubre todo lo que FENIX tiene para ofrecer</Fragment>
 
   <Fragment slot="subtitle">
-    Optimiza la gestión de tu call center con nuestra suite completa de herramientas y funcionalidades avanzadas.
+    Optimiza la gestión de tu contactos con nuestra suite completa de herramientas y funcionalidades avanzadas.
   </Fragment>
   <Fragment slot="boton">
     
