@@ -5,8 +5,14 @@ import Features2 from '~/components/widgets/Features2.astro';
 import Hero from '~/components/widgets/Hero2.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Layout from '~/layouts/LandingLayoutProduct.astro';
-import HeroImagen from '~/assets/images/fenix-crm.png';
-import EstadisticaVideo from '~/assets/images/Estadistica.mp4';
+import HeroImagen from '~/assets/images/FenixCRM.png';
+import RegistroFenix from '~/assets/images/RegistroFenix.png';
+import DashboardFenix from '~/assets/images/DashboardFenix.png';
+import CrearContactoFenix from '~/assets/images/CrearContactoFenix.png';
+import GestionarFenix from '~/assets/images/GestionarFenix.png';
+
+
+//import EstadisticaVideo from '~/assets/images/Estadistica.mp4';
 import CampaniaVideo from '~/assets/images/Campania.mp4';
 import AsignacionVideo from '~/assets/images/Asignacion.mp4';
 import ListasVideo from '~/assets/images/Lista.mp4';
@@ -96,7 +102,7 @@ const metadata = {
     ]}
   />
 
-  <!-- Content Widget - Administración **************** -->
+  <!-- Content Widget - Registro **************** -->
 
   <Content
     isReversed
@@ -108,15 +114,15 @@ const metadata = {
         icon: 'tabler:chart-line',
       },
     ]}
-    video={{
-      src: EstadisticaVideo,
-      type: 'video/mp4',
+    image={{
+      src: RegistroFenix,
+      alt: 'FENIX Registro',
     }}
   >
 
   </Content>
 
-  <!-- Content Widget - Estadísticas **************** -->
+  <!-- Content Widget - Dashboard **************** -->
 
   <Content
     isAfterContent
@@ -128,15 +134,15 @@ const metadata = {
         icon: 'tabler:database',
       },
     ]}
-    video={{
-      src: CampaniaVideo,
-      type: 'video/mp4',
+    image={{
+      src: DashboardFenix,
+      alt: 'FENIX Dashboard',
     }}
   >
  
   </Content>
 
-  <!-- Content Widget - Teleoperador **************** -->
+  <!-- Content Widget - Crear Contacto **************** -->
 
   <Content
     isReversed
@@ -148,9 +154,9 @@ const metadata = {
         icon: 'tabler:headset',
       },
     ]}
-    video={{
-      src: AsignacionVideo,
-      type: 'video/mp4',
+    image={{
+      src: CrearContactoFenix,
+      alt: 'FENIX Crear Contacto',
     }}
   >
 
