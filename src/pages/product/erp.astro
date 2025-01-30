@@ -3,28 +3,44 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Hero from '~/components/widgets/Hero.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Layout from '~/layouts/LandingLayoutProduct.astro';
+import ErpHeroImagen from '~/assets/images/erp_hero3.png';
+import ErpStockImagen from '~/assets/images/erp_stock2.png';
+import ErpPuntoVentaImagen from '~/assets/images/erp_punto_venta3.png';
+import ErpProductosImagen from '~/assets/images/erp_productos2.png';
+
+// Obtener la URL base dependiendo del entorno
+let baseURL = 'https://erp.neighbour.cl/';
+if (typeof window !== 'undefined') {
+  const currentURL = window.location.href;
+  if (currentURL.includes('localhost')) {
+    baseURL = 'http://127.0.0.1:8000/';
+  }
+}
+  const registerURL = `${baseURL}register?app=erp`;
 
 const metadata = {
-  title: 'ERP a la Medida',
+  title: 'ERP a la Medida  - Neighbour Technology',
+  ignoreTitleTemplate: true
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
-
-  <Hero
+  
+  <Hero2
     tagline="ERP Personalizado para tu Negocio"
     title="Controla cada aspecto de tu negocio con nuestro ERP a la medida"
     subtitle="Gestión total de tu empresa con funcionalidades avanzadas como punto de venta, control de stock, ticketera, agenda de horas, gestor de contenido y cartas QR."
-    actions={[{ variant: 'primary', target: '_blank', text: 'Solicita una demo', href: 'https://erp.neighbour.cl/' }]}
+    actions={[{ variant: 'primary', target: '_blank', text: 'Solicita una demo', href: registerURL }]}
     image={{
-      src: 'https://images.unsplash.com/photo-1581092580497-579e6423a49a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
+      src: ErpHeroImagen,
       alt: 'ERP Hero Image',
     }}
   />
-
+    
   <!-- Features2 Widget ************** -->
 
   <Features2
@@ -35,7 +51,7 @@ const metadata = {
       {
         title: 'Punto de Venta (POS)',
         description:
-          'Gestión eficiente de ventas con herramientas de facturación, generación de tickets y múltiples formas de pago. Ideal para cualquier tipo de comercio.',
+          'Gestión eficiente de ventas con herramientas y múltiples formas de pago. Ideal para cualquier tipo de comercio.',
         icon: 'tabler:cash-register',
       },
       {
@@ -44,30 +60,14 @@ const metadata = {
           'Monitorea tus inventarios en tiempo real, controla el stock disponible y genera alertas automáticas cuando los productos lleguen a niveles mínimos.',
         icon: 'tabler:box',
       },
+     
       {
-        title: 'Agenda de Horas',
+        title: 'Inventario de Productos',
         description:
-          'Administra citas y reservas con una agenda inteligente que permite gestionar los tiempos de atención para tu negocio de manera eficiente.',
-        icon: 'tabler:calendar',
-      },
-      {
-        title: 'Gestor de Contenidos',
-        description:
-          'Administra el contenido de tu sitio web o tienda en línea de forma rápida y sencilla. Ideal para gestionar productos, promociones y más.',
+          'Gestiona tu catálogo de productos de manera eficiente, incluyendo precios, categorías, variantes y características. Mantén tu inventario organizado y actualizado.',
         icon: 'tabler:edit',
       },
-      {
-        title: 'Ticketera y Facturación',
-        description:
-          'Genera tickets y facturas de manera automática y con total personalización, asegurando un proceso rápido y eficiente en el punto de venta.',
-        icon: 'tabler:receipt',
-      },
-      {
-        title: 'Cartas QR Digitales',
-        description:
-          'Diseña y administra menús o catálogos digitales con códigos QR personalizados para que tus clientes accedan a ellos desde cualquier dispositivo.',
-        icon: 'tabler:qrcode',
-      },
+     
     ]}
   />
 
@@ -79,12 +79,12 @@ const metadata = {
       {
         title: 'Punto de Venta (POS)',
         description:
-          'Nuestro sistema POS está diseñado para facilitar tus ventas, con un flujo rápido de facturación, generación de tickets y soporte para múltiples formas de pago.',
+          'Nuestro sistema POS está diseñado para facilitar tus ventas, con un flujo rápido de pagos y generación de tickets.',
         icon: 'tabler:shopping-cart',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1556742400-b5b7c512f3d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+      src: ErpPuntoVentaImagen ,
       alt: 'Punto de Venta Image',
     }}
   >
@@ -106,7 +106,7 @@ const metadata = {
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1592998430230-3149f4e93748?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      src: ErpStockImagen,
       alt: 'Control de Stock Image',
     }}
   >
@@ -121,19 +121,24 @@ const metadata = {
     isReversed
     items={[
       {
-        title: 'Agenda de Horas',
+        title: 'Inventario de Productos',
         description:
-          'Facilita la gestión de citas y reservas con nuestra agenda inteligente, permitiendo que administres el tiempo de tu negocio de manera efectiva y sin complicaciones.',
+          'Este módulo permite agregar y administrar los productos de tu punto de venta de manera eficiente, facilitando el control del inventario y optimizando la gestión de stock.',
         icon: 'tabler:clock',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1553456558-aff63285bdd0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-      alt: 'Agenda de Horas Image',
+      src: ErpProductosImagen,
+      alt: 'Inventario de productos Image',
+      style: {
+        objectFit: 'contain', // Asegura que la imagen no se recorte
+        width: '100%',        // Ajusta el ancho a 100% del contenedor
+        height: 'auto',       // Mantiene la relación de aspecto
+      },
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Agenda de Horas</h3>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Inventario de Productos</h3>
     </Fragment>
   </Content>
 

@@ -5,8 +5,14 @@ import Features2 from '~/components/widgets/Features2.astro';
 import Hero from '~/components/widgets/Hero2.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Layout from '~/layouts/LandingLayoutProduct.astro';
-import HeroImagen from '~/assets/images/fenix_crm.png';
-import EstadisticaVideo from '~/assets/images/Estadistica.mp4';
+import HeroImagen from '~/assets/images/FenixCRM.png';
+import RegistroFenix from '~/assets/images/RegistroFenix.png';
+import DashboardFenix from '~/assets/images/DashboardFenix.png';
+import CrearContactoFenix from '~/assets/images/CrearContactoFenix.png';
+import GestionarFenix from '~/assets/images/GestionarFenix.png';
+
+
+//import EstadisticaVideo from '~/assets/images/Estadistica.mp4';
 import CampaniaVideo from '~/assets/images/Campania.mp4';
 import AsignacionVideo from '~/assets/images/Asignacion.mp4';
 import ListasVideo from '~/assets/images/Lista.mp4';
@@ -30,84 +36,73 @@ import ClinicaLasCondes from '~/assets/images/Clinica-Las-Condes.jpg';
 import ClinicaCordillera from '~/assets/images/clinica-cordillera.jpg';
 import Clinica_U_de_los_andes from '~/assets/images/Clinica_U_de_los_andes.png';
 
+let baseURL = 'https://app.neighbour.cl/';
+if (typeof window !== 'undefined') {
+  const currentURL = window.location.href;
+  if (currentURL.includes('localhost')) {
+    baseURL = 'http://127.0.0.1:8000/';
+  }
+}
+const registerURL = `${baseURL}register?app=crm`;
+
 const metadata = {
-  title: 'FENIX Contact Center Suite',
+  title: 'FENIX Contact Center Suite - Neighbour Technology',
+  description: 'Maximiza la gestión de tus contactos con nuestro software todo en uno: realiza llamadas VoIP, envía SMS, correos electrónicos y mensajes de WhatsApp, mantén un historial organizado y automatiza tareas con bots de IA personalizados. Simplifica tu comunicación y aumenta tu productividad',
+  ignoreTitleTemplate: true
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
   <Hero
-    tagline="FENIX Contact Center Suite"
-    title="Optimiza tus campañas desde cualquier lugar con nuestro software 100% en la nube"
-    subtitle="Gestiona campañas INBOUND y OUTBOUND con una solución informática robusta, diseñada para maximizar la eficacia y eficiencia de tu call center."
+    tagline="Simplifica la Gestión de Tus Contactos con Nuestra Plataforma Todo en Uno"
+    title="FENIX Contact Center Suite"
+    subtitle="Realiza llamadas VoIP, envía SMS, correos, WhatsApp y automatiza tareas con bots de IA. ¡Todo en un solo lugar!"
+    actions={[{ variant: 'primary', target: '_blank', text: 'Prueba Gratis Ahora', href: registerURL }]}
     image={{
       src: HeroImagen,
       alt: 'FENIX Hero Image',
     }}
   >
-    <Fragment slot="boton">
-      <Button variant="primary" class="open-modal-btn">
-        Solicita tu DEMO 
-      </Button>
-      <a href="https://wa.me/56963238857?text=Hola,%20me%20gustaría%20recibir%20más%20información" target="_blank" class="flex items-center w-auto justify-center font-semibold bg-[#25D366] text-white border-[#25D366] px-8 py-2 rounded-full space-x-2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
-          <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
-        </svg>
-        <span>Chatea con un Asesor</span>
-      </a>
-    </Fragment>
+    
   </Hero2>
 
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="Características de FENIX"
+    title="¿Por Qué Elegir Nuestra Plataforma?"
     subtitle="Nuestra plataforma ofrece herramientas avanzadas para optimizar la gestión y supervisión de tus campañas."
     columns={3}
     items={[
       {
-        title: 'Administración de Campañas',
-        description:
-          'Configura y administra campañas, ajustando cada etapa según las necesidades del negocio. Incluye módulos para la gestión de bases de datos, asignación de tareas y más.',
+        title: 'Gestión centralizada de contactos',
+        description:'',
         icon: 'tabler:settings',
       },
       {
-        title: 'Estadísticas en Tiempo Real',
-        description:
-          'Fortalece el control y supervisión gracias a las gráficas en tiempo real del módulo de estadística. Optimiza los contactos y gestiona las bases de datos de manera eficiente.',
+        title: 'Llamadas VoIP integradas.',
+        description:'',
         icon: 'tabler:chart-bar',
       },
       {
-        title: 'Asignación de Recursos',
-        description:
-          'Gestiona la asignación de tareas y recursos, permitiendo bloquear accesos, cargar bases de datos, y personalizar canales de comunicación como SMS, Email, y WhatsApp.',
+        title: 'Envío de SMS, correos y WhatsApp desde un solo lugar.',
+        description:'',
         icon: 'tabler:users',
       },
       {
-        title: 'Teleoperador',
-        description:
-          'Simplifica la administración y comunicación de los teleoperadores a través de herramientas como agenda de llamadas, historial de gestiones, teléfono web y WhatsApp.',
+        title: 'Historial organizado de todas las interacciones.',
+        description:'',
         icon: 'tabler:phone',
       },
       {
-        title: 'Supervisión en Tiempo Real',
-        description:
-          'Permite a los supervisores visualizar en tiempo real las conexiones y gestiones de los teleoperadores, optimizando la calidad de las campañas.',
+        title: 'Bots de IA personalizados para automatizar tareas.',
+        description:'',
         icon: 'tabler:eye',
-      },
-      {
-        title: 'Auditoría y Control de Calidad',
-        description:
-          'Administra perfiles de auditor, valida registros en tiempo real y descarga grabaciones para asegurar la calidad del servicio.',
-        icon: 'tabler:clipboard-check',
-      },
+      }
     ]}
   />
 
-  <!-- Content Widget - Administración **************** -->
+  <!-- Content Widget - Registro **************** -->
 
   <Content
     isReversed
@@ -119,15 +114,15 @@ const metadata = {
         icon: 'tabler:chart-line',
       },
     ]}
-    video={{
-      src: EstadisticaVideo,
-      type: 'video/mp4',
+    image={{
+      src: RegistroFenix,
+      alt: 'FENIX Registro',
     }}
   >
 
   </Content>
 
-  <!-- Content Widget - Estadísticas **************** -->
+  <!-- Content Widget - Dashboard **************** -->
 
   <Content
     isAfterContent
@@ -139,15 +134,15 @@ const metadata = {
         icon: 'tabler:database',
       },
     ]}
-    video={{
-      src: CampaniaVideo,
-      type: 'video/mp4',
+    image={{
+      src: DashboardFenix,
+      alt: 'FENIX Dashboard',
     }}
   >
  
   </Content>
 
-  <!-- Content Widget - Teleoperador **************** -->
+  <!-- Content Widget - Crear Contacto **************** -->
 
   <Content
     isReversed
@@ -159,9 +154,9 @@ const metadata = {
         icon: 'tabler:headset',
       },
     ]}
-    video={{
-      src: AsignacionVideo,
-      type: 'video/mp4',
+    image={{
+      src: CrearContactoFenix,
+      alt: 'FENIX Crear Contacto',
     }}
   >
 
@@ -257,8 +252,8 @@ const metadata = {
     {
       variant: 'primary',
       target: '_blank',
-      text: 'Solicita más información',
-      href: 'https://wa.me/56963238857?text=Quiero%20solicitar%20un%20servicio%20de%20telefonía%20IP%20y%20contestadoras',
+      text: 'Solicita tu DEMO',
+      href: registerURL,
       icon: 'tabler:message-circle',
     },
   ]}
@@ -269,9 +264,6 @@ const metadata = {
     Optimiza la gestión de tu call center con nuestra suite completa de herramientas y funcionalidades avanzadas.
   </Fragment>
   <Fragment slot="boton">
-    <Button variant="primary" class="open-modal-btn">
-      Solicita tu DEMO
-    </Button>
     
   </Fragment>
 </CallToAction>

@@ -1,0 +1,111 @@
+---
+import Layout from '~/layouts/LandingLayoutProduct.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features from '~/components/widgets/Features.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Button from '~/components/ui/Button.astro';
+import HeroImagen from '~/assets/images/sms-marketing.jpg';
+
+const metadata = {
+  title: 'Campañas Digitales Personalizadas - Neighbour Technology',
+  ignoreTitleTemplate: true
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero2
+    tagline="Conecta con tu Audiencia"
+    title="Campañas de Mailing, SMS y Telefonía IP"
+    subtitle="Llega a tus clientes con estrategias digitales efectivas y personalizadas que generan impacto y conversión."
+    image={{
+      src: HeroImagen,
+      alt: 'Campañas digitales personalizadas',
+    }}
+  >
+    <Fragment slot="boton">
+      <Button variant="primary" class="open-modal-btn">
+        Cotiza tu Campaña
+      </Button>
+      <a href="https://wa.me/56963238857?text=Hola,%20quiero%20información%20sobre%20campañas%20digitales" target="_blank" class="flex items-center w-auto justify-center font-semibold bg-[#25D366] text-white border-[#25D366] px-8 py-2 rounded-full space-x-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+          <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+        </svg>
+        <span>Chatea con un Asesor</span>
+      </a>
+    </Fragment>
+  </Hero2>
+  
+  <Stats
+    title="Resultados de Nuestras Campañas Digitales"
+    subtitle="Conectamos con tu audiencia a través de múltiples canales digitales."
+    stats={[
+      { title: 'Emails Enviados', amount: '500', symbol:'K+' },
+      { title: 'Mensajes SMS Enviados', amount: '1', symbol:'M+' },
+      { title: 'Llamadas Gestionadas', amount: '50', symbol:'K+' },
+      { title: 'Tasa de Conversión Promedio', amount: '35', symbol:'%' }
+    ]}
+  />
+  
+  <Features
+    title="Nuestros Servicios"
+    subtitle="Combinamos estrategias de Mailing, SMS y Telefonía IP para maximizar el alcance de tu negocio."
+    columns={3}
+    items={[
+      {
+        title: 'Campañas de Mailing',
+        description: 'Emails personalizados, segmentados y optimizados para maximizar conversiones.',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Campañas de SMS',
+        description: 'Mensajes de texto directos con alta tasa de apertura y respuesta.',
+        icon: 'tabler:message-circle',
+      },
+      {
+        title: 'Telefonía IP y Contestadoras',
+        description: 'Llamadas entrantes, números personalizados y sistemas automatizados para mejorar la comunicación empresarial.',
+        icon: 'tabler:phone-call',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        target: '_blank',
+        text: 'Cotiza tu Estrategia Digital',
+        href: 'https://wa.me/56963238857?text=Quiero%20cotizar%20una%20campaña%20digital',
+        icon: 'tabler:message-circle',
+      },
+    ]}
+  >
+    <Fragment slot="title">Impulsa tu Negocio con Estrategias Digitales</Fragment>
+    <Fragment slot="subtitle">
+      Llega a más clientes con campañas de mailing, SMS y telefonía IP adaptadas a tus necesidades.
+    </Fragment>
+  </CallToAction>
+
+  <FAQs
+    title="Preguntas Frecuentes"
+    items={[
+      {
+        title: '¿Cómo elijo la mejor estrategia?',
+        description: 'Evaluamos tus objetivos y te asesoramos en la mejor combinación de canales digitales.',
+      },
+      {
+        title: '¿Puedo automatizar mis campañas?',
+        description: 'Sí, ofrecemos soluciones automatizadas para optimizar tus envíos y llamadas.',
+      },
+      {
+        title: '¿Cómo mido los resultados?',
+        description: 'Te proporcionamos reportes detallados con métricas clave como tasas de apertura, respuesta y conversión.',
+      },
+    ]}
+  />
+</Layout>
