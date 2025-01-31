@@ -1,4 +1,4 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink, /*getBlogPermalink, getAsset*/ } from './utils/permalinks';
 
 export const headerData = {
   links:[
@@ -15,7 +15,7 @@ export const headerData = {
       links: [
         {
           text: 'Landing Page',
-          href: '/services/web-page',
+          href: '/services/Landing-Page',
         },
         {
           text: ' Agencia de Marketing',
@@ -23,17 +23,20 @@ export const headerData = {
         },
         {
           text: 'Soluciones Digitales',
-          href: '/services/optimizacion-procesos',
+          href: '/services/Soluciones-Digitales',
         },
         {
-          text: 'Mantencion y Soporte tecnico',
-          href: '/services/mantencion',
+          text: 'Vicidial',
+          href: '/services/Vicidial',
+        },
+        {
+          text: 'Mantencion y Soporte Técnico',
+          href: '/services/Mantencion-y-Soporte-Tecnico',
         },
         {
           text: 'Hosting y Datacenter',
-          href: '/services/hosting-datacenter',
-        },
-        
+          href: '/services/Hosting-y-Datacenter',
+        }        
       ]
     },
     {
@@ -50,8 +53,7 @@ export const headerData = {
         {
           text: 'ERP Hydra',
           href: '/product/erp',
-        },
-        
+        }
       ]
     },
     {
@@ -184,24 +186,28 @@ export const footerData = {
       links: [
         {
           text: 'Landing Page',
-          href: '/services/web-page',
+          href: '/services/Landing-Page',
         },
         {
-          text: 'Agencia de Marketing',
+          text: ' Agencia de Marketing',
           href: 'https://smart360.cl',
         },
         {
           text: 'Soluciones Digitales',
-          href: '/services/optimizacion-procesos',
+          href: '/services/Soluciones-Digitales',
         },
         {
-          text: 'Mantencion y Soporte Tecnico',
-          href: '/services/mantencion',
+          text: 'Vicidial',
+          href: '/services/Vicidial',
+        },
+        {
+          text: 'Mantencion y Soporte Técnico',
+          href: '/services/Mantencion-y-Soporte-Tecnico',
         },
         {
           text: 'Hosting y Datacenter',
-          href: '/services/hosting-datacenter',
-        },
+          href: '/services/Hosting-y-Datacenter',
+        }
       ]
     },
     {

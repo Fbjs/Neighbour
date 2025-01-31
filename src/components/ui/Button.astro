@@ -21,7 +21,7 @@ const variants = {
   secondary: 'btn-secondary',
   tertiary: 'btn btn-tertiary',
   link: 'cursor-pointer hover:text-primary',
-  whatsapp: 'btn bg-green-500 text-white flex items-center gap-2 hover:bg-green-600', // Nueva variante
+  whatsapp: 'flex items-center justify-center bg-[#25D366] text-white px-4 py-3 rounded-lg transition duration-300 hover:bg-[#20B357] shadow-lg',
 };
 
 // Construimos el enlace de WhatsApp solo si el número está presente
@@ -37,15 +37,16 @@ const whatsappUrl = phone ? `https://wa.me/${phone}?text=${encodeURIComponent(me
     </button>
   ) : variant === 'whatsapp' && phone ? (
     // Botón de WhatsApp (solo si `phone` tiene un valor)
-    <a
-      href={whatsappUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      class={twMerge(variants[variant] || '', className)}
-      {...rest}
-    >
-      <Icon name="tabler:brand-whatsapp" class="w-5 h-5" /> {text}
-    </a>
+  <a
+    href={whatsappUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    class={twMerge(variants[variant] || '', className, 'flex items-center gap-2')}
+    {...rest}
+  >
+    <Icon name="tabler:brand-whatsapp" class="w-5 h-5 mr-1" /> {text}
+  </a>
+
   ) : (
     // Botón normal como enlace
     <a
