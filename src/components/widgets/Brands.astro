@@ -86,18 +86,35 @@ const {
 </style>
 
 <script>
-  const carouselTrack = document.getElementById("carouselTrack");
-  let scrollAmount = 0;
+  document.addEventListener("DOMContentLoaded", () => {
+    const carouselTrack = document.getElementById("carouselTrack");
+    let scrollAmount = 0;
+    let scrollWidth = carouselTrack.scrollWidth / 2; // Precalcula el ancho a recorrer
+    let animationFrame;
 
-  function autoScroll() {
-    scrollAmount -= 1;
-    carouselTrack.style.transform = `translateX(${scrollAmount}px)`;
+    function autoScroll() {
+      scrollAmount -= 1;
+      carouselTrack.style.transform = `translateX(${scrollAmount}px)`;
 
-    // Si el desplazamiento llega al final del contenido, reinicia el scroll
-    if (Math.abs(scrollAmount) >= carouselTrack.scrollWidth / 2) {
-      scrollAmount = 0;
+      // Reiniciar el scroll si llega al final
+      /*if (Math.abs(scrollAmount) >= scrollWidth) {
+        scrollAmount = 0;
+      }*/
+
+      animationFrame = requestAnimationFrame(autoScroll);
     }
-  }
 
-  setInterval(autoScroll, 20); // Controla la velocidad del desplazamiento
+    // Iniciar la animación
+    animationFrame = requestAnimationFrame(autoScroll);
+
+    // Detener animación si el usuario no está en la pestaña para ahorrar recursos
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        cancelAnimationFrame(animationFrame);
+      } else {
+        animationFrame = requestAnimationFrame(autoScroll);
+      }
+    });
+  });
 </script>
+
