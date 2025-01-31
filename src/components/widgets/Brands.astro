@@ -97,9 +97,9 @@ const {
       carouselTrack.style.transform = `translateX(${scrollAmount}px)`;
 
       // Reiniciar el scroll si llega al final
-      /*if (Math.abs(scrollAmount) >= scrollWidth) {
+      if (Math.abs(scrollAmount) >= scrollWidth) {
         scrollAmount = 0;
-      }*/
+      }
 
       animationFrame = requestAnimationFrame(autoScroll);
     }
