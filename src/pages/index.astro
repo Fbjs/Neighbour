@@ -166,15 +166,13 @@ const metadata = {
     ]}
   />
 
-  
-
  <!-- Video de fondo -->
- <div class="video-fondo">
+ <!--div class="video-fondo">
   <video autoplay muted loop>
-    <source src="/src/assets/images/space.mp4" type="video/mp4"> <!-- Reemplaza con la ruta a tu video -->
+    <source src="/src/assets/images/space.mp4" type="video/mp4">
     Tu navegador no soporta el elemento de video.
   </video>
-</div>
+</div-->
 <div class="bg-fondo_false">
     <!-- Features2 Widget ************** -->
 
@@ -215,8 +213,6 @@ const metadata = {
         { title: 'Expertos en Tecnología', amount: '50',symbol:'+' },
       ]}
     />
-
-
 
     <Brands
     title="Instituciones que Confían en Neighbour Technology"
@@ -353,10 +349,9 @@ const metadata = {
   <CallToAction
     actions={[
       {
-        variant: 'primary',
+        variant: 'whatsapp',
         text: 'Solicita más información',
-        href: 'mailto:admintrador@neighbour.cl',
-        icon: 'tabler:mail',
+        phone: '56976069961'
       },
     ]}
   >
@@ -366,12 +361,6 @@ const metadata = {
 
     <Fragment slot="subtitle">
       Contacta con nosotros para más información sobre nuestros servicios y soluciones tecnológicas.
-    </Fragment>
-
-    <Fragment slot="boton">
-      <Button variant="primary" class="open-modal-btn">
-        Cotiza tu Proyecto
-      </Button>
     </Fragment>
 
   </CallToAction>

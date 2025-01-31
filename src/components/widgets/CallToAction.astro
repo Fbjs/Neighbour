@@ -57,7 +57,7 @@ const {
           {Array.isArray(actions) ? (
             actions.map((action) => (
               <div class=" w-full sm:w-auto">
-                {action.variant == 'primary' ? (
+                {action.variant == 'whatsapp' ? (
                    <Button {...(action || {})} class="w-full sm:mb-0" />
                 ):(
                   <slot name="boton"></slot>
