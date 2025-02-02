@@ -9,16 +9,16 @@ const { inputs, textarea, disclaimer, button = 'Enviar', description = '' , asun
 
 
 <!-- Modal -->
-<div id="contact-modal" class="hidden fixed z-50 inset-0 overflow-y-auto">
-  <!-- Fondo oscuro semi-transparente -->
-  <div class="fixed inset-0 transition-opacity bg-slate-900 bg-opacity-75"></div>
+<div id="contact-modal" class="hidden fixed z-50 inset-0 overflow-y-auto transition-opacity duration-500 ease-out">
+  <!-- Fondo oscuro semi-transparente con animación -->
+  <div id="modal-bg" class="fixed inset-0 bg-slate-900 bg-opacity-0 transition-opacity duration-500 ease-out"></div>
 
-  <!-- Contenido del modal -->
+  <!-- Contenido del modal con animaciones mejoradas -->
   <div class="flex items-center justify-center min-h-screen">
-    <div class="bg-white dark:bg-slate-900 rounded-lg overflow-hidden shadow-xl transform transition-all max-w-md w-full">
+    <div id="modal-content" class="bg-white dark:bg-slate-900 rounded-lg overflow-hidden shadow-2xl transform scale-90 opacity-0 translate-y-10 transition-all duration-500 ease-out max-w-md w-full">
       <div class="px-6 py-4">
         <div class="text-center sm:text-left">
-          <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white" id="modal-title">
+          <h3 class="text-lg leading-6 font-bold text-gray-900 dark:text-white">
             Formulario de Contacto
           </h3>
           <p class="mt-2 text-sm text-gray-500 dark:text-gray-300">
@@ -28,8 +28,8 @@ const { inputs, textarea, disclaimer, button = 'Enviar', description = '' , asun
 
         <form action="https://api.web3forms.com/submit" method="POST" class="mt-4 text-left">
           <input type="hidden" name="access_key" value="be189844-e76c-45c7-b324-032897ee8890" />
-          <input type="hidden" name="asunto" value={asunto} />
 
+          <!-- Inputs dinámicos -->
           {inputs &&
             inputs.map(({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '' }) =>
               name && (
@@ -52,6 +52,7 @@ const { inputs, textarea, disclaimer, button = 'Enviar', description = '' , asun
               )
             )}
 
+          <!-- Textarea -->
           {textarea && (
             <div class="mb-4">
               <label for="textarea" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
@@ -68,24 +69,7 @@ const { inputs, textarea, disclaimer, button = 'Enviar', description = '' , asun
             </div>
           )}
 
-          {disclaimer && (
-            <div class="mt-3 flex items-start">
-              <div class="flex mt-0.5">
-                <input
-                  id="disclaimer"
-                  name="disclaimer"
-                  type="checkbox"
-                  class="cursor-pointer mt-1 py-3 px-4 block w-full text-md rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-900"
-                />
-              </div>
-              <div class="ml-3">
-                <label for="disclaimer" class="cursor-pointer select-none text-sm text-gray-600 dark:text-gray-400">
-                  {disclaimer.label}
-                </label>
-              </div>
-            </div>
-          )}
-
+          <!-- Botones -->
           <div class="flex items-center justify-end space-x-3">
             <Button variant="primary" type="submit">
               {button}
@@ -97,36 +81,50 @@ const { inputs, textarea, disclaimer, button = 'Enviar', description = '' , asun
               Cerrar
             </button>
           </div>
-
-          {description && (
-            <div class="mt-3 text-center">
-              <p class="text-sm text-gray-600 dark:text-gray-400">{description}</p>
-            </div>
-          )}
         </form>
       </div>
     </div>
   </div>
 </div>
 
+<!-- Script para animaciones -->
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const openModalBtns = document.querySelectorAll('.open-modal-btn');
     const closeModalBtns = document.querySelectorAll('.close-modal-btn');
     const modal = document.getElementById('contact-modal');
+    const modalBg = document.getElementById('modal-bg');
+    const modalContent = document.getElementById('modal-content');
 
-    if (openModalBtns.length && closeModalBtns.length && modal) {
-      openModalBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          modal.classList.remove('hidden');
-        });
-      });
+    function openModal() {
+      modal.classList.remove('hidden');
 
-      closeModalBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          modal.classList.add('hidden');
-        });
-      });
+      setTimeout(() => {
+        modalBg.classList.replace('bg-opacity-0', 'bg-opacity-80'); // Aumenta opacidad del fondo
+        modalContent.classList.replace('opacity-0', 'opacity-100');
+        modalContent.classList.replace('scale-90', 'scale-105'); // Hace un ligero rebote
+        modalContent.classList.replace('translate-y-10', 'translate-y-0');
+
+        setTimeout(() => {
+          modalContent.classList.replace('scale-105', 'scale-100'); // Se ajusta al tamaño final
+        }, 150);
+      }, 10);
     }
+
+    function closeModal() {
+      modalBg.classList.replace('bg-opacity-80', 'bg-opacity-0'); // Reduce opacidad del fondo
+      modalContent.classList.replace('opacity-100', 'opacity-0');
+      modalContent.classList.replace('scale-100', 'scale-90'); // Reduce tamaño para desaparecer
+      modalContent.classList.replace('translate-y-0', 'translate-y-20'); // Se desplaza hacia abajo
+
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        modalContent.classList.replace('translate-y-20', 'translate-y-10'); // Reseteo para la próxima apertura
+      }, 400);
+    }
+
+    openModalBtns.forEach(btn => btn.addEventListener('click', openModal));
+    closeModalBtns.forEach(btn => btn.addEventListener('click', closeModal));
   });
 </script>
+
