@@ -59,6 +59,7 @@ const { language, textDirection } = I18N;
       overflow: hidden;
       z-index: -1; /* Coloca el video detrás de otros elementos */
     }
+
     /* Estilo para el video */
     .video-fondo video {
       position: absolute;
@@ -188,7 +189,7 @@ gsap.fromTo('.btn-slider-1',
     start: 'top 50%',      // Inicia cuando el subtítulo apenas entra en el viewport
     end: 'top 40%',        // Termina más rápido para que no haya tanto scroll
     scrub: 2,              // Suaviza un poco, pero hace la animación más rápida
-    markers: false,         // Para visualizar (puedes quitarlo)
+    markers: true,         // Para visualizar (puedes quitarlo)
     toggleActions: 'play none none reverse'
   }
 });
@@ -324,7 +325,7 @@ f2Timeline.fromTo('.f2-der',
 // ------------------------- Features2 -------------------------
 
 // ------------------------- Stats -------------------------
-gsap.from(".stat", {
+/*gsap.from(".stat", {
   scrollTrigger: {
     trigger: ".stat",
     start: "top 50%", // Cuando el top del trigger llega al top del viewport
@@ -337,7 +338,7 @@ gsap.from(".stat", {
   opacity: 0, // Comienza invisible
   duration: 1, // Duración del efecto
   ease: "power3.out", // Tipo de suavizado
-});
+});*/
 // ------------------------- Stats -------------------------
 
 // ------------------------- Brands -------------------------

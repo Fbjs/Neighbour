@@ -89,42 +89,54 @@ const { inputs, textarea, disclaimer, button = 'Enviar', description = '' , asun
 
 <!-- Script para animaciones -->
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const openModalBtns = document.querySelectorAll('.open-modal-btn');
-    const closeModalBtns = document.querySelectorAll('.close-modal-btn');
-    const modal = document.getElementById('contact-modal');
-    const modalBg = document.getElementById('modal-bg');
-    const modalContent = document.getElementById('modal-content');
+document.addEventListener('DOMContentLoaded', function () {
+  const modal = document.getElementById('contact-modal');
+  const modalBg = document.getElementById('modal-bg');
+  const modalContent = document.getElementById('modal-content');
 
-    function openModal() {
-      modal.classList.remove('hidden');
+  const openModalBtns = document.querySelectorAll('.open-modal-btn');
+  const closeModalBtns = document.querySelectorAll('.close-modal-btn');
 
-      setTimeout(() => {
-        modalBg.classList.replace('bg-opacity-0', 'bg-opacity-80'); // Aumenta opacidad del fondo
-        modalContent.classList.replace('opacity-0', 'opacity-100');
-        modalContent.classList.replace('scale-90', 'scale-105'); // Hace un ligero rebote
-        modalContent.classList.replace('translate-y-10', 'translate-y-0');
+  function openModal() {
+    if (!modal || !modalBg || !modalContent) return; // Evita errores si los elementos no existen
 
-        setTimeout(() => {
-          modalContent.classList.replace('scale-105', 'scale-100'); // Se ajusta al tamaño final
-        }, 150);
-      }, 10);
-    }
+    modal.classList.remove('hidden');
 
-    function closeModal() {
-      modalBg.classList.replace('bg-opacity-80', 'bg-opacity-0'); // Reduce opacidad del fondo
-      modalContent.classList.replace('opacity-100', 'opacity-0');
-      modalContent.classList.replace('scale-100', 'scale-90'); // Reduce tamaño para desaparecer
-      modalContent.classList.replace('translate-y-0', 'translate-y-20'); // Se desplaza hacia abajo
+    setTimeout(() => {
+      modalBg.classList.replace('bg-opacity-0', 'bg-opacity-80'); // Aumenta opacidad del fondo
+      modalContent.classList.replace('opacity-0', 'opacity-100');
+      modalContent.classList.replace('scale-90', 'scale-105'); // Hace un ligero rebote
+      modalContent.classList.replace('translate-y-10', 'translate-y-0');
 
       setTimeout(() => {
-        modal.classList.add('hidden');
-        modalContent.classList.replace('translate-y-20', 'translate-y-10'); // Reseteo para la próxima apertura
-      }, 400);
-    }
+        modalContent.classList.replace('scale-105', 'scale-100'); // Se ajusta al tamaño final
+      }, 150);
+    }, 10);
+  }
 
-    openModalBtns.forEach(btn => btn.addEventListener('click', openModal));
-    closeModalBtns.forEach(btn => btn.addEventListener('click', closeModal));
-  });
+  function closeModal() {
+    if (!modal || !modalBg || !modalContent) return;
+
+    modalBg.classList.replace('bg-opacity-80', 'bg-opacity-0'); // Reduce opacidad del fondo
+    modalContent.classList.replace('opacity-100', 'opacity-0');
+    modalContent.classList.replace('scale-100', 'scale-90'); // Reduce tamaño para desaparecer
+    modalContent.classList.replace('translate-y-0', 'translate-y-20'); // Se desplaza hacia abajo
+
+    setTimeout(() => {
+      modal.classList.add('hidden');
+      modalContent.classList.replace('translate-y-20', 'translate-y-10'); // Reseteo para la próxima apertura
+    }, 400);
+  }
+
+  // Abrir modal con cada botón asignado
+  openModalBtns.forEach(btn => btn.addEventListener('click', openModal));
+
+  // Cerrar modal con botones de cierre
+  closeModalBtns.forEach(btn => btn.addEventListener('click', closeModal));
+
+  // Cerrar modal al hacer clic fuera del contenido
+  modalBg?.addEventListener('click', closeModal);
+});
+
 </script>
 
