@@ -1,15 +1,16 @@
 ---
 // Importa el video de fondo
-import videoBackground from '/videos/hero.webm'; // Asegúrate de tener el video en la ruta correcta
+//import videoBackground from '/videos/hero.webm'; // Asegúrate de tener el video en la ruta correcta
 import Button from '../ui/Button.astro';
 ---
 
 <div class="relative w-full h-screen overflow-hidden entry-effect-1">
   <!-- Video de fondo -->
   <video autoplay muted loop playsinline class="absolute inset-0 object-cover w-full h-full z-50">
-    <source src={videoBackground} type="video/mp4" />
+    <source src="/videos/hero.webm" type="video/webm" />
     Tu navegador no soporta videos.
   </video>
+ 
 
   <!-- Contenedor del contenido -->
   <div class="relative flex flex-col justify-center items-center h-full text-white text-center p-10 z-10 entry-effect-2 bg-cover bg-center" >
