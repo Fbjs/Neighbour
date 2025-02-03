@@ -27,7 +27,7 @@ export const headerData = {
         },
         {
           text: 'Vicidial',
-          href: '#Features2',
+          href: '/#Features2',
         },
         {
           text: 'Mantencion y Soporte Técnico',
