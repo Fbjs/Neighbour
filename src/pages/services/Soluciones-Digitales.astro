@@ -15,7 +15,7 @@ import Brands from '~/components/widgets/Brands.astro';
 import ContactUs from '~/components/widgets/ContactForm.astro';
 import Button from '~/components/ui/Button.astro';
 
-import HeroImagen from '~/assets/images/optimizacion-procesos.jpg';
+import HeroImagen from '~/assets/images/ingenieria-de-software.jpg';
 
 const metadata = {
   title: 'Optimización de Procesos - Neighbour Technology',
@@ -27,26 +27,27 @@ const metadata = {
   <!-- Hero2 Widget ******************* -->
 
   <Hero2
-    tagline="Soluciones Personalizadas"
-    title="Software a la medida que impulsa tu crecimiento"
-    subtitle="Creamos soluciones de software personalizadas para automatizar, optimizar y hacer crecer tu negocio, adaptándonos a tus necesidades únicas."
-    
-    image={{
-      src: HeroImagen,
-      alt: 'Soluciones de software a la medida',
-    }}
-  >
-    <Fragment slot="boton">
-      <button class="open-modal-btn px-8 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition duration-300 text-white shadow-lg">
-        Cotiza tu Proyecto
-      </button>
+  tagline="Soluciones Personalizadas"
+  title="Desarrollo de Software a Medida para Impulsar su Crecimiento Empresarial"
+  subtitle="Ofrecemos soluciones de software personalizadas diseñadas para automatizar, optimizar y potenciar su negocio, adaptándonos a las necesidades específicas de su organización."
+  image={{
+    src: HeroImagen,
+    alt: 'Soluciones de software a medida',
+  }}
+>
+  <Fragment slot="boton">
+    <button class="open-modal-btn px-8 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition duration-300 text-white shadow-lg">
+      Solicite una Cotización
+    </button>
 
-      <Button variant='whatsapp',
-      text='Solicita más información',
-      phone='56963238857'></Button>
-    </Fragment>
+    <Button
+      variant="whatsapp"
+      text="Más información"
+      phone="56963238857"
+    />
+  </Fragment>
+</Hero2>
 
-  </Hero2>
 
    <!-- Features2 Widget ************** -->
 

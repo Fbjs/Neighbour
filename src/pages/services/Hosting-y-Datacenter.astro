@@ -74,41 +74,136 @@ const metadata = {
   />
 
   <Prices
-    title="Nuestros Planes"
+    title="Hosting Planes"
     subtitle="Elige el plan que mejor se adapte a tu proyecto"
     prices={[
       {
-        title: 'Hosting Básico', price: '10.000', period: 'mensual',
+        title: 'Hosting Estándar', price: '8.568', period: 'Mensual Iva incluido',
         items: [
             {
-                description:'1 dominio incluido',
+                description:'3x AMD Ryzen 9',
             },
             {
-                description: '5 GB de almacenamiento SSD', 
+                description: '8GB de RAM', 
             },
             {
-                description:'1 cuenta de correo', 
+                description: '10GB SSD', 
             },
             {
-                description:'SSL gratuito'
+                description:'Cuentas de correo 10'
+            },
+            {
+                description:'Velocidad I/O 40MB/s', 
+            },
+            {
+              description:"MySQL/MariaDB - PHP 5.3 a 8.2"
+            }
+          
+        ],
+        callToAction: { text: 'Solicitar', href: '#' },
+        hasRibbon: false, ribbonTitle: 'Más Popular'
+      },
+      {
+        title: 'Hosting Estándar', price: '17.136', period: 'Mensual Iva incluido',
+        items: [
+            {
+                description:'5x AMD Ryzen 9',
+            },
+            {
+                description: '16GB de RAM', 
+            },
+            {
+                description: '30GB SSD', 
+            },
+            {
+                description:'Cuentas de correo 50'
+            },
+            {
+                description:'Velocidad I/O 100MB/s', 
+            },
+            {
+                description:'MySQL/MariaDB - PHP 5.3 a 8.2'
+            },
+            {
+                description:'Conexion Internacional 10Gbps'
+            },
+        ],
+        callToAction: { text: 'Solicitar', href: '#' },
+        hasRibbon: true, ribbonTitle: 'Más Popular'
+      },
+      {
+        title: 'Hosting Premium', price: '23.562', period: 'Mensual Iva incluido',
+        items: [
+            {
+                description:'6x AMD Ryzen 9',
+            },
+            {
+                description: '16GB de RAM', 
+            },
+            {
+                description: '50GB SSD', 
+            },
+            {
+                description:'Cuentas de correo 100'
+            },
+            {
+                description:'Velocidad I/O 200MB/s', 
+            },
+            {
+                description:'MySQL/MariaDB - PHP 5.3 a 8.2'
+            },
+            {
+                description:'Conexion Internacional 10Gbps'
+            },
+            {
+                description:'Correos Por Hora 1000'
+            },
+            {
+                description:'Transferencia Mensual: Sin Limites'
             }
         ],
         callToAction: { text: 'Solicitar', href: '#' },
       },
+    ]}
+  />
+  
+  <Prices
+    title="VPS Planes"
+    subtitle="Elige el plan que mejor se adapte a tu proyecto"
+    prices={[
       {
-        title: 'VPS Estándar', price: '60.000', period: 'mensual',
+        title: 'VPS Básico', price: '49.500', period: 'Mensual Iva incluido',
         items: [
             {
-                description:'2 CPU vCores',
+                description:'Xeon 2CPU @ 2.6 GHz',
             },
             {
-                description: '4 GB de RAM', 
+                description: '4GB RAM', 
             },
             {
-                description: '50 GB SSD', 
+                description: '60GB SSD', 
             },
             {
-                description:'1 IP dedicada'
+                description:'Trafico Ilimitado', 
+            },
+           
+        ],
+        callToAction: { text: 'Solicitar', href: '#' },
+      },
+      {
+        title: 'VPS Estándar', price: '89.000', period: 'Mensual Iva incluido',
+        items: [
+            {
+                description:'Xeon 4CPU @ 2.6 GHz',
+            },
+            {
+                description: '8GB de RAM', 
+            },
+            {
+                description: '80GB SSD', 
+            },
+            {
+                description:'Transferencia Ilimitada', 
             },
             {
                 description:'Soporte avanzado'
@@ -118,19 +213,22 @@ const metadata = {
         hasRibbon: true, ribbonTitle: 'Más Popular'
       },
       {
-        title: 'VPS Premium', price: '120.000', period: 'mensual',
+        title: 'VPS Premium', price: '149.800', period: 'Mensual Iva incluido',
         items: [
-            {
-                description:'4 CPU vCores',
+        {
+                description:'Xeon 6CPU @ 2.6 GHz',
             },
             {
-                description: '8 GB de RAM', 
+                description: '16GB RAM', 
             },
             {
-                description: '100 GB SSD', 
+                description: '120GB SSD', 
             },
             {
-                description:'2 IP dedicada'
+                description:'Transferencia Ilimitada', 
+            },
+            {
+                description:'Soporte avanzado'
             },
             {
                 description:'Monitoreo continuo'
@@ -140,6 +238,7 @@ const metadata = {
       },
     ]}
   />
+
 
   <CallToAction
     actions={[
@@ -162,11 +261,14 @@ const metadata = {
 
   <FAQs
     title="Preguntas Frecuentes"
+    classes={{container:'bg-white dark:bg-dark dark:bg-opacity-80 my-10 '}}
     items={[
       { title: '¿Qué diferencia hay entre hosting y VPS?', description: 'El hosting es compartido, mientras que el VPS ofrece recursos dedicados.' },
       { title: '¿Cómo puedo escalar mi plan?', description: 'Nuestros planes permiten aumentar recursos sin interrupciones.' },
       { title: '¿Ofrecen seguridad avanzada?', description: 'Sí, con firewalls, certificados SSL y monitoreo constante.' },
       { title: '¿Brindan soporte técnico?', description: 'Sí, ofrecemos soporte 24/7 para hosting y VPS.' },
     ]}
-  />
+  >
+   
+  </FAQs>
 </Layout>

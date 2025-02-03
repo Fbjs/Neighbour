@@ -101,99 +101,101 @@ const metadata = {
   ]}
 />
 
+
+
 <Prices
     title="Nuestros Planes de Mantenimiento"
     subtitle="Elige el plan que mejor se ajuste a las necesidades de tu infraestructura tecnológica"
     prices={[
-      {
-        title: 'Básico',
-        subtitle: 'Ideal para pequeñas empresas o negocios con infraestructura sencilla',
-        price: '250.000',
-        period: 'desde',
-        items: [
-          {
-            description: 'Mantenimiento preventivo de redes (1 vez al mes)',
-          },
-          {
-            description: 'Soporte de software básico',
-          },
-          {
-            description: 'Revisión de hardware (1 vez al mes)',
-          },
-          {
-            description: 'Optimización de rendimiento',
-          },
-          {
-            description: 'Informe mensual de mantenimiento',
-          },
-        ],
-        callToAction: {
-          target: '_blank',
-          text: 'Solicitar',
-          href: '#',
+       {
+      "title": "Plan Básico",
+      "subtitle": "Para empresas con hasta 10 equipos.",
+      "price": "150.000",
+      "period": "mensual",
+      "items": [
+        {
+          "description": "Mantenimiento preventivo mensual de hasta 10 equipos"
         },
-      },
-      {
-        title: 'Estándar',
-        subtitle: 'Perfecto para empresas en crecimiento con infraestructura más compleja',
-        price: '450.000',
-        period: 'desde',
-        items: [
-          {
-            description: 'Mantenimiento preventivo y correctivo de redes (2 veces al mes)',
-          },
-          {
-            description: 'Soporte de software avanzado',
-          },
-          {
-            description: 'Revisión de hardware (2 veces al mes)',
-          },
-          {
-            description: 'Resolución de incidencias de hardware y software',
-          },
-          {
-            description: 'Informe quincenal de mantenimiento',
-          },
-        ],
-        callToAction: {
-          target: '_blank',
-          text: 'Solicitar',
-          href: '#',
+        {
+          "description": "Upgrade de Componentes Disco,Ram,CPU.. "
         },
-        hasRibbon: true,
-        ribbonTitle: 'Más Popular',
-      },
-      {
-        title: 'Premium',
-        subtitle: 'La mejor opción para grandes empresas con necesidades críticas',
-        price: '750.000',
-        period: 'desde',
-        items: [
-          {
-            description: 'Mantenimiento preventivo y correctivo de redes (4 veces al mes)',
-          },
-          {
-            description: 'Soporte de software y hardware 24/7',
-          },
-          {
-            description: 'Revisión de hardware semanal',
-          },
-          {
-            description: 'Monitorización continua de sistemas',
-          },
-          {
-            description: 'Informe semanal y asesoría personalizada',
-          },
-          {
-            description: 'Soporte prioritario',
-          },
-        ],
-        callToAction: {
-          target: '_blank',
-          text: 'Solicitar',
-          href: '#',
+        {
+          "description": "Actualización de software y parches de seguridad"
         },
+        {
+          "description": "Revisión y limpieza interna de hardware"
+        },
+        {
+          "description": "Informe mensual de estado de los equipos"
+        }
+      ],
+      "callToAction": {
+        "target": "_blank",
+        "text": "Solicitar",
+        "href": "#"
+      }
+    },
+    {
+      "title": "Plan Estándar",
+      "subtitle": "Para empresas con hasta 25 equipos.",
+      "price": "300.000",
+      "period": "mensual",
+      "items": [
+        {
+          "description": "Mantenimiento preventivo mensual de hasta 25 equipos"
+        },
+        {
+          "description": "Upgrade de Componentes Disco,Ram,CPU.."
+        },
+        {
+          "description": "Gestión de incidencias y resolución de problemas de hardware y software"
+        },
+        {
+          "description": "Optimización del rendimiento de los equipos"
+        },
+        {
+          "description": "Informe mensual de estado de los equipos"
+        }
+      ],
+      "callToAction": {
+        "target": "_blank",
+        "text": "Solicitar",
+        "href": "#"
       },
+      "hasRibbon": true,
+      "ribbonTitle": "Más Popular"
+    },
+    {
+      "title": "Plan Premium",
+      "subtitle": "Diseñado para empresas con más de 25 equipos.",
+      "price": "500.000",
+      "period": "mensual",
+      "items": [
+        {
+          "description": "Mantenimiento preventivo y correctivo mensual de más de 25 equipos"
+        },
+        {
+          "description": "Soporte remoto para clientes y empleados"
+        },
+        {
+          "description": "Upgrade de Componentes Disco,Ram,CPU.."
+        },
+        {
+          "description": "Monitorización continua de sistemas críticos"
+        },
+        {
+          "description": "Gestión proactiva de actualizaciones y parches de seguridad"
+        },
+        {
+          "description": "Informe semanal detallado y asesoría personalizada"
+        }
+      ],
+      "callToAction": {
+        "target": "_blank",
+        "text": "Solicitar",
+        "href": "#"
+      }
+    }
     ]}
 />
 
@@ -225,6 +227,7 @@ const metadata = {
 
 <FAQs
   title="Preguntas Frecuentes"
+  classes={{container:'bg-black bg-opacity-80 my-10 '}}
   items={[
     {
       title: '¿Qué incluye el mantenimiento de redes?',
