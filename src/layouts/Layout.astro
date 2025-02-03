@@ -31,7 +31,7 @@ const { language, textDirection } = I18N;
 ---
 
 <!doctype html>
-<html lang={language} dir={textDirection} class="2xl:text-[20px] scrollbar-hide lenis lenis-smooth scroll-pt-16">
+<html lang={language} dir={textDirection} class="2xl:text-[20px] ">
   <head>
     <CommonMeta />
     <Favicons />
@@ -119,7 +119,7 @@ const { language, textDirection } = I18N;
 
 
 <script>
-  import "../assets/scripts/lenisSmoothScroll.js";
+  //import "../assets/scripts/lenisSmoothScroll.js";
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -290,9 +290,8 @@ f2Timeline.fromTo('.f2-izq',
 
 // Animación del f2-headline (título) después del f2-izq
 f2Timeline.fromTo('.f2-headline', 
-  { opacity: 0, y: -100 },  // Inicia desde arriba con opacidad 0
+  {  y: -100 },  // Inicia desde arriba con opacidad 0
   { 
-    opacity: 1,   // Se hace visible
     y: 0,         // Termina en su posición original
     duration: 2   // Duración de la animación más rápida
   }, 
