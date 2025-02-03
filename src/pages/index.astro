@@ -201,13 +201,16 @@ const metadata = {
     ]}
   >
     <Fragment slot="bg">
-      <div class="absolute inset-0 "></div>
+      <div class="absolute inset-0  "></div>
     </Fragment>
   </Features2>
 
   <!-- Stats Widget ****************** -->
-  <div class="bg-blue-50 dark:bg-dark p-6 my-8">
+  <div class="  p-6 my-8">
     <Stats
+      classes={{
+        container: 'dark:bg-dark dark:bg-opacity-70 my-10',
+      }}
       stats={[
         { title: 'Clientes Satisfechos', amount: '500+' },
         { title: 'Proyectos Completados', amount: '1200+' },
@@ -215,10 +218,10 @@ const metadata = {
         { title: 'Expertos en Tecnología', amount: '50+' },
       ]}
     />
-
-
-
     <Brands
+    classes={{
+      container: 'dark:bg-dark dark:bg-opacity-70 my-10',
+    }}
     title="Instituciones que Confían en Neighbour Technology"
     subtitle="En Neighbour Technology, colaboramos con estas organizaciones para ofrecer soluciones tecnológicas a medida, mejorando su infraestructura y optimizando procesos."
     icons={[]}
@@ -351,6 +354,7 @@ const metadata = {
   <!-- CallToAction Widget *********** -->
 
   <CallToAction
+ 
     actions={[
       {
         variant: 'primary',
