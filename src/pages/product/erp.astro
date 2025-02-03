@@ -10,6 +10,7 @@ import ErpHeroImagen from '~/assets/images/erp_hero3.png';
 import ErpStockImagen from '~/assets/images/erp_stock2.png';
 import ErpPuntoVentaImagen from '~/assets/images/erp_punto_venta3.png';
 import ErpProductosImagen from '~/assets/images/erp_productos2.png';
+import Button from '~/components/ui/Button.astro';
 
 // Obtener la URL base dependiendo del entorno
 let baseURL = 'https://erp.neighbour.cl/';
@@ -154,5 +155,11 @@ const metadata = {
     ]}
     title="Descubre cómo nuestro ERP puede transformar tu negocio"
     subtitle="Gestiona cada aspecto de tu negocio desde un solo lugar con nuestro ERP personalizado y optimizado para tu industria."
-  />
+  >
+  <Fragment slot="boton">
+
+      <Button variant="whatsapp" text="Cotiza tu Proyecto" phone="5696238857" / >
+
+  </Fragment>
+  </CallToAction>
 </Layout>
