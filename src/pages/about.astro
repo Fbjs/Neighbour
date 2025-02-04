@@ -5,29 +5,14 @@ import Hero from '~/components/widgets/Hero.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
-
 import image2 from '~/assets/images/FENIX_contact_center.png';
-
 
 const metadata = {
   title: 'Sobre Nosotros - Neighbour Technology',
   ignoreTitleTemplate: true
 };
 ---
-<!--style>
-  .bg-fondo {
-    background-image: url('/src/assets/images/tex5.jpg'); /* Reemplaza con la ruta a tu imagen */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    width: 100%;
-    height: 100%;
-  }
-</style-->
 <Layout metadata={metadata}>
-
-
   <div class="bg-fondo text-white">
     <Hero
       tagline="Sobre Nosotros"
@@ -46,11 +31,12 @@ const metadata = {
       </Fragment>
     </Hero>
   </div>
-
-
   
   <!-- Stats Widget ****************** -->
   <Stats
+    classes={{
+      container: 'stat-container bg-dark bg-opacity-70 my-10',
+    }}
     title="Estadísticas de Neighbour Technology"
     stats={[
       { title: 'Clientes Satisfechos', amount: '500',symbol:'+' },

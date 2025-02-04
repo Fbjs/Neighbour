@@ -360,20 +360,36 @@ tlF2Items.fromTo('.f2-items',
 // ------------------------- Features2 -------------------------
 
 // ------------------------- Stats -------------------------
-gsap.from(".stat", {
+// Animación para .stat
+// Creamos la timeline para asegurar la secuencia
+const tlStat = gsap.timeline({
   scrollTrigger: {
-    trigger: ".stat",
-    start: "top 70%", // Cuando el top del trigger llega al top del viewport
-    end: "bottom 50%", // Hasta el bottom del trigger llega al 50% del viewport
-    scrub: 2, // Hace que la animación se sincronice con el scroll
+    trigger: ".stat-container",
+    start: "top 70%",  
+    end: "bottom 50%",    
+    scrub: 2,
     markers: false,
     toggleActions: 'play none none reverse'
-  },
-  y: -100, // Desplazamiento inicial desde arriba
-  opacity: 0, // Comienza invisible
-  duration: 1, // Duración del efecto
-  ease: "power3.out", // Tipo de suavizado
+  }
 });
+
+// Animación para .stat-container (se ejecuta primero)
+tlStat.from(".stat-container", {
+  scale: 0.3,  // Empieza más pequeño para un efecto más llamativo
+  opacity: 0,  // Inicia invisible
+  duration: 2, // Más lenta para mayor impacto
+  ease: "power2.out"
+});
+
+// Animación para .stat (comienza justo después de que termina la anterior)
+tlStat.from(".stat", {
+  y: -200, // Baja más desde arriba para mayor impacto
+  opacity: 0, // Inicia invisible
+  duration: 2, // Más lenta para mayor visibilidad
+  ease: "power2.out"
+});
+
+
 // ------------------------- Stats -------------------------
 
 // ------------------------- Brands -------------------------
@@ -549,36 +565,72 @@ gsap.from(".h-img", {
 // Definir la constante s2Timeline para la animación con ScrollTrigger
 const s2Timeline = gsap.timeline({
   scrollTrigger: {
-    trigger: ".s2-title", // Punto de activación de la animación
-    start: "top 60%", // Empieza cuando el top de .s2-title está al 80% del viewport
-    end: "top 40%", // Termina cuando el bottom de .s2-icon sale del viewport
-    scrub: false, // No sincronizado con el scroll (se ejecuta automáticamente)
-    toggleActions: "play none none reverse", // Juega la animación hacia abajo, y la revierte hacia arriba
-    markers: false, // Ponlo en true para depuración, cambiar a false cuando ya no lo necesites
+    trigger: ".s2-container",
+    start: "top 70%",
+    end: "top 60%",
+    scrub: false,
+    toggleActions: "play none none reverse",
+    markers: false,
   },
 });
 
-// Animación para s2-title
-s2Timeline.from(".s2-title", {
-  opacity: 0, // Empieza invisible
-  y: 50, // Desplazado 50px hacia abajo
-  duration: 1.5, // Duración de la animación
-  ease: "power2.out", // Suavizado
+// Animaciones de s2-container
+s2Timeline.from(".s2-container", {
+  opacity: 0, 
+  scale: 0.95, 
+  duration: 0.5, 
+  ease: "power2.out",
 })
-// Animación para s2-des, empieza después de s2-title
+.from(".s2-title", {
+  opacity: 0,
+  y: 20,
+  duration: 0.4,
+  ease: "power2.out",
+}, "+=0.1")
 .from(".s2-des", {
   opacity: 0,
-  y: 50,
-  duration: 1.5,
+  y: 20,
+  duration: 0.4,
   ease: "power2.out",
-}, "-=1") // Empieza justo antes de que termine la animación de s2-title
-// Animación para s2-icon, empieza después de s2-des
-.from(".s2-icon", {
+}, "+=0.1");
+
+// Nueva timeline para s2-icon-container y sus elementos
+const s2IconTimeline = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".s2-icon-container",
+    start: "top 70%",
+    end: "top 60%",
+    scrub: false,
+    toggleActions: "play none none reverse",
+    markers: false,
+  },
+});
+
+// Animaciones de s2-icon-container
+s2IconTimeline.from(".s2-icon-container", {
+  opacity: 0, 
+  scale: 0.95, 
+  duration: 0.5, 
+  ease: "power2.out",
+})
+.from(".s2-icon-title", {
   opacity: 0,
-  y: 50,
-  duration: 1.5,
+  y: 20,
+  duration: 0.4,
   ease: "power2.out",
-}, "-=1"); // Empieza justo antes de que termine la animación de s2-des
+}, "+=0.1")
+.from(".s2-icon-des", {
+  opacity: 0,
+  y: 20,
+  duration: 0.4,
+  ease: "power2.out",
+}, "+=0.1")
+.from(".s2-icon", { // Ahora forma parte de s2IconTimeline
+  opacity: 0,
+  y: 20,
+  duration: 0.4,
+  ease: "power2.out",
+}, "+=0.1");
 // ------------------------- Steps2 -------------------------
 // ------------------------- About -------------------------
 

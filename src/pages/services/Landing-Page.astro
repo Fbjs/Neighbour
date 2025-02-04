@@ -185,15 +185,8 @@ const properties = [
     }}
   >
   <Fragment slot="boton">
-    <div class="w-full flex flex-col sm:flex-row justify-center items-center sm:space-x-4 space-y-4 sm:space-y-0 ">
-      <Button variant="formulario">
-        Cotiza tu Proyecto
-      </Button>
-
-      <Button variant='whatsapp',
-      text='Contacta a un Asesor',
-      phone='56963238857'/>
-    </div>
+    <Button variant="formulario" text="Cotiza tu Proyecto"/>
+    <Button variant='whatsapp' text='Contacta a un Asesor' phone='56963238857'/>
   </Fragment>  
 
 </Hero2>
@@ -213,6 +206,9 @@ const properties = [
  <!-- Stats Widget ****************** -->
 
   <Stats
+  classes={{
+    container: 'stat-container bg-dark bg-opacity-70 my-10',
+  }}
     title="Nuestros Resultados"
     subtitle="Las siguientes estadísticas reflejan el éxito de nuestros clientes con las páginas web que hemos desarrollado."
     stats={[
