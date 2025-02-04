@@ -1,6 +1,5 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
 import Hero from '~/components/widgets/Hero.astro';
 import HeroCarousel from '~/components/widgets/HeroCarousel.astro';
 import Note from '~/components/widgets/Note.astro';
@@ -13,12 +12,10 @@ import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Slider from '~/components/widgets/Slider.astro';
-
 import image2 from '~/assets/images/FENIX_contact_center.png';
 import ContactForm from '~/components/widgets/ContactForm.astro';
 import Brands from '~/components/widgets/Brands.astro';
 import Button from '~/components/ui/Button.astro';
-
 import Santander from '~/assets/images/Santander.jpg';
 import Regalariza from '~/assets/images/regalariza.jpg';
 import MundoCreditos from '~/assets/images/Mundo_creditos.jpg';
@@ -50,77 +47,17 @@ import Líder from '~/assets/images/Lider.webp';
 import Claro from '~/assets/images/Claro.svg';
 import SBPay from '~/assets/images/SBPay.webp';
 
-
 const metadata = {
   title: 'Neighbour Technology — Soluciones Tecnológicas Innovadoras',
   ignoreTitleTemplate: true,
 };
 ---
-
-<style>
-  .bg-fondo {
-    background-image: url('/src/assets/images/tex5.jpg'); /* Reemplaza con la ruta a tu imagen */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    width: 100%;
-    height: 100%;
-  }
-
-  /* Estilo para el contenedor del video */
-  .video-fondo {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: -1; /* Coloca el video detrás de otros elementos */
-    }
-
-    /* Estilo para el video */
-    .video-fondo video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* Asegura que el video cubra todo el fondo sin deformarse */
-      transform: translate(-50%, -50%);
-    }
-
-</style>
-
-
-
 <Layout metadata={metadata}>
-  <!----HeroCarousel />----->
-  <Slider class="relative overflow-hidden">
-    <!--Fragment slot="boton">
-      <Button variant="primary" class="open-modal-btn btn-slider-1 entry-effect-1">
-        Cotiza tu Proyecto
-      </Button>
-      <a href="https://wa.me/56963238857?text=Hola,%20me%20gustaría%20recibir%20más%20información" target="_blank" class="flex items-center justify-center font-semibold bg-[#25D366] text-white border-[#25D366] px-8 py-2 rounded-full space-x-2 btn-slider-2 entry-effect-2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
-          <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
-        </svg>
-        <span>Chatea con un Asesor</span>
-      </a>
-    </Fragment-->
-  </Slider>
-  
-
+  <Slider class="relative overflow-hidden"></Slider>
 
   <Note />
 
   <!-- Features Widget *************** -->
-
-  
-
-
   <Features
     id="features"
     tagline="Servicios"
@@ -166,221 +103,202 @@ const metadata = {
     ]}
   />
 
-  
-
- <!-- Video de fondo -->
- <div class="video-fondo">
-  <video autoplay muted loop>
-    <source src="/src/assets/images/space.mp4" type="video/mp4"> <!-- Reemplaza con la ruta a tu video -->
-    Tu navegador no soporta el elemento de video.
-  </video>
-</div>
-<div class="bg-fondo_false">
     <!-- Features2 Widget ************** -->
-
     <Features2
-    classes={{
-      headline: 'dark:bg-dark dark:bg-opacity-70 my-10',
-    }}
-    title="Otras Especialidades"
-    subtitle="Expertos en Soluciones Tecnológicas"
-    tagline="Especialidades"
-    items={[
-      {
-        title: 'Experto en VICIdial',
-        description: 'Accede a un centro de contacto completo con marcación predictiva y gestión de agentes.',
-        icon: 'tabler:device-desktop',
-      },
-      {
-        title: 'Experto en Asterisk',
-        description: 'Integra voz en una plataforma escalable para optimizar tus comunicaciones.',
-        icon: 'tabler:phone-call',
-      },
-      {
-        title: 'Gestor Integral VICIdial - Asterisk',
-        description: 'Gestión de acciones y reportes de manera efectiva para optimizar tus operaciones.',
-        icon: 'tabler:report',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0  "></div>
-    </Fragment>
-  </Features2>
+      classes={{
+        headline: 'dark:bg-dark dark:bg-opacity-70 my-10',
+      }}
+      title="Otras Especialidades"
+      subtitle="Expertos en Soluciones Tecnológicas"
+      tagline="Especialidades"
+      items={[
+        {
+          title: 'Experto en VICIdial',
+          description: 'Accede a un centro de contacto completo con marcación predictiva y gestión de agentes.',
+          icon: 'tabler:device-desktop',
+        },
+        {
+          title: 'Experto en Asterisk',
+          description: 'Integra voz en una plataforma escalable para optimizar tus comunicaciones.',
+          icon: 'tabler:phone-call',
+        },
+        {
+          title: 'Gestor Integral VICIdial - Asterisk',
+          description: 'Gestión de acciones y reportes de manera efectiva para optimizar tus operaciones.',
+          icon: 'tabler:report',
+        },
+      ]}>
+        <Fragment slot="bg">
+        <div class="absolute inset-0  "></div>
+        </Fragment>
+    </Features2>
 
-  <!-- Stats Widget ****************** -->
-  <div class="  p-6 my-8">
-    <Stats
+    <!-- Stats Widget ****************** -->
+    <div class="p-6 my-8">
+      <Stats
+        classes={{
+          container: 'stat dark:bg-dark dark:bg-opacity-70 my-10',
+        }}
+        stats={[
+          { title: 'Clientes Satisfechos', amount: '500', symbol:'+' },
+          { title: 'Proyectos Completados', amount: '1200', symbol:'+' },
+          { title: 'Años de Experiencia', amount: '10', symbol:'+' },
+          { title: 'Expertos en Tecnología', amount: '50', symbol:'+' },
+        ]}
+      />
+      <Brands
       classes={{
         container: 'dark:bg-dark dark:bg-opacity-70 my-10',
       }}
-      stats={[
-        { title: 'Clientes Satisfechos', amount: '500+' },
-        { title: 'Proyectos Completados', amount: '1200+' },
-        { title: 'Años de Experiencia', amount: '10+' },
-        { title: 'Expertos en Tecnología', amount: '50+' },
+      title="Instituciones que Confían en Neighbour Technology"
+      subtitle="En Neighbour Technology, colaboramos con estas organizaciones para ofrecer soluciones tecnológicas a medida, mejorando su infraestructura y optimizando procesos."
+      icons={[]}
+      images={[
+        {
+          src: Santander.src,
+          alt: 'Santander',
+        },
+        {
+          src: Regalariza.src,
+          alt: 'Regalariza',
+        },
+        {
+          src: MundoCreditos.src,
+          alt: 'MundoCreditos',
+        },
+        {
+          src: MarubeniCredit.src,
+          alt: 'MarubeniCredit',
+        },
+        {
+          src: MAF.src,
+          alt: 'MAF',
+        },
+        {
+          src: IACC.src,
+          alt: 'IACC',
+        },
+        {
+          src: IPLACEX.src,
+          alt: 'IPLACEX',
+        },
+        {
+          src: GrupoMok.src,
+          alt: 'GrupoMok',
+        },
+        {
+          src: Falabella.src,
+          alt: 'Falabella',
+        },
+        {
+          src: ClinicaLasCondes.src,
+          alt: 'ClinicaLasCondes',
+        },
+        {
+          src: ClinicaCordillera.src,
+          alt: 'ClinicaCordillera',
+        },
+        {
+          src: Clinica_U_de_los_andes.src,
+          alt: 'Clinica_U_de_los_andes',
+        },
+        {
+          src: Bupa.src,
+          alt: 'Bupa',
+        },
+        {
+          src: Wom.src,
+          alt: 'Wom',
+        },
+        {
+          src: Cevsa.src,
+          alt: 'Cevsa',
+        },
+        {
+          src: Equifax.src,
+          alt: 'Equifax',
+        },
+        {
+          src: Hites.src,
+          alt: 'Hites',
+        },
+        {
+          src: Corona.src,
+          alt: 'Corona',
+        },
+        {
+          src: Ripley.src,
+          alt: 'Ripley',
+        },
+        {
+          src: Sura.src,
+          alt: 'Sura',
+        },
+        {
+          src: Cruz_Verde.src,
+          alt: 'Cruz_Verde',
+        },
+        {
+          src: Preunic.src,
+          alt: 'Preunic',
+        },
+        {
+          src: BCI.src,
+          alt: 'BCI',
+        },
+        {
+          src: Autofin.src,
+          alt: 'Autofin',
+        },
+        {
+          src: SoutBridge.src,
+          alt: 'SoutBridge',
+        },
+        {
+          src: Pango.src,
+          alt: 'Pango',
+        },
+        {
+          src: Consorcio.src,
+          alt: 'Consorcio',
+        },
+        {
+          src: Líder.src,
+          alt: 'Líder',
+        },
+        {
+          src: Claro.src,
+          alt: 'Claro',
+        },
+        {
+          src: SBPay.src,
+          alt: 'SBPay',
+        },
       ]}
     />
-    <Brands
-    classes={{
-      container: 'dark:bg-dark dark:bg-opacity-70 my-10',
-    }}
-    title="Instituciones que Confían en Neighbour Technology"
-    subtitle="En Neighbour Technology, colaboramos con estas organizaciones para ofrecer soluciones tecnológicas a medida, mejorando su infraestructura y optimizando procesos."
-    icons={[]}
-    images={[
-      {
-        src: Santander.src,
-        alt: 'Santander',
-      },
-      {
-        src: Regalariza.src,
-        alt: 'Regalariza',
-      },
-      {
-        src: MundoCreditos.src,
-        alt: 'MundoCreditos',
-      },
-      {
-        src: MarubeniCredit.src,
-        alt: 'MarubeniCredit',
-      },
-      {
-        src: MAF.src,
-        alt: 'MAF',
-      },
-      {
-        src: IACC.src,
-        alt: 'IACC',
-      },
-      {
-        src: IPLACEX.src,
-        alt: 'IPLACEX',
-      },
-      {
-        src: GrupoMok.src,
-        alt: 'GrupoMok',
-      },
-      {
-        src: Falabella.src,
-        alt: 'Falabella',
-      },
-      {
-        src: ClinicaLasCondes.src,
-        alt: 'ClinicaLasCondes',
-      },
-      {
-        src: ClinicaCordillera.src,
-        alt: 'ClinicaCordillera',
-      },
-      {
-        src: Clinica_U_de_los_andes.src,
-        alt: 'Clinica_U_de_los_andes',
-      },
-      {
-        src: Bupa.src,
-        alt: 'Bupa',
-      },
-      {
-        src: Wom.src,
-        alt: 'Wom',
-      },
-      {
-        src: Cevsa.src,
-        alt: 'Cevsa',
-      },
-      {
-        src: Equifax.src,
-        alt: 'Equifax',
-      },
-      {
-        src: Hites.src,
-        alt: 'Hites',
-      },
-      {
-        src: Corona.src,
-        alt: 'Corona',
-      },
-      {
-        src: Ripley.src,
-        alt: 'Ripley',
-      },
-      {
-        src: Sura.src,
-        alt: 'Sura',
-      },
-      {
-        src: Cruz_Verde.src,
-        alt: 'Cruz_Verde',
-      },
-      {
-        src: Preunic.src,
-        alt: 'Preunic',
-      },
-      {
-        src: BCI.src,
-        alt: 'BCI',
-      },
-      {
-        src: Autofin.src,
-        alt: 'Autofin',
-      },
-      {
-        src: SoutBridge.src,
-        alt: 'SoutBridge',
-      },
-      {
-        src: Pango.src,
-        alt: 'Pango',
-      },
-      {
-        src: Consorcio.src,
-        alt: 'Consorcio',
-      },
-      {
-        src: Líder.src,
-        alt: 'Líder',
-      },
-      {
-        src: Claro.src,
-        alt: 'Claro',
-      },
-      {
-        src: SBPay.src,
-        alt: 'SBPay',
-      },
-    ]}
-  />
-  </div>
-  
+    </div>
 
-  <!-- CallToAction Widget *********** -->
+    <!-- CallToAction Widget *********** -->
+    <CallToAction
+      actions={[
+        {
+          variant: 'primary',
+          text: 'Solicita más información',
+          href: 'mailto:admintrador@neighbour.cl',
+          icon: 'tabler:mail',
+        },
+      ]}
+    >
+      <Fragment slot="title">
+        ¡Potencia tu Negocio con <br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Neighbour Technology!</span>
+      </Fragment>
 
-  <CallToAction
- 
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Solicita más información',
-        href: 'mailto:admintrador@neighbour.cl',
-        icon: 'tabler:mail',
-      },
-    ]}
-  >
-    <Fragment slot="title">
-      ¡Potencia tu Negocio con <br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Neighbour Technology!</span>
-    </Fragment>
+      <Fragment slot="subtitle">
+        Contacta con nosotros para más información sobre nuestros servicios y soluciones tecnológicas.
+      </Fragment>
 
-    <Fragment slot="subtitle">
-      Contacta con nosotros para más información sobre nuestros servicios y soluciones tecnológicas.
-    </Fragment>
-
-    <Fragment slot="boton">
-      <Button variant="whatsapp" text="Cotiza tu Proyecto" phone="5696238857" / >
-    </Fragment>
-
-  </CallToAction>
-
-</div>
-
+      <Fragment slot="boton">
+        <Button variant="whatsapp" text="Cotiza tu Proyecto" phone="5696238857" / >
+      </Fragment>
+    </CallToAction>
 </Layout>
