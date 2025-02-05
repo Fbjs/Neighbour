@@ -13,7 +13,7 @@ import Analytics from '~/components/common/Analytics.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
 import ContactUs from '~/components/widgets/ContactForm.astro';
 
-// Comment the line below to disable View Transitions
+// Comment the line below to disable View TransitionsP
 import { ViewTransitions } from 'astro:transitions';
 
 import type { MetaData as MetaDataType } from '~/types';
@@ -125,7 +125,8 @@ const { language, textDirection } = I18N;
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
   })(window, document, "clarity", "script", "q496d9uvoq");
-  //import "../assets/scripts/lenisSmoothScroll.js";
+  
+  import "../assets/scripts/lenisSmoothScroll.js";
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
