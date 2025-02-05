@@ -26,7 +26,7 @@ export const headerData = {
           href: '/services/Soluciones-Digitales',
         },
         {
-          text: 'Vicidial',
+          text: 'Otras Especialidades',
           href: '/#Features2',
         },
         {

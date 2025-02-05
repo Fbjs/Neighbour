@@ -183,13 +183,12 @@ const properties = [
       src: HeroImagen,
       alt: 'Páginas web personalizadas',
     }}
-  >
-  <Fragment slot="boton">
-    <Button variant="formulario" text="Cotiza tu Proyecto"/>
-    <Button variant='whatsapp' text='Contacta a un Asesor' phone='56963238857'/>
-  </Fragment>  
-
-</Hero2>
+    >
+    <Fragment slot="boton">
+      <Button variant="formulario" text="Cotiza tu Proyecto"/>
+      <Button variant='whatsapp' text='Contacta a un Asesor' phone='56963238857'/>
+    </Fragment>
+  </Hero2>
 
    <!-- Features2 Widget ************** -->
 
@@ -198,29 +197,26 @@ const properties = [
     subtitle="Con una trayectoria en diseño y desarrollo web, ofrecemos soluciones que combinan estética y funcionalidad. Nos enfocamos en crear páginas que no solo atraigan a tus clientes, sino que también generen conversiones y resultados reales."
   >
     <Fragment slot="bg">
-      <div class="absolute inset-0 dark:bg-dark dark:bg-opacity-70"></div>
-    </Fragment>
+      <div class="f2-tag absolute inset-0 dark:bg-dark dark:bg-opacity-70"></div>
+    </Fragment-->
   </Features2>
  
 
  <!-- Stats Widget ****************** -->
-
   <Stats
-  classes={{
-    container: 'stat-container bg-dark bg-opacity-70 my-10',
-  }}
-    title="Nuestros Resultados"
-    subtitle="Las siguientes estadísticas reflejan el éxito de nuestros clientes con las páginas web que hemos desarrollado."
+    classes={{
+      container: 'stat-container bg-dark bg-opacity-70 my-10',
+    }}
+    title="Estadísticas de Neighbour Technology"
     stats={[
-      { title: 'Páginas Web Desarrolladas', amount: '200+', symbol: '+' },
-      { title: 'Clientes Satisfechos', amount: '180+', symbol: '+' },
-      { title: 'Incremento en Conversiones', amount: '65%', symbol: '%' },
-      { title: 'Proyectos en Curso', amount: '20+', symbol: '+' },
+      { title: 'Clientes Satisfechos', amount: '500', symbol:'+' },
+      { title: 'Proyectos Completados', amount: '1200', symbol:'+' },
+      { title: 'Años de Experiencia', amount: '10', symbol:'+' },
+      { title: 'Expertos en Tecnología', amount: '50', symbol:'+' },
     ]}
   />
 
  <!-- Features Widget *************** -->
-
  <Features
   id="features"
   title="Características de Nuestras Páginas Web"
