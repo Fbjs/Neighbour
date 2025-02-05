@@ -33,7 +33,7 @@ const {
       )}
     >
       {items.map(({ title, description, icon, callToAction, classes: itemClasses = {} }) => (
-        <div id="fadeText">
+        <div id="fadeText" class="relative p-4 rounded-lg bg-dark bg-opacity-70 fondo-oscuro">
           <div class={twMerge('flex flex-row max-w-md', panelClass, itemClasses?.panel)}>
             <div class="flex justify-center">
               {(icon || defaultIcon) && (
@@ -44,10 +44,10 @@ const {
               )}
             </div>
             <div class="mt-0.5">
-              {title && <h3 class={twMerge('text-xl font-bold elemento-derecha', titleClass, itemClasses?.title)}>{title}</h3>}
+              {title && <h3 class={twMerge('text-xl font-bold elemento-derecha text-white', titleClass, itemClasses?.title)}>{title}</h3>}
               {description && (
                 <p
-                  class={twMerge(`${title ? 'mt-3 elemento-derecha' : ''} text-muted`, descriptionClass, itemClasses?.description)}
+                  class={twMerge(`${title ? 'mt-3 elemento-derecha' : ''} text-gray-300`, descriptionClass, itemClasses?.description)}
                   set:html={description}
                 />
               )}
@@ -63,3 +63,4 @@ const {
     </div>
   )
 }
+

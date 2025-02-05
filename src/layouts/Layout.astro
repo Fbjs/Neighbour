@@ -117,16 +117,16 @@ const { language, textDirection } = I18N;
   </body>
 </html>
 
-
 <script>
-
+  
 (function(c,l,a,r,i,t,y){
       c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
   })(window, document, "clarity", "script", "q496d9uvoq");
-  
+
   import "../assets/scripts/lenisSmoothScroll.js";
+
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -192,11 +192,11 @@ gsap.fromTo('.btn-slider-1',
   // ------------------------- Features  -------------------------
   const tl = gsap.timeline({
   scrollTrigger: {
-    trigger: '.subtitle', // Se dispara con el subtítulo
-    start: 'top 50%',      // Inicia cuando el subtítulo apenas entra en el viewport
-    end: 'top 40%',        // Termina más rápido para que no haya tanto scroll
-    scrub: 2,              // Suaviza un poco, pero hace la animación más rápida
-    markers: false,         // Para visualizar (puedes quitarlo)
+    trigger: '.tag',
+    start: 'top 80%',
+    end: 'top 60%',
+    scrub: 2, // Suaviza un poco, pero hace la animación más rápida
+    markers: false,
     toggleActions: 'play none none reverse'
   }
 });
@@ -207,7 +207,7 @@ tl.fromTo('.tag',
   { 
     opacity: 1,   // Se hace visible
     y: 0,         // Termina en su posición original
-    duration: 2   // Duración de la animación más rápida
+    duration: 1   // Duración de la animación más rápida
   }
 );
 
@@ -217,7 +217,7 @@ tl.fromTo('.title',
   { 
     opacity: 1,   // Se hace visible
     y: 0,         // Termina en su posición original
-    duration: 2   // Duración de la animación más rápida
+    duration: 1   // Duración de la animación más rápida
   }, 
   '+=0.2'         // Retraso pequeño para separar las animaciones
 );
@@ -228,7 +228,7 @@ tl.fromTo('.subtitle',
   { 
     opacity: 1,   // Se hace visible
     y: 0,         // Termina en su posición original
-    duration: 2   // Duración de la animación más rápida
+    duration: 1   // Duración de la animación más rápida
   }, 
   '+=0.2'         // Retraso pequeño para separar las animaciones
 );
@@ -237,8 +237,8 @@ tl.fromTo('.subtitle',
 const tlIzquierda = gsap.timeline({
   scrollTrigger: {
     trigger: '.elemento-izquierda',
-    start: 'top 45%',
-    end: 'top 30%',
+    start: 'top 60%',
+    end: 'top 40%',
     scrub: 2,
     markers: false,   // Puedes habilitar si necesitas visualizar los puntos de inicio y fin
     toggleActions: 'play none none reverse'
@@ -256,8 +256,8 @@ tlIzquierda.from('.elemento-izquierda', {
 const tlDerecha = gsap.timeline({
   scrollTrigger: {
     trigger: '.elemento-derecha',
-    start: 'top 45%',
-    end: 'top 30%',
+    start: 'top 60%',
+    end: 'top 40%',
     scrub: 2,
     markers: false,   // Puedes habilitar si necesitas visualizar los puntos de inicio y fin
     toggleActions: 'play none none reverse'
@@ -271,83 +271,131 @@ tlDerecha.from('.elemento-derecha', {
   ease: 'power3.out'
 });
 
-  // ------------------------- Features -------------------------
-  
-  // ------------------------- Features2 -------------------------
-  const f2Timeline = gsap.timeline({
+const tlFondoOscuro = gsap.timeline({
   scrollTrigger: {
-    trigger: '.f2-headline',      // Se dispara con el elemento f2-mid
-    start: 'top 60%',        // Inicia cuando f2-mid apenas entra en el viewport
-    end: 'top 20%',          // Termina más rápido para que no haya tanto scroll
-    scrub: 2,                // Suaviza un poco, pero hace la animación más rápida
-    markers: false,          // Para visualizar (puedes quitarlo)
+    trigger: '.fondo-oscuro',
+    start: 'top 70%',
+    end: 'top 50%',
+    scrub: 2,
+    markers: false,
     toggleActions: 'play none none reverse'
   }
 });
 
-// Animación del f2-izq entrando desde la izquierda
-f2Timeline.fromTo('.f2-izq',
-  { opacity: 0, x: -100 },  // Inicia desde la izquierda con opacidad 0
+tlFondoOscuro.fromTo('.fondo-oscuro', 
+  { opacity: 0, y: -50 },
   { 
-    opacity: 1,   // Se hace visible
-    x: 0,         // Termina en su posición original
-    duration: 2   // Duración de la animación
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    ease: 'power3.out'
   }
 );
 
-// Animación del f2-headline (título) después del f2-izq
-f2Timeline.fromTo('.f2-headline', 
-  {  y: -100 },  // Inicia desde arriba con opacidad 0
+  // ------------------------- Features -------------------------
+  
+  // ------------------------- Features2 -------------------------
+  const f2tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.f2-tag',
+    start: 'top 80%',
+    end: 'top 60%',
+    scrub: 2, // Suaviza un poco, pero hace la animación más rápida
+    markers: false,
+    toggleActions: 'play none none reverse'
+  }
+});
+
+// Animación del subtítulo (subtittle)
+f2tl.fromTo('.f2-tag', 
+  { opacity: 0, y: -100 },  // Inicia más arriba y con opacidad 0 (puedes reducir el desplazamiento)
   { 
+    opacity: 1,   // Se hace visible
     y: 0,         // Termina en su posición original
-    duration: 2   // Duración de la animación más rápida
+    duration: 1   // Duración de la animación más rápida
+  }
+);
+
+// Animación del título (tittle) después del subtítulo
+f2tl.fromTo('.f2-title', 
+  { opacity: 0, y: -100 },  // Inicia más arriba y con opacidad 0
+  { 
+    opacity: 1,   // Se hace visible
+    y: 0,         // Termina en su posición original
+    duration: 1   // Duración de la animación más rápida
   }, 
   '+=0.2'         // Retraso pequeño para separar las animaciones
 );
 
-// Animación del f2-mid entrando desde abajo
-f2Timeline.fromTo('.f2-mid', 
-  { opacity: 0, y: 100 },  // Inicia desde abajo con opacidad 0
+// Animación del tag después del título
+f2tl.fromTo('.f2-subtitle', 
+  { opacity: 0, y: -100 },  // Inicia más arriba y con opacidad 0
   { 
     opacity: 1,   // Se hace visible
     y: 0,         // Termina en su posición original
-    duration: 2   // Duración de la animación
+    duration: 1   // Duración de la animación más rápida
   }, 
   '+=0.2'         // Retraso pequeño para separar las animaciones
 );
 
-// Animación del f2-der entrando desde la derecha
-f2Timeline.fromTo('.f2-der', 
-  { opacity: 0, x: 100 },  // Inicia desde la derecha con opacidad 0
-  { 
-    opacity: 1,   // Se hace visible
-    x: 0,         // Termina en su posición original
-    duration: 2   // Duración de la animación
-  }, 
-  '+=0.2'         // Retraso pequeño para que entre al final de todo
-);
+const tlF2Items = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.f2-items',
+    start: 'top 70%',
+    end: 'top 50%',
+    scrub: 2,
+    markers: false,
+    toggleActions: 'play none none reverse'
+  }
+});
 
+tlF2Items.fromTo('.f2-items', 
+  { opacity: 0, y: -50 },
+  { 
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    ease: 'power3.out'
+  }
+);
 
 // ------------------------- Features2 -------------------------
 
 // ------------------------- Stats -------------------------
-/*gsap.from(".stat", {
+// Animación para .stat
+// Creamos la timeline para asegurar la secuencia
+const tlStat = gsap.timeline({
   scrollTrigger: {
-    trigger: ".stat",
-    start: "top 50%", // Cuando el top del trigger llega al top del viewport
-    end: "bottom 50%", // Hasta el bottom del trigger llega al 50% del viewport
-    scrub: 2, // Hace que la animación se sincronice con el scroll
+    trigger: ".stat-container",
+    start: "top 70%",  
+    end: "bottom 50%",    
+    scrub: 2,
     markers: false,
     toggleActions: 'play none none reverse'
-  },
-  y: -100, // Desplazamiento inicial desde arriba
-  opacity: 0, // Comienza invisible
-  duration: 1, // Duración del efecto
-  ease: "power3.out", // Tipo de suavizado
-});*/
+  }
+});
+
+// Animación para .stat-container (se ejecuta primero)
+tlStat.from(".stat-container", {
+  scale: 0.3,  // Empieza más pequeño para un efecto más llamativo
+  opacity: 0,  // Inicia invisible
+  duration: 2, // Más lenta para mayor impacto
+  ease: "power2.out"
+});
+
+// Animación para .stat (comienza justo después de que termina la anterior)
+tlStat.from(".stat", {
+  y: -200, // Baja más desde arriba para mayor impacto
+  opacity: 0, // Inicia invisible
+  duration: 2, // Más lenta para mayor visibilidad
+  ease: "power2.out"
+});
+
+
 // ------------------------- Stats -------------------------
 
 // ------------------------- Brands -------------------------
+// Animación para el título (.brand-title)
 // Animación para el título (.brand-title)
 gsap.from(".brand-title", {
   scrollTrigger: {
@@ -379,7 +427,7 @@ gsap.from(".brand-subtitle", {
   delay: 0.5      // Retraso para que aparezca después del título
 });
 
-// Nueva animación para la imagen (.brand-img)
+// Animación para la imagen (.brand-img)
 gsap.from(".brand-img", {
   scrollTrigger: {
     trigger: '.brand-img', // Se dispara con la imagen
@@ -395,6 +443,23 @@ gsap.from(".brand-img", {
   ease: "power3.out", 
   delay: 1        // Retraso para que aparezca después del subtítulo
 });
+
+// Nueva animación para el contenedor (.brand-container)
+gsap.from(".brand-container", {
+  scrollTrigger: {
+    trigger: '.brand-container', // Se dispara con el contenedor
+    start: 'top 70%',  
+    end: 'top 50%',    
+    scrub: 2,
+    toggleActions: 'play none none reverse',
+    markers: false
+  },
+  scale: 0.8,      // Comienza más pequeño
+  opacity: 0,      // Comienza invisible
+  duration: 2,     // Duración de la animación
+  ease: "power3.out" 
+});
+
 
 // ------------------------- Brands -------------------------
 
@@ -502,36 +567,72 @@ gsap.from(".h-img", {
 // Definir la constante s2Timeline para la animación con ScrollTrigger
 const s2Timeline = gsap.timeline({
   scrollTrigger: {
-    trigger: ".s2-title", // Punto de activación de la animación
-    start: "top 60%", // Empieza cuando el top de .s2-title está al 80% del viewport
-    end: "top 40%", // Termina cuando el bottom de .s2-icon sale del viewport
-    scrub: false, // No sincronizado con el scroll (se ejecuta automáticamente)
-    toggleActions: "play none none reverse", // Juega la animación hacia abajo, y la revierte hacia arriba
-    markers: false, // Ponlo en true para depuración, cambiar a false cuando ya no lo necesites
+    trigger: ".s2-container",
+    start: "top 70%",
+    end: "top 60%",
+    scrub: false,
+    toggleActions: "play none none reverse",
+    markers: false,
   },
 });
 
-// Animación para s2-title
-s2Timeline.from(".s2-title", {
-  opacity: 0, // Empieza invisible
-  y: 50, // Desplazado 50px hacia abajo
-  duration: 1.5, // Duración de la animación
-  ease: "power2.out", // Suavizado
+// Animaciones de s2-container
+s2Timeline.from(".s2-container", {
+  opacity: 0, 
+  scale: 0.95, 
+  duration: 0.5, 
+  ease: "power2.out",
 })
-// Animación para s2-des, empieza después de s2-title
+.from(".s2-title", {
+  opacity: 0,
+  y: 20,
+  duration: 0.4,
+  ease: "power2.out",
+}, "+=0.1")
 .from(".s2-des", {
   opacity: 0,
-  y: 50,
-  duration: 1.5,
+  y: 20,
+  duration: 0.4,
   ease: "power2.out",
-}, "-=1") // Empieza justo antes de que termine la animación de s2-title
-// Animación para s2-icon, empieza después de s2-des
-.from(".s2-icon", {
+}, "+=0.1");
+
+// Nueva timeline para s2-icon-container y sus elementos
+const s2IconTimeline = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".s2-icon-container",
+    start: "top 70%",
+    end: "top 60%",
+    scrub: false,
+    toggleActions: "play none none reverse",
+    markers: false,
+  },
+});
+
+// Animaciones de s2-icon-container
+s2IconTimeline.from(".s2-icon-container", {
+  opacity: 0, 
+  scale: 0.95, 
+  duration: 0.5, 
+  ease: "power2.out",
+})
+.from(".s2-icon-title", {
   opacity: 0,
-  y: 50,
-  duration: 1.5,
+  y: 20,
+  duration: 0.4,
   ease: "power2.out",
-}, "-=1"); // Empieza justo antes de que termine la animación de s2-des
+}, "+=0.1")
+.from(".s2-icon-des", {
+  opacity: 0,
+  y: 20,
+  duration: 0.4,
+  ease: "power2.out",
+}, "+=0.1")
+.from(".s2-icon", { // Ahora forma parte de s2IconTimeline
+  opacity: 0,
+  y: 20,
+  duration: 0.4,
+  ease: "power2.out",
+}, "+=0.1");
 // ------------------------- Steps2 -------------------------
 // ------------------------- About -------------------------
 
