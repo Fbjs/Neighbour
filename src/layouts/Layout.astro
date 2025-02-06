@@ -188,107 +188,34 @@ gsap.fromTo('.btn-slider-1',
 
 
   // ------------------------- Features  -------------------------
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.tag',
-      start: 'top 80%',
-      end: 'top 60%',
-      scrub: 2, // Suaviza un poco, pero hace la animación más rápida
-      markers: false,
-      toggleActions: 'play none none reverse'
-    }
+  function animarElemento(selector, animation) {
+  gsap.utils.toArray(selector).forEach((element) => {
+    gsap.fromTo(element, 
+      { opacity: 0, y: -50 },  // Estado inicial: Invisible y desplazado hacia arriba
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 1, 
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: element, 
+          start: "top 80%",  // Se activa cuando el top del elemento entra al 80% del viewport
+          end: "top 60%",  
+          toggleActions: "play none none reverse",
+          scrub: false
+        }
+      }
+    );
   });
+}
 
-// Animación del subtítulo (subtittle)
-tl.fromTo('.tag', 
-  { opacity: 0, y: -100 },  // Inicia más arriba y con opacidad 0 (puedes reducir el desplazamiento)
-  { 
-    opacity: 1,   // Se hace visible
-    y: 0,         // Termina en su posición original
-    duration: 1   // Duración de la animación más rápida
-  }
-);
-
-// Animación del título (tittle) después del subtítulo
-tl.fromTo('.title', 
-  { opacity: 0, y: -100 },  // Inicia más arriba y con opacidad 0
-  { 
-    opacity: 1,   // Se hace visible
-    y: 0,         // Termina en su posición original
-    duration: 1   // Duración de la animación más rápida
-  }, 
-  '+=0.2'         // Retraso pequeño para separar las animaciones
-);
-
-// Animación del tag después del título
-tl.fromTo('.subtitle', 
-  { opacity: 0, y: -100 },  // Inicia más arriba y con opacidad 0
-  { 
-    opacity: 1,   // Se hace visible
-    y: 0,         // Termina en su posición original
-    duration: 1   // Duración de la animación más rápida
-  }, 
-  '+=0.2'         // Retraso pequeño para separar las animaciones
-);
-
-// Timeline para ScrollTrigger desde la izquierda
-const tlIzquierda = gsap.timeline({
-  scrollTrigger: {
-    trigger: '.elemento-izquierda',
-    start: 'top 60%',
-    end: 'top 40%',
-    scrub: 2,
-    markers: false,   // Puedes habilitar si necesitas visualizar los puntos de inicio y fin
-    toggleActions: 'play none none reverse'
-  }
+// 🔹 Aplicamos animaciones a cada tipo de elemento
+document.addEventListener("DOMContentLoaded", () => {
+  animarElemento(".tag");       // Anima cada .tag
+  animarElemento(".title");     // Anima cada .title
+  animarElemento(".subtitle");  // Anima cada .subtitle
+  animarElemento(".fondo-oscuro"); // Anima cada .fondo-oscuro
 });
-
-tlIzquierda.from('.elemento-izquierda', {
-  x: -200,  // Se mueve desde la izquierda
-  opacity: 0,
-  duration: 1,
-  ease: 'power3.out'
-});
-
-// Timeline para ScrollTrigger desde la derecha
-const tlDerecha = gsap.timeline({
-  scrollTrigger: {
-    trigger: '.elemento-derecha',
-    start: 'top 60%',
-    end: 'top 40%',
-    scrub: 2,
-    markers: false,   // Puedes habilitar si necesitas visualizar los puntos de inicio y fin
-    toggleActions: 'play none none reverse'
-  }
-});
-
-tlDerecha.from('.elemento-derecha', {
-  x: 200,  // Se mueve desde la derecha
-  opacity: 0,
-  duration: 1,
-  ease: 'power3.out'
-});
-
-const tlFondoOscuro = gsap.timeline({
-  scrollTrigger: {
-    trigger: '.fondo-oscuro',
-    start: 'top 70%',
-    end: 'top 50%',
-    scrub: 2,
-    markers: false,
-    toggleActions: 'play none none reverse'
-  }
-});
-
-tlFondoOscuro.fromTo('.fondo-oscuro', 
-  { opacity: 0, y: -50 },
-  { 
-    opacity: 1,
-    y: 0,
-    duration: 1,
-    ease: 'power3.out'
-  }
-);
 
   // ------------------------- Features -------------------------
   
@@ -362,33 +289,38 @@ tlF2Items.fromTo('.f2-items',
 // ------------------------- Stats -------------------------
 // Animación para .stat
 // Creamos la timeline para asegurar la secuencia
-const tlStat = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".container",
-    start: "top 70%",  
-    end: "bottom 50%",    
-    scrub: 2,
-    markers: false,
-    toggleActions: 'play none none reverse'
+gsap.utils.toArray<HTMLElement>(".container").forEach((container) => {
+  const stat = container.querySelector(".stat"); // Seleccionamos el elemento hijo .stat dentro de cada .container
+
+  if (container instanceof HTMLElement && stat instanceof HTMLElement) {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container, // Se anima cada instancia de .container
+        start: "top 70%",  
+        end: "top 50%",
+        scrub: 2,
+        markers: false,
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    // Animación del contenedor
+    tl.from(container, {
+      scale: 0.3,
+      opacity: 0,
+      duration: 2,
+      ease: "power2.out"
+    });
+
+    // Animación del elemento hijo .stat
+    tl.from(stat, {
+      y: -200,
+      opacity: 0,
+      duration: 2,
+      ease: "power2.out"
+    });
   }
 });
-
-// Animación para .stat-container (se ejecuta primero)
-tlStat.from(".container", {
-  scale: 0.3,  // Empieza más pequeño para un efecto más llamativo
-  opacity: 0,  // Inicia invisible
-  duration: 2, // Más lenta para mayor impacto
-  ease: "power2.out"
-});
-
-// Animación para .stat (comienza justo después de que termina la anterior)
-tlStat.from(".stat", {
-  y: -200, // Baja más desde arriba para mayor impacto
-  opacity: 0, // Inicia invisible
-  duration: 2, // Más lenta para mayor visibilidad
-  ease: "power2.out"
-});
-
 
 // ------------------------- Stats -------------------------
 
