@@ -123,16 +123,8 @@ const { language, textDirection } = I18N;
   </body>
 </html>
 
-<script >
-  
-(function(c,l,a,r,i,t,y){
-      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", "q496d9uvoq");
-  
+<script >  
   import "../assets/scripts/lenisSmoothScroll.js";
-
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -372,7 +364,7 @@ tlF2Items.fromTo('.f2-items',
 // Creamos la timeline para asegurar la secuencia
 const tlStat = gsap.timeline({
   scrollTrigger: {
-    trigger: ".stat-container",
+    trigger: ".container",
     start: "top 70%",  
     end: "bottom 50%",    
     scrub: 2,
@@ -382,7 +374,7 @@ const tlStat = gsap.timeline({
 });
 
 // Animación para .stat-container (se ejecuta primero)
-tlStat.from(".stat-container", {
+tlStat.from(".container", {
   scale: 0.3,  // Empieza más pequeño para un efecto más llamativo
   opacity: 0,  // Inicia invisible
   duration: 2, // Más lenta para mayor impacto
