@@ -135,10 +135,11 @@ const metadata = {
     </Features2>
 
     <!-- Stats Widget ****************** -->
-    <div class="p-6 my-8">
+    <div class="p-6">
+
       <Stats
         classes={{
-          container: 'stat-container bg-dark bg-opacity-70 my-10',
+          container: 'stat-container bg-dark bg-opacity-70 ',
         }}
         stats={[
           { title: 'Clientes Satisfechos', amount: '500', symbol:'+' },
@@ -147,9 +148,10 @@ const metadata = {
           { title: 'Expertos en Tecnología', amount: '50', symbol:'+' },
         ]}
       />
+      
       <Brands
       classes={{
-        container: 'dark:bg-dark dark:bg-opacity-70 my-10',
+        container: 'dark:bg-dark dark:bg-opacity-70 my-5',
       }}
       title="Instituciones que Confían en Neighbour Technology"
       subtitle="En Neighbour Technology, colaboramos con estas organizaciones para ofrecer soluciones tecnológicas a medida, mejorando su infraestructura y optimizando procesos."
@@ -280,6 +282,7 @@ const metadata = {
     </div>
 
     <!-- CallToAction Widget *********** -->
+    <div class="px-6">
     <CallToAction
       actions={[
         {
@@ -301,5 +304,9 @@ const metadata = {
       <Fragment slot="boton">
         <Button variant="whatsapp" text="Cotiza tu Proyecto" phone="5696238857" / >
       </Fragment>
+
+      
     </CallToAction>
-</Layout>
+  </div>
+
+  </Layout>

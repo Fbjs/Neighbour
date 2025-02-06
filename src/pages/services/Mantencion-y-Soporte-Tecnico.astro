@@ -50,11 +50,14 @@ const metadata = {
    <!-- Features2 Widget ************** -->
 
   <Features2
+    classes={{
+      container: ' bg-dark bg-opacity-70 my-5',
+    }}
     title="Nuestros Servicios"
     subtitle="Nos especializamos en el mantenimiento preventivo y correctivo de redes, software y hardware. Con un equipo altamente capacitado, aseguramos que tus sistemas estén siempre operativos y optimizados para el máximo rendimiento."
   >
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent stat-container"></div>
     </Fragment>
   </Features2>
  
@@ -62,9 +65,9 @@ const metadata = {
  <!-- Stats Widget ****************** -->
 
   <Stats
-  classes={{
-    container: 'stat-container bg-dark bg-opacity-70 my-10',
-  }}
+    classes={{
+      container: 'tag bg-dark bg-opacity-70 my-5',
+    }}
     title="Resultados de Nuestros Servicios de Mantenimiento"
     subtitle="A continuación, algunos de los resultados que nuestros clientes han experimentado tras utilizar nuestros servicios de mantenimiento tecnológico."
     stats={[
@@ -107,6 +110,10 @@ const metadata = {
 
 
 <Prices
+    classes={{
+    container: 'tag ',
+  }}
+
     title="Nuestros Planes de Mantenimiento"
     subtitle="Elige el plan que mejor se ajuste a las necesidades de tu infraestructura tecnológica"
     prices={[

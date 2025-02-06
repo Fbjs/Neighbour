@@ -197,15 +197,15 @@ gsap.fromTo('.btn-slider-1',
 
   // ------------------------- Features  -------------------------
   const tl = gsap.timeline({
-  scrollTrigger: {
-    trigger: '.tag',
-    start: 'top 80%',
-    end: 'top 60%',
-    scrub: 2, // Suaviza un poco, pero hace la animación más rápida
-    markers: false,
-    toggleActions: 'play none none reverse'
-  }
-});
+    scrollTrigger: {
+      trigger: '.tag',
+      start: 'top 80%',
+      end: 'top 60%',
+      scrub: 2, // Suaviza un poco, pero hace la animación más rápida
+      markers: false,
+      toggleActions: 'play none none reverse'
+    }
+  });
 
 // Animación del subtítulo (subtittle)
 tl.fromTo('.tag', 
