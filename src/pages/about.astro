@@ -6,13 +6,18 @@ import Stats from '~/components/widgets/Stats.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import image2 from '~/assets/images/FENIX_contact_center.png';
+import FondoVideo from "~/layouts/FondoVideo.astro";
 
 const metadata = {
   title: 'Sobre Nosotros - Neighbour Technology',
   ignoreTitleTemplate: true
 };
 ---
+<FondoVideo src="/videos/digital.mp4" />
 <Layout metadata={metadata}>
+  
+
+
   <div class="bg-fondo text-white">
     <Hero
       tagline="Sobre Nosotros"
