@@ -21,7 +21,7 @@ const metadata = {
   ignoreTitleTemplate: true
 };
 ---
-<FondoVideo src="/videos/codigo.mp4" />
+<FondoVideo src="/videos/codigo_verde.mp4" />
 
 <Layout metadata={metadata}>
   <!-- Hero2 Widget ******************* -->
@@ -34,6 +34,9 @@ const metadata = {
       alt: 'Servicios de Hosting y VPS',
     }}
   >
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+  </Fragment>
     <Fragment slot="boton">
       <button class="open-modal-btn px-8 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition duration-300 text-white shadow-lg">
         Cotiza tu Plan

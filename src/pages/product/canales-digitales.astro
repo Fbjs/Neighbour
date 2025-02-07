@@ -18,26 +18,31 @@ const metadata = {
 <FondoVideo src="/videos/calle.mp4" />
 
 <Layout metadata={metadata}>
-  <Hero2
-    tagline="Conecta con tu Audiencia"
-    title="Campañas de Mailing, SMS y Telefonía IP"
-    subtitle="Llega a tus clientes con estrategias digitales efectivas y personalizadas que generan impacto y conversión."
-    image={{
-      src: HeroImagen,
-      alt: 'Campañas digitales personalizadas',
-    }}
-  >
-    <Fragment slot="boton">
-      <Button variant="formulario">
-        Empieza Ahora
-      </Button>
+    <Hero2
+      
+      tagline="Conecta con tu Audiencia"
+      title="Campañas de Mailing, SMS y Telefonía IP"
+      subtitle="Llega a tus clientes con estrategias digitales efectivas y personalizadas que generan impacto y conversión."
+      image={{
+        src: HeroImagen,
+        alt: 'Campañas digitales personalizadas',
+      }}
+    >
+      <Fragment slot="bg">
+        <div class="absolute inset-0 dark:bg-dark dark:bg-opacity-60"></div>
+      </Fragment>
 
-      <Button
-      variant="whatsapp"
-      text="Contacta a un Asesor"
-      phone="56963238857"/>
-    </Fragment>
-  </Hero2>
+        <Fragment slot="boton">
+        <Button variant="formulario">
+          Empieza Ahora
+        </Button>
+
+        <Button
+        variant="whatsapp"
+        text="Contacta a un Asesor"
+        phone="56963238857"/>
+      </Fragment>
+    </Hero2>
   
   <Stats
   classes={{

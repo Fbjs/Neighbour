@@ -22,7 +22,7 @@ const metadata = {
 
 };
 ---
-<FondoVideo src="/videos/codigo.mp4" />
+<FondoVideo src="/videos/soporte2.mp4" />
 
 <Layout metadata={metadata}>
   <!-- Hero2 Widget ******************* -->
@@ -38,14 +38,14 @@ const metadata = {
     }}
   >
     <Fragment slot="boton">
-      <button class="open-modal-btn px-8 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition duration-300 text-white shadow-lg">
-        Cotiza tu Plan
-      </button>
+      <Button variant="primary" text="Cotiza tu Plan" />
       <Button variant='whatsapp',
       text='Chatea con un Asesor',
-      phone='56963238857'></Button>
+      phone='56963238857'/>
     </Fragment>
-
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-dark bg-opacity-60 "></div>
+    </Fragment>
   </Hero2>
 
 
@@ -113,8 +113,8 @@ const metadata = {
 
 <Prices
     classes={{
-    container: 'tag ',
-  }}
+      container: ' ',
+    }}
 
     title="Nuestros Planes de Mantenimiento"
     subtitle="Elige el plan que mejor se ajuste a las necesidades de tu infraestructura tecnológica"
@@ -239,7 +239,7 @@ const metadata = {
 
 <FAQs
   title="Preguntas Frecuentes"
-  classes={{container:'bg-black bg-opacity-80 my-10 '}}
+  classes={{container:''}}
   items={[
     {
       title: '¿Qué incluye el mantenimiento de redes?',

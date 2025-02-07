@@ -29,37 +29,39 @@ const metadata = {
   <!-- Hero2 Widget ******************* -->
 
   <Hero2
-  tagline="Soluciones Personalizadas"
-  title="Desarrollo de Software a Medida para Impulsar su Crecimiento Empresarial"
-  subtitle="Ofrecemos soluciones de software personalizadas diseñadas para automatizar, optimizar y potenciar su negocio, adaptándonos a las necesidades específicas de su organización."
-  image={{
-    src: HeroImagen,
-    alt: 'Soluciones de software a medida',
-  }}
->
-  <Fragment slot="boton">
+    tagline="Soluciones Personalizadas"
+    title="Desarrollo de Software a Medida para Impulsar su Crecimiento Empresarial"
+    subtitle="Ofrecemos soluciones de software personalizadas diseñadas para automatizar, optimizar y potenciar su negocio, adaptándonos a las necesidades específicas de su organización."
+    image={{
+      src: HeroImagen,
+      alt: 'Soluciones de software a medida',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-dark bg-opacity-60"></div>
+    </Fragment>
+    <Fragment slot="boton">
 
-    <Button variant="formulario">
-      Solicite una Cotización
-    </Button>
-    <Button
-      variant="whatsapp"
-      text="Más información"
-      phone="56963238857"
-    />
-  </Fragment>
+      <Button variant="formulario">
+        Solicite una Cotización
+      </Button>
+      <Button
+        variant="whatsapp"
+        text="Más información"
+        phone="56963238857"
+      />
+    </Fragment>
 </Hero2>
 
 
    <!-- Features2 Widget ************** -->
 
   <Features2
+    classes={{container:" fondo-oscuro backdrop-blur bg-dark bg-opacity-70 my-10"}}
     title="Quiénes Somos"
     subtitle="Somos expertos en la creación de software a medida que se adapta a las necesidades específicas de cada cliente. Con un equipo de desarrolladores apasionados, ayudamos a las empresas a automatizar procesos, mejorar la eficiencia y alcanzar nuevos niveles de crecimiento."
   >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 dark:bg-dark dark:bg-opacity-70  "></div>
-    </Fragment>
+    
   </Features2>
  
 
@@ -67,7 +69,7 @@ const metadata = {
 
   <Stats
   classes={{
-    container: 'stat-container bg-dark bg-opacity-70 my-10',
+    container: ' fondo-oscuro bg-dark bg-opacity-70 my-10',
   }}
     title="Impacto de Nuestras Soluciones Personalizadas"
     subtitle="Las siguientes cifras reflejan la confianza que nuestros clientes han depositado en nosotros y los resultados tangibles que hemos logrado."
@@ -86,6 +88,7 @@ const metadata = {
  <!-- Features2 Widget ************** -->
 
  <Features
+  classes={{headline:" fondo-oscuro bg-dark bg-opacity-70 my-10"}}
   id="features"
   title="Características de Nuestras Soluciones"
   subtitle="Nuestro software a la medida está diseñado para adaptarse a las necesidades de tu empresa, garantizando eficiencia y resultados."
@@ -110,7 +113,9 @@ const metadata = {
       icon: 'tabler:lifebuoy',
     },
   ]}
-/>
+>
+
+  </Feactures>
 
 <CallToAction
   actions={[
