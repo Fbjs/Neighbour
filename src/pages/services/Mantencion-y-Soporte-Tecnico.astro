@@ -1,9 +1,7 @@
 ---
 import Layout from '~/layouts/LandingLayoutServices.astro';
-
 import Hero2 from '~/components/widgets/Hero2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-
 import Features2 from '~/components/widgets/Features2.astro';
 import Features from '~/components/widgets/Features.astro';
 import Stats from '~/components/widgets/Stats.astro';
@@ -12,39 +10,30 @@ import Brands from '~/components/widgets/Brands.astro';
 import Prices from '~/components/widgets/Pricing.astro';
 import ContactUs from '~/components/widgets/ContactForm.astro';
 import Button from '~/components/ui/Button.astro';
-
 import HeroImagen from '~/assets/images/mantencion.jpg';
 import FondoVideo from "~/layouts/FondoVideo.astro";
 
 const metadata = {
   title: 'Mantenimiento de Redes, Software y Hardware - Neighbour Technology',
   ignoreTitleTemplate: true
-
 };
 ---
 <FondoVideo src="/videos/soporte2.mp4" />
 
 <Layout metadata={metadata}>
-  <!-- Hero2 Widget ******************* -->
-
+  <!-- Hero2 Widget -->
   <Hero2
     tagline="Mantén tus Sistemas Operando Sin Interrupciones"
     title="Mantenimiento Integral de Redes, Software y Hardware"
     subtitle="Ofrecemos servicios especializados para garantizar el correcto funcionamiento de tu infraestructura tecnológica, asegurando rendimiento, estabilidad y seguridad."
-    
     image={{
       src: HeroImagen,
       alt: 'Mantenimiento de redes, software y hardware',
     }}
   >
     <Fragment slot="boton">
-      <Button variant="primary" text="Cotiza tu Plan" />
-      <Button variant='whatsapp',
-      text='Chatea con un Asesor',
-      phone='56963238857'/>
-    </Fragment>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-dark bg-opacity-60 "></div>
+      <Button variant="formulario" text="Cotiza tu Plan" />
+      <Button variant='whatsapp' text='Chatea con un Asesor' phone='56963238857'/>
     </Fragment>
   </Hero2>
 
