@@ -33,7 +33,7 @@ const {
       )}
     >
       {items.map(({ title, description, icon, callToAction, classes: itemClasses = {} }) => (
-        <div id="fadeText" class="relative p-4 rounded-lg bg-dark bg-opacity-70 fondo-oscuro">
+        <div id="fadeText" class="relative p-4 rounded-lg bg-dark bg-opacity-60 backdrop-blur fondo-oscuro">
           <div class={twMerge('flex flex-row max-w-md', panelClass, itemClasses?.panel)}>
             <div class="flex justify-center">
               {(icon || defaultIcon) && (

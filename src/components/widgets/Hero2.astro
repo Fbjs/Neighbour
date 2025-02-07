@@ -2,7 +2,6 @@
 import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
 import Background from '~/components/ui/Background.astro';
-
 import type { Hero as Props } from '~/types';
 
 const {
@@ -22,7 +21,7 @@ const {
 ---
 
 <section class="relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
-  <div class="absolute inset-0 pointer-events-none bg-dark bg-opacity-60 rounded-xl" aria-hidden="true">
+  <div class="absolute inset-0 pointer-events-none bg-dark bg-opacity-60" aria-hidden="true">
     <slot name="bg">
       {bg ? <Fragment set:html={bg} /> : null}
     </slot>
