@@ -38,3 +38,10 @@ analytics:
 
 ui:
   theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+
+apps:
+  examples:
+    - name: Aplicación 1
+      description: Ejemplo de descripción de la aplicación 1.
+    - name: Aplicación 2
+      description: Ejemplo de descripción de la aplicación 2.
