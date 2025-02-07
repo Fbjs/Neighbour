@@ -37,6 +37,7 @@ import Falabella from '~/assets/images/fallabella.png';
 import ClinicaLasCondes from '~/assets/images/Clinica-Las-Condes.jpg';
 import ClinicaCordillera from '~/assets/images/clinica-cordillera.jpg';
 import Clinica_U_de_los_andes from '~/assets/images/Clinica_U_de_los_andes.png';
+import FondoVideo from "~/layouts/FondoVideo.astro";
 
 let baseURL = 'https://app.neighbour.cl/';
 if (typeof window !== 'undefined') {
@@ -53,6 +54,8 @@ const metadata = {
   ignoreTitleTemplate: true
 };
 ---
+
+<FondoVideo src="/videos/mundo.mp4" />
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
