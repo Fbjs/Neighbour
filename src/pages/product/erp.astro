@@ -13,6 +13,9 @@ import ErpPuntoVentaImagen from '~/assets/images/erp_punto_venta3.png';
 import ErpProductosImagen from '~/assets/images/erp_productos2.png';
 import FondoVideo from "~/layouts/FondoVideo.astro";
 
+import ErpVideoProducto from '~/assets/videos/video_productos.mp4';
+
+
 // Obtener la URL base dependiendo del entorno
 let baseURL = 'https://erp.neighbour.cl/';
 if (typeof window !== 'undefined') {
@@ -83,9 +86,10 @@ const metadata = {
         icon: 'tabler:shopping-cart',
       },
     ]}
-    image={{
-      src: ErpPuntoVentaImagen ,
-      alt: 'Punto de Venta Image',
+    video={{
+      src: '/videos/video_caja.mp4',
+      type: 'video/mp4',
+     
     }}
   >
     <Fragment slot="content">
@@ -95,8 +99,7 @@ const metadata = {
 
   <!-- Content Widget - Control de Stock **************** -->
 
-  <Content
-  isReversed
+  <Content 
 
     items={[
       {
@@ -106,9 +109,10 @@ const metadata = {
         icon: 'tabler:box',
       },
     ]}
-    image={{
-      src: ErpStockImagen,
-      alt: 'Control de Stock Image',
+     video={{
+      src: '/videos/video_stock.mp4',
+      type: 'video/mp4',
+     
     }}
   >
     <Fragment slot="content">
@@ -128,14 +132,10 @@ const metadata = {
         icon: 'tabler:clock',
       },
     ]}
-    image={{
-      src: ErpProductosImagen,
-      alt: 'Inventario de productos Image',
-      style: {
-        objectFit: 'contain', // Asegura que la imagen no se recorte
-        width: '100%',        // Ajusta el ancho a 100% del contenedor
-        height: 'auto',       // Mantiene la relación de aspecto
-      },
+    video={{
+      src: '/videos/video_productos.mp4',
+      type: 'video/mp4',
+     
     }}
   >
     <Fragment slot="content">
