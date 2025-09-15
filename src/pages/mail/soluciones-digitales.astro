@@ -7,57 +7,163 @@
   <style>
     /* Estilos básicos para correos */
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       color: #333;
-      background-color: #ffffff;
-    }
-    .containerivo{
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 20px;
-      text-align: center;
       background-color: #f4f4f4;
-      border-radius: 8px;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 650px;
+      margin: 30px auto;
+      padding: 30px;
+      text-align: center;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .logo {
+      max-width: 150px;
+      height: auto;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+    h1, h2 {
+      color: #007bff;
+      margin-bottom: 20px;
+      animation: slideInLeft 1s ease-in-out;
+    }
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    p {
+      margin-bottom: 20px;
+      font-size: 16px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .intro {
+      font-size: 18px;
+      font-weight: 600;
+      color: #444;
+      animation: slideInRight 1s ease-in-out;
+    }
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    .services-list {
+      text-align: left;
+      margin-bottom: 30px;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .services-list li {
+      margin-bottom: 10px;
+      list-style: none;
+      animation: fadeIn 2.5s ease-in-out;
+    }
+    .services-list li::before {
+      content: '✓';
+      color: #28a745;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+    .cta-text {
+      font-weight: bold;
+      margin-bottom: 15px;
+      animation: fadeIn 3s ease-in-out;
     }
     .button {
       display: inline-block;
       padding: 12px 24px;
       background-color: #007bff;
       color: #ffffff;
-      text-decoration: none;
+      text-decoration: none !important;
       border-radius: 5px;
       font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
     }
     .button:hover {
       background-color: #0056b3;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transform: translateY(-2px);
     }
     .footer-text {
       font-size: 12px;
       color: #666666;
+      animation: fadeIn 3.5s ease-in-out;
+    }
+    img {
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
     }
   </style>
 </head>
-<body>
-  <div class="container">
-    <h1>Soluciones Digitales</h1>
-    <p>¡Hola! Este es el contenido principal de tu correo. Aquí puedes añadir más información sobre los servicios que ofreces.</p>
+<body style="margin: 0; padding: 0; background-color: #f4f4f4;">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #f4f4f4; padding: 30px 0;">
+    <tr>
+      <td align="center">
+        <div class="container">
+          <!-- Logo de la empresa -->
+          <img src="https://ruta-de-tu-logo.com/logo.png" alt="Logo de Neighbour" class="logo" />
 
-    <!-- Imagen con enlace a WhatsApp -->
-    <a href="https://wa.me/56963238857?text=¡Hola!%20Estoy%20interesado/a%20en%20conocer%20más%20sobre%20sus%20servicios.%20¿Podrían%20darme%20más%20información%20sobre%20cómo%20pueden%20ayudarme%20a%20mejorar%20mi%20presencia%20digital%20y%20alcanzar%20mis%20objetivos?%20Gracias." target="_blank" rel="noopener noreferrer">
-      <img src="https://neighbour.cl/Linkedin-hoy.webp" alt="Imagen del contenido" style="width: 100%; height: auto; border-radius: 8px;" />
-    </a>
+          <h1>Soluciones Digitales a la Medida</h1>
+          <p class="intro">
+            ¡Hola! En Neighbour, transformamos tus ideas en realidades digitales. 
+          </p>
 
-    <p>
-      <a href="https://wa.me/56963238857?text=¡Hola!%20Estoy%20interesado/a%20en%20conocer%20más%20sobre%20sus%20servicios.%20¿Podrían%20darme%20más%20información%20sobre%20cómo%20pueden%20ayudarme%20a%20mejorar%20mi%20presencia%20digital%20y%20alcanzar%20mis%20objetivos?%20Gracias." class="button" target="_blank" rel="noopener noreferrer">
-        Solicitar Información en WhatsApp
-      </a>
-    </p>
+          <p>
+            Nos especializamos en el desarrollo de software personalizado que se adapta perfectamente a las necesidades únicas de tu negocio.
+          </p>
 
-    <!-- Pie de página -->
-    <p class="footer-text">
-      Si no puedes ver este mensaje correctamente, haz clic 
-      <a href="https://neighbour.cl/Linkedin-hoy.webp" target="_blank" rel="noopener noreferrer">aquí</a> para verlo en tu navegador.
-    </p>
-  </div>
+          <h2>¿Qué Hacemos?</h2>
+          <ul class="services-list">
+            <li>Desarrollo de Aplicaciones Web y Móviles</li>
+            <li>Sistemas de Gestión y Automatización</li>
+            <li>Integración de APIs y Servicios de Terceros</li>
+            <li>Consultoría Tecnológica y Estrategia Digital</li>
+            <li>Mantenimiento y Actualización de Software</li>
+          </ul>
+
+          <p class="cta-text">¿Listo para llevar tu negocio al siguiente nivel?</p>
+
+          <!-- Imagen con enlace a WhatsApp -->
+          <a href="https://wa.me/56963238857?text=¡Hola!%20Estoy%20interesado/a%20en%20conocer%20más%20sobre%20sus%20servicios.%20¿Podrían%20darme%20más%20información%20sobre%20cómo%20pueden%20ayudarme%20a%20mejorar%20mi%20presencia%20digital%20y%20alcanzar%20mis%20objetivos?%20Gracias." target="_blank" rel="noopener noreferrer">
+            <img src="https://neighbour.cl/Linkedin-hoy.webp" alt="Imagen del contenido" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; margin-bottom: 20px;" />
+          </a>
+
+          <p>
+            <a href="https://wa.me/56963238857?text=¡Hola!%20Estoy%20interesado/a%20en%20conocer%20más%20sobre%20sus%20servicios.%20¿Podrían%20darme%20más%20información%20sobre%20cómo%20pueden%20ayudarme%20a%20mejorar%20mi%20presencia%20digital%20y%20alcanzar%20mis%20objetivos?%20Gracias." class="button" target="_blank" rel="noopener noreferrer">
+              Solicitar Información en WhatsApp
+            </a>
+          </p>
+
+          <!-- Pie de página -->
+          <p class="footer-text">
+            Si no puedes ver este mensaje correctamente, haz clic
+            <a href="https://neighbour.cl/Linkedin-hoy.webp" target="_blank" rel="noopener noreferrer">aquí</a> para verlo en tu navegador.
+          </p>.
+        </div>
+      </td>
+    </tr>
+  </table>
 </body>
 </html>

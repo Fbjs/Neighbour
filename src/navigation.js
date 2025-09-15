@@ -18,7 +18,7 @@ export const headerData = {
           href: '/services/Landing-Page',
         },
         {
-          text: ' Agencia de Marketing',
+          text: 'Smart360',
           href: 'https://smart360.cl',
         },
         {
