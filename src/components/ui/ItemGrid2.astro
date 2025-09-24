@@ -3,6 +3,7 @@ import type { ItemGrid as Props } from '~/types';
 import { Icon } from 'astro-icon/components';
 import { twMerge } from 'tailwind-merge';
 import Button from './Button.astro';
+import { Img } from 'src/assets/images'
 
 const { items = [], columns, defaultIcon = '', classes = {} } = Astro.props;
 
@@ -21,9 +22,9 @@ const {
     <div
       class={twMerge(
         `grid gap-8 gap-x-12 sm:gap-y-8 ${
-          columns === 4
-            ? 'lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2'
-            : columns === 3
+          columns === 5
+            ? 'lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-2'
+            : columns === 4
               ? 'lg:grid-cols-3 sm:grid-cols-2'
               : columns === 2
                 ? 'sm:grid-cols-2 '

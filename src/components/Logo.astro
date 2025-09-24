@@ -1,6 +1,6 @@
 ---
 import { SITE } from 'astrowind:config';
-import Logo from '~/assets/images/logo.png';
+import Logo from '~/assets/images/neighbour-logo-v2-03.png';
 
 // Global declaration for gsap animation library
 declare global {
@@ -13,9 +13,7 @@ declare global {
 
 
 <span  class="flex self-center justify-center items-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white">
-  <img id="fadeInMoveRight" src={Logo?.src} alt="Logo Neighbour" class="w-16">
+  <img id="fadeInMoveRight" src={Logo?.src} alt="Logo Neighbour" style="width:190px">
   <div id="fadeInMoveRight">
-    <div class="text-xl font-bold">{SITE?.name}</div>
-    <div class="text-sm font-extralight">{SITE?.leyend}</div>
   </div>  
 </span>

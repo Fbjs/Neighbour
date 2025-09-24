@@ -1,0 +1,131 @@
+---
+import Image from '~/components/common/Image.astro';
+import Button from '~/components/ui/Button.astro';
+import Background from '~/components/ui/Background.astro';
+import type { Hero as Props } from '~/types';
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  subsubtitle = await Astro.slots.render('subsubtitle'),
+  subsubtitle2 = await Astro.slots.render('subsubtitle2'),
+
+  tagline,
+
+  content = await Astro.slots.render('content'),
+  actions = await Astro.slots.render('actions'),
+  image = await Astro.slots.render('image'),
+  image1 = await Astro.slots.render('image'),
+  image2 = await Astro.slots.render('image'),
+  clase = '',
+  id,
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+---
+
+<section class="relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
+    <div class="py-12 md:py-20 lg:py-0 lg:flex lg:items-center lg:h-screen gap-8 ">
+      
+      <div class="basis-1/2">
+        {
+          title && (
+            <h1
+              class="font-lastica bold  text-4xl md:text-5xl md:text-6xl font-black tracking-widest mb-4 font-heading dark:text-blue-900"
+              set:html={title}
+            />
+          )
+        }
+         {subtitle && <p class="text-3xl text-muted  mb-6 dark:text-black font-semibold " set:html={subtitle} />}
+        
+        {
+          image && (
+            <div class="relative m-auto max-w-5xl">
+              {typeof image === 'string' ? (
+                <Fragment set:html={image} />
+              ) : (
+                <Image
+                  class="mx-auto rounded-xl w-full hover:scale-105"
+                  widths={[400, 768, 1024, 2040]}
+                  sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+                  loading="eager"
+                 
+                  {...image}
+                />
+              )}
+            </div>
+          )
+        }
+         {subsubtitle && <p class="text-2xl text-center mb-6 dark:text-black" set:html={subsubtitle} />}
+      </div>
+      <div class="basis-1/2">
+        {
+          image1 && (
+            <div class="relative m-auto max-w-5xl">
+              {typeof image1 === 'string' ? (
+                <Fragment set:html={image1} />
+              ) : (
+                <Image
+                  class="mx-auto rounded-xl w-full hover:scale-105"
+                  widths={[400, 768, 1024, 2040]}
+                  sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+                  loading="eager"
+                 
+                  
+                  {...image1}
+                />
+              )}
+            </div>
+          )
+        }
+      </div>
+      <div class="basis-1/2">
+        {subsubtitle2 && <p class="text-4xl text-muted mb-32 dark:text-blue-900" set:html={subsubtitle2} />}
+        {
+          image2 && (
+            <div class="relative m-auto ">
+              {typeof image2 === 'string' ? (
+                <Fragment set:html={image2} />
+              ) : (
+                <Image
+                  class="mx-auto rounded-xl w-full hover:scale-105"
+                  widths={[400, 768, 1024, 2040]}
+                  sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+                  loading="eager"
+               
+                  {...image2}
+                />
+              )}
+              
+            </div>
+          )
+        }
+         <div class="max-w-3xl mx-auto lg:max-w-none mt-16">
+         
+
+          {
+            actions && (
+              <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 lg:justify-start lg:m-0 lg:max-w-7xl">
+                {Array.isArray(actions) ? (
+                  actions.map((action) => (
+                    <div class="flex w-full sm:w-auto">
+                     <a target="_blank" href="https://app.neighbour.cl/register?app=crm" class="px-24 py-6 rounded-xl text-white font-normal text-l
+               bg-gradient-to-r from-black to-blue-600"> PRUEBA GRATIS AHORA </a>
+                    </div>
+                  ))
+                ) : (
+                  <Fragment set:html={actions} />
+                )}
+              </div>
+            )
+          }
+          <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap sm:flex-row sm:justify-center gap-4 lg:justify-start lg:m-0 lg:max-w-7xl">
+            <slot name="boton"></slot>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+</section>

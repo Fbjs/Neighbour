@@ -2,17 +2,34 @@
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features2 from '~/components/widgets/Features2.astro';
-import Hero from '~/components/widgets/Hero2.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Layout from '~/layouts/LandingLayoutProduct.astro';
-import HeroImagen from '~/assets/images/FenixCRM.png';
+import HeroImagen from '~/assets/images/plataforma.png';
 import RegistroFenix from '~/assets/images/RegistroFenix.png';
 import DashboardFenix from '~/assets/images/DashboardFenix.png';
 import CrearContactoFenix from '~/assets/images/CrearContactoFenix.png';
 import GestionarFenix from '~/assets/images/GestionarFenix.png';
 import AsignacionFenix from '~/assets/images/AsignacionFenix.png';
 import ListaFenix from '~/assets/images/ListaFenix.png';
+import Hero1 from '~/components/widgets/Hero1.astro';
+import HeroImagen1 from '~/assets/images/logos-fenix.png';
+import HeroImagen2 from '~/assets/images/conecta.png';
+import Features4 from '~/components/widgets/Features4.astro';
+import iconomnicanal from '~/assets/images/iconomnicanal.png';
+import iconllamadavoip from '~/assets/images/iconllamadavoip.png';
+import icon360 from '~/assets/images/icon360.png';
+import iconapi from '~/assets/images/iconapi.png'
+import icondash from '~/assets/images/icondash.png'
+import icongestion from '~/assets/images/icongestion.png'
+import iconbotsia from '~/assets/images/iconbotsia.png'
+import iconplatform from '~/assets/images/iconplatform.png'
+import iconnube from '~/assets/images/iconnube.png'
+import iconmeta from '~/assets/images/iconmeta.png'
+import Formulariocontacto from '~/components/widgets/Formulariocontacto.astro'
+import Crmfenix from '~/assets/images/crmfenix.png'
 
+import videofenix from '~/assets/images/video-fenix.mp4'
 
 //import EstadisticaVideo from '~/assets/images/Estadistica.mp4';
 import CampaniaVideo from '~/assets/images/Campania.mp4';
@@ -22,9 +39,11 @@ import TeleoperadorVideo from '~/assets/images/Teleoperador.mp4';
 import AuditoriaVideo from '~/assets/images/Auditoria.mp4';
 import SupervisorVideo from '~/assets/images/Supervisor.mp4';
 import Brands from '~/components/widgets/Brands.astro';
+import Brands2 from '~/components/widgets/Brands2.astro';
 import ContactUs from '~/components/widgets/ContactForm.astro';
 import Button from '~/components/ui/Button.astro';
 
+//------marcas carrousel 1
 import Santander from '~/assets/images/Santander.jpg';
 import Regalariza from '~/assets/images/regalariza.jpg';
 import MundoCreditos from '~/assets/images/Mundo_creditos.jpg';
@@ -37,7 +56,31 @@ import Falabella from '~/assets/images/fallabella.png';
 import ClinicaLasCondes from '~/assets/images/Clinica-Las-Condes.jpg';
 import ClinicaCordillera from '~/assets/images/clinica-cordillera.jpg';
 import Clinica_U_de_los_andes from '~/assets/images/Clinica_U_de_los_andes.png';
+import Wom from '~/assets/images/Wom.png';
+import Bupa from '~/assets/images/Bupa.png';
+import Cevsa from '~/assets/images/cevsa.png';
+//------marcas carrousel 2
+import Bice from '~/assets/images/Bice.png';
+import Ripley from '~/assets/images/Ripley.png';
+import Sura from '~/assets/images/Sura.png';
+import Help from '~/assets/images/Help.png';
+import Sbpay from '~/assets/images/SBpay.png';
+import Cruzverde from '~/assets/images/Cruzverde.png';
+import Claro from '~/assets/images/Claro.png';
+import Vidacamara from '~/assets/images/Vidacamara.png';
+import Saveseguros from '~/assets/images/Saveseguros.png';
+import Hites from '~/assets/images/hites.png';
+import Corona from '~/assets/images/Corona.png';
+import Security from '~/assets/images/Security.png';
+import Equifax from '~/assets/images/Equifax.png';
+import Aiep from '~/assets/images/Aiep.png';
+
+
+
 import FondoVideo from "~/layouts/FondoVideo.astro";
+import Contentfenix from '~/components/widgets/Contentfenix.astro';
+import Contentfenixvideo from '~/components/widgets/ContentfenixVideo.astro';
+
 
 let baseURL = 'https://app.neighbour.cl/';
 if (typeof window !== 'undefined') {
@@ -55,83 +98,132 @@ const metadata = {
 };
 ---
 
-<FondoVideo src="/videos/mundo.mp4" />
+<FondoVideo src="/src/assets/images/fondo-blanco-azul.png"/>
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
-  <Hero
-    tagline="Simplifica la Gestión de Tus Contactos con Nuestra Plataforma Todo en Uno"
-    title="FENIX Contact Center Suite"
-    subtitle="Realiza llamadas VoIP, envía SMS, correos, WhatsApp y automatiza tareas con bots de IA. ¡Todo en un solo lugar!"
-    actions={[{ variant: 'fancy', target: '_blank', text: 'Prueba Gratis Ahora', href: registerURL }]}
+  <Hero1
+    title="FENIX"
+        subtitle="Contact Center Suite"
+         subsubtitle="Unifica tus canales y simplifica <br/> la gestión de tus contactos. <br/> <strong> ¡TODO EN UN SOLO LUGAR! </strong>"
+    actions={[{ variant: 'fancy', target: '_blank', text: 'Prueba Gratis Ahora', href: "https://app.neighbour.cl/register?app=crm" }]}
     image={{
       src: HeroImagen,
       alt: 'FENIX Hero Image',
     }}
+    image1={{
+      src: HeroImagen1,
+      alt: 'FENIX Hero Image',
+    }}
+    subsubtitle2=" <strong> ¡CONECTA COMUNICA y CRECE CON FENIX! </strong>"
+    image2={{
+      src: HeroImagen2,
+      alt: 'FENIX Hero Image',
+    }}
   >
     
-  </Hero2>
+  </Hero1>
 
-  <!-- Features2 Widget ************** -->
-  <Features2
+  <!-- Features Widget ************** -->
+  <Features4
     title="¿Por Qué Elegir Nuestra Plataforma?"
-    subtitle="Nuestra plataforma ofrece herramientas avanzadas para optimizar la gestión y supervisión de tus campañas."
-    columns={3}
+    subtitle="CRM Fenix ofrece herramientas avanzadas para optimizar <br/> la gestión y supervisión de tus campañas."
+    columns={5}
+
     items={[
       {
-        title: 'Gestión centralizada de contactos',
+        title: 'Omnicanal total (Llamadas, SMS, Correo, WhatsApp) ',
         description:'',
-        icon: 'tabler:settings',
+        icon: iconomnicanal ,
       },
       {
         title: 'Llamadas VoIP integradas.',
         description:'',
-        icon: 'tabler:chart-bar',
+        icon: iconllamadavoip ,
       },
       {
-        title: 'Envío de SMS, correos y WhatsApp desde un solo lugar.',
+        title: 'Histórico 360° del cliente e interacciones. ',
         description:'',
-        icon: 'tabler:users',
+        icon: icon360 ,
       },
       {
-        title: 'Historial organizado de todas las interacciones.',
+        title: 'Integraciones y API.',
         description:'',
-        icon: 'tabler:phone',
+        icon: iconapi ,
       },
       {
-        title: 'Bots de IA personalizados para automatizar tareas.',
+        title: 'Dashboard analítico en tiempo real. ',
         description:'',
-        icon: 'tabler:eye',
-      }
+        icon: icondash ,
+      },
+      {
+        title: 'Gestión centralizada de contactos',
+        description:'',
+        icon: icongestion ,
+      },
+      {
+        title: 'Bots de IA personalizados para automatizar tareas. ',
+        description:'',
+        icon: iconbotsia ,
+      },
+      {
+        title: 'Plataforma escalable a tu necesidad. ',
+        description:'',
+        icon: iconplatform ,
+      },
+      {
+        title: 'Plataforma en una Nube. ',
+        description:'',
+        icon: iconnube ,
+      },
+      {
+        title: 'Formulario web Meta. ',
+        description:'',
+        icon: iconmeta ,
+      },
+      
+      
     ]}
   />
+  
 
   <!-- Content Widget - Registro **************** -->
-  <Content
+  <!-- video recorrido -->
+  <Contentfenixvideo
+  isAfterContent
+ 
+video={{
+    src: videofenix,
+    alt: 'video-fenix',
+  }}
+>
+</Contentfenixvideo>
+<!-- video fin -->
+
+  <Contentfenix
     isReversed
     items={[
       {
-        title: 'Regístrate y Descubre el Poder de FENIX',
-        description:
-          'Únete a FENIX y accede a herramientas avanzadas que transformarán la manera en que gestionas tus contactos. Con nuestro módulo de estadísticas en tiempo real, podrás supervisar y optimizar tus operaciones de televentas y telecobranzas de manera eficiente. Regístrate ahora y comienza a personalizar tus reportes, visualizar gestiones y descargar informes adaptados a las necesidades de tu negocio.',
-        icon: 'tabler:chart-line',
-      },
+  title: 'Descubre el poder de una Atención Inteligente con FENIX Blending',
+  description: 'Regístrate y accede a herramientas avanzadas que revolucionan la forma en que gestionas tus contactos, equipos y resultados. Con nuestro módulo de estadísticas en tiempo real, podrás supervisar, analizar y optimizar tus operaciones de televentas y telecobranzas con total precisión. Personaliza reportes, visualiza gestiones clave y descarga informes diseñados para adaptarse a las necesidades reales de tu negocio. <br/><br/> &#x1F449; <b> ¡Activa tu cuenta hoy y lleva tu atención al siguiente nivel! </b> ',
+  
+},
     ]}
     image={{
       src: RegistroFenix,
       alt: 'Registro en FENIX',
     }}
   >
-  </Content>
+  </Contentfenix>
 
   <!-- Content Widget - Dashboard **************** -->
-  <Content
+  <Contentfenix
     isAfterContent
     items={[
       {
         title: 'Descubre tu Dashboard Personalizado',
         description:
-          'Una vez registrado en FENIX, accede a tu Dashboard Personalizado y toma el control total de tus operaciones. Visualiza en tiempo real métricas clave como la asignación de tareas, el avance de gestiones, la contactabilidad y la intensidad de tus campañas. Monitorea la contactabilidad diaria y optimiza tus estrategias con datos precisos y actualizados. ¡Todo al alcance de un vistazo!',
+          'Una vez registrado experimenta tu trabajo, bajo control total. Con el Dashboard Personalizado de FENIX, visualiza métricas clave en tiempo real: Asignación de tareas, avance de gestiones, contactabilidad y desempeño de campañas.  <br/><br/> <b> &#x1F4A1; ¡Toma decisiones rápidas y efectivas con información precisa y actualizada! </b> <br/><br/> &#x2714;  Optimiza tus estrategias <br/> &#x2714;  Supervisa tu equipo en segundos <br/> &#x2714;   Todo al alcance de un solo panel ',
         icon: 'tabler:chart-line',
       },
     ]}
@@ -140,17 +232,17 @@ const metadata = {
       alt: 'Dashboard de FENIX',
     }}
   >
-  </Content>
+  </Contentfenix>
 
   <!-- Content Widget - Crear Contacto **************** -->
 
-  <Content
+  <Contentfenix
     isReversed
     items={[
       {
         title: 'Crea Contactos Manualmente con Facilidad',
         description:
-          'Con FENIX, tienes la flexibilidad de crear y gestionar tus contactos o prospectos de cobranza y ventas de manera manual. Ingresa detalles clave como el RUT, nombre, apellidos, género, fecha de nacimiento, teléfono y correo electrónico. Esta funcionalidad te permite mantener tus bases de datos actualizadas y personalizadas, asegurando que cuentas con la información necesaria para optimizar tus estrategias de contacto. ¡Regístrate y comienza a gestionar tus contactos de manera eficiente hoy mismo!',
+          'Con FENIX, puedes ingresar y administrar tus contactos o prospectos de ventas y cobranza de forma manual, rápida y segura. Agrega datos clave como RUT, nombre, apellidos, género, fecha de nacimiento, teléfono y correo electrónico. Mantén tus bases actualizadas y personalizadas, asegurando la información precisa que necesitas para planificar y ejecutar estrategias efectivas de contacto. Registrate y empieza a construir una base de datos sólida y optimizada. <br/><br/> <b> &#x1F4CB; ¡Gestiona de manera eficiente hoy mismo! </b> ',
         icon: 'tabler:user-plus',
       },
     ]}
@@ -159,17 +251,17 @@ const metadata = {
       alt: 'Crear Contacto en FENIX',
     }}
   >
-  </Content>
+  </Contentfenix>
 
   <!-- Content Widget - Gestionar **************** -->
 
-  <Content
+  <Contentfenix
     isAfterContent
     items={[
       {
         title: 'Gestiona tus Contactos de Manera Eficiente',
         description:
-          'Con FENIX, gestionar tus contactos nunca fue tan sencillo. Accede a la información detallada de cada cliente, incluyendo su RUT, nombre, estado, datos de contacto y más. Actualiza y organiza la información de tus clientes de manera manual, asegurándote de mantener tus bases de datos siempre actualizadas. Además, puedes revisar el historial de gestiones, fechas de llamadas y comentarios, lo que te permite tener un control completo sobre tus interacciones. ¡Regístrate y optimiza la gestión de tus contactos hoy mismo!',
+          'Con FENIX, acceder y administrar la información de tus clientes nunca fue tan fácil. Consulta y actualiza datos clave como RUT, nombre, estado, teléfono, correo y mucho más, todo desde un panel intuitivo y centralizado. Visualiza el historial completo de gestiones, fechas de contacto y comentarios realizados, lo que te permite llevar un seguimiento detallado de cada interacción. Mantén tu base de datos siempre actualizada y toma decisiones con información precisa. <br/><br/> <b> &#x1F4BC; ¡Optimiza tu gestión comercial ahora! </b>',
         icon: 'tabler:user-check',
       },
     ]}
@@ -178,17 +270,17 @@ const metadata = {
       alt: 'Gestionar Contactos en FENIX',
     }}
   >
-  </Content>
+  </Contentfenix>
 
 
   <!-- Content Widget - Teleoperador **************** -->
-  <Content
+  <Contentfenix
     isReversed
     items={[
       {
         title: 'Crea y Gestiona Asignaciones de Contactos',
         description:
-          'Con FENIX, puedes crear nuevas asignaciones y agregar contactos a tus campañas de manera sencilla. Organiza y administra tu base de datos de contactos asignándolos a diferentes campañas según tus necesidades. Visualiza y gestiona las asignaciones existentes, incluyendo detalles como el nombre de la campaña, la fecha de creación y el número de clientes asignados en conjunto con algunos reportes. Esta funcionalidad te permite mantener un control preciso sobre tus operaciones y optimizar la gestión de tus contactos. ¡Regístrate y comienza a gestionar tus asignaciones de manera eficiente hoy mismo!',
+          'Con FENIX, asignar contactos a tus campañas es simple, rápido y eficiente. Organiza tu base de datos asignando prospectos según criterios específicos y gestiona cada asignación con total control. Visualiza detalles clave como el nombre de la campaña, fecha de creación, cantidad de contactos asignados y reportes asociados. Optimiza tus operaciones segmentando mejor y manteniendo el control sobre cada etapa del proceso. <br/><br/> <b> &#x1F4C8; ¡Empieza hoy y gestiona tus campañas con mayor precisión y orden! </b>',
         icon: 'tabler:list-check',
       },
     ]}
@@ -197,16 +289,14 @@ const metadata = {
       alt: 'Asignación de Contactos en FENIX',
     }}
   >
-  </Content>
-
+  </Contentfenix>
     <!-- Content Widget - Estadísticas **************** -->
-
-    <Content
+    <Contentfenix
     isAfterContent
     items={[
       {
-        title: 'Listas de Recorrido',
-        description: "Continuamos con la gestión de listas, teniendo en cuenta que podemos crear listas desde las asignaciones con funcionalidades como la gestión manual por defecto o detonar validaciones de teléfono, IVR, SMS, WhatsApp masivos y mailing. Estas listas permiten organizar y ejecutar campañas de contacto de manera eficiente, asegurando una comunicación efectiva y personalizada con los clientes.",
+        title: 'Listas de Recorrido Dinámica',
+        description: "Con FENIX, puedes crear y gestionar listas de recorrido directamente desde tus asignaciones, facilitando la ejecución de campañas multicanal. Activa acciones como validación de teléfono, IVR, SMS, WhatsApp o mailing masivos, y mantén un control preciso sobre cada interacción. Estas listas te permiten organizar tu operación de forma estratégica, personalizar la comunicación con tus clientes y mejorar significativamente la eficiencia de tus campañas. <br/><br/> <b> &#x1F4CA; ¡Segmenta, automatiza y contacta con impacto! </b> ",
         icon: 'tabler:database',
       },
     ]}
@@ -216,7 +306,7 @@ const metadata = {
     }}
   >
  
-  </Content>
+  </Contentfenix>
 
 
     <!-- Content Widget - Teleoperador **************** -->
@@ -241,7 +331,7 @@ const metadata = {
 
   <!-- CallToAction Widget *********** -->
 
-
+<div class="flex mx-auto max-w-7xl">
   <CallToAction
   actions={[
     {
@@ -254,13 +344,21 @@ const metadata = {
   <Fragment slot="title">Descubre todo lo que FENIX tiene para ofrecer</Fragment>
 
   <Fragment slot="subtitle">
-    Optimiza la gestión de tu contactos con nuestra suite completa de herramientas y funcionalidades avanzadas.
-  </Fragment>
+    Optimiza la gestión de tu contactos con nuestra suite </br> completa de herramientas y funcionalidades avanzadas.
+  </Fragment>Fragment>
   <Fragment slot="boton">
-    
   </Fragment>
+    <Fragment slot="imagen">
+      <img class="w-32 ml-32" src={Crmfenix.src} ></img>
+    </Fragment>
+
 </CallToAction>
 
+
+<Formulariocontacto/>
+</div>
+
+<div class="mx-auto w-full bg-blue-700 bg-opacity-70 mb-16 mt-16">
   <Brands
   title="Instituciones que Confían en Fénix"
   subtitle="En Fénix Contact Center Suite, colaboramos con estas organizaciones para optimizar su infraestructura tecnológica y administrativa."
@@ -314,7 +412,83 @@ const metadata = {
       src: Clinica_U_de_los_andes.src,
       alt: 'Clinica_U_de_los_andes',
     },
+    {
+      src: Wom.src,
+      alt: 'Wom',
+    },
+    {
+      src: Bupa.src,
+      alt: 'Bupa',
+    },
+    {
+      src: Cevsa.src,
+      alt: 'Cevsa',
+    },
   ]}
 />
 
+
+<Brands2
+  
+  icons={[]}
+  images={[
+    {
+      src: Bice.src,
+      alt: 'Bice',
+    },
+    {
+      src: Ripley.src,
+      alt: 'Ripley',
+    },
+    {
+      src: Sura.src,
+      alt: 'Sura',
+    },
+    {
+      src: Help.src,
+      alt: 'help',
+    },
+    {
+      src: Sbpay.src,
+      alt: 'SBpay',
+    },
+    {
+      src: Cruzverde.src,
+      alt: 'Cruzverde',
+    },
+    {
+      src: Claro.src,
+      alt: 'Claro',
+    },
+    {
+      src: Vidacamara.src,
+      alt: 'Vidacamara',
+    },
+    {
+      src: Saveseguros.src,
+      alt: 'Saveseguros',
+    },
+    {
+      src: Hites.src,
+      alt: 'hites',
+    },
+    {
+      src: Corona.src,
+      alt: 'Corona',
+    },
+    {
+      src: Security.src,
+      alt: 'Security',
+    },
+    {
+      src: Equifax.src,
+      alt: 'Equifax',
+    },
+    {
+      src: Aiep.src,
+      alt: 'Aiep',
+    },
+  ]}
+/>
+</div>
 </Layout>

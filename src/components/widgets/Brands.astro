@@ -1,7 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
 import type { Brands as Props } from '~/types';
-
 import Image from '~/components/common/Image.astro';
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
@@ -20,38 +19,38 @@ const {
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`brand-container max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
-  <div class="text-center mb-6">
+  <div class="text-center mb-6 text-blue-900">
     <div class="brand-title">
       <Headline title={title} />
     </div>
-    <div class="brand-subtitle">
-      <Headline subtitle={subtitle} />
+    <div class="brand-subtitle  ">
+      <p class="text-black-900 text-lg font-bold" > {subtitle} </p>
     </div>
   </div>
   
   <div class="overflow-hidden relative brand-img">
     <div id="carouselTrack" class="brand-container flex whitespace-nowrap">
       {icons && icons.map((icon) => (
-        <div class="flex justify-center items-center mx-6">
+          <div class="flex items-center justify-center mx-6">
           <Icon name={icon} class="w-12 h-auto text-gray-500" />
         </div>
       ))}
       {images && images.map((image) => (
         image.src && (
-          <div class="flex justify-center items-center mx-6">
-            <Image src={image.src} alt={image.alt || ''} class="max-w-[150px] h-auto" />
+        <div class="flex items-center justify-center mx-4">
+            <Image src={image.src} alt={image.alt || ''} class="max-w-[150px] w-40" />
           </div>
         )
       ))}
       <!-- Duplicamos el contenido para lograr el efecto de desplazamiento infinito -->
       {icons && icons.map((icon) => (
-        <div class="flex justify-center items-center mx-6">
-          <Icon name={icon} class="w-12 h-auto text-gray-500" />
+   <div class="flex items-center justify-center mx-6">       
+  <Icon name={icon} class="w-12 h-auto text-gray-500" />
         </div>
       ))}
       {images && images.map((image) => (
         image.src && (
-          <div class="flex justify-center items-center mx-6">
+        <div class="flex items-center justify-center mx-4">
             <Image src={image.src} alt={image.alt || ''} class="max-w-[150px] h-auto" />
           </div>
         )
@@ -62,7 +61,7 @@ const {
 
 <style>
   .brand-container {
-    display: flex;
+    display:flex;
     transition: transform 0.1s linear;
   }
 
@@ -89,20 +88,22 @@ const {
   document.addEventListener("DOMContentLoaded", () => {
     const carouselTrack = document.getElementById("carouselTrack");
     let scrollAmount = 0;
-    let scrollWidth = carouselTrack.scrollWidth / 2; // Precalcula el ancho a recorrer
+    let scrollWidth = carouselTrack?.scrollWidth;    // Precalcula el ancho a recorrer
     let animationFrame;
 
     function autoScroll() {
-      scrollAmount -= 1;
+      scrollAmount -= 2;
       carouselTrack.style.transform = `translateX(${scrollAmount}px)`;
 
       // Reiniciar el scroll si llega al final
-      if (Math.abs(scrollAmount) >= scrollWidth) {
-        scrollAmount = 0;
-      }
+      
+    if (Math.abs(scrollAmount) >= scrollWidth / 1.95 ) {
+    scrollAmount = 1;
+    scrollAmount -= 0.5;
+  }
 
-      animationFrame = requestAnimationFrame(autoScroll);
-    }
+  requestAnimationFrame(autoScroll);
+}
 
     // Iniciar la animación
     animationFrame = requestAnimationFrame(autoScroll);

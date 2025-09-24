@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Lastica';
+    src: url('/fonts/Lastica.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face 
+  {
+    font-family: 'Lastica regular';
+    src: url('/fonts/Lastica regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face
+  {
+    font-family: 'Lastica bold';
+    src: url('/fonts/Lastica bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
