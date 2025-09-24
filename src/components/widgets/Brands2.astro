@@ -1,0 +1,118 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { Brands as Props } from '~/types';
+import Image from '~/components/common/Image.astro';
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+
+const {
+  title = '',
+  subtitle = '',
+  tagline = '',
+  icons = [],
+  images = [],
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`brand-container max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <div class="text-center mb-6">
+    <div class="brand-title">
+      <Headline title={title} />
+    </div>
+    <div class="brand-subtitle">
+      <Headline subtitle={subtitle} />
+    </div>
+  </div>
+  
+  <div class="overflow-hidden relative brand-img">
+    <div id="carouselTrack2" class="brand-container flex whitespace-nowrap">
+      {icons && icons.map((icon) => (
+       <div class="flex items-center justify-center mx-6">   
+          <Icon name={icon} class="w-12 h-auto text-gray-500" />
+        </div>
+      ))}
+      {images && images.map((image) => (
+        image.src && (
+          <div class="flex justify-center items-center mx-4">
+            <Image src={image.src} alt={image.alt || ''} class="max-w-[150px] h-auto" />
+          </div>
+        )
+      ))}
+      <!-- Duplicamos el contenido para lograr el efecto de desplazamiento infinito -->
+      {icons && icons.map((icon) => (
+<div class="flex items-center justify-center mx-6">
+            <Icon name={icon} class="w-12 h-auto text-gray-500" />
+        </div>
+      ))}
+      {images && images.map((image) => (
+        image.src && (
+          <div class="flex justify-center items-center mx-4">
+            <Image src={image.src} alt={image.alt || ''} class="max-w-[150px] w-40" />
+          </div>
+        )
+      ))}
+    </div>
+  </div>
+</WidgetWrapper>
+
+<style>
+  .brand-container {
+    display: flex;
+    transition: transform 0.1s linear;
+  }
+
+  .brand-img {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  /* Mejoras visuales */
+  .brand-container div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px;
+    transition: transform 0.3s ease;
+  }
+
+  .brand-container div:hover {
+    transform: translateY(-5px);
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const carouselTrack = document.getElementById("carouselTrack2");
+    let scrollAmount = 0;
+    let scrollWidth = carouselTrack.scrollWidth; // Precalcula el ancho a recorrer
+    let animationFrame;
+
+    function autoScroll() {
+      scrollAmount -= 2;
+      carouselTrack.style.transform = `translateX(${scrollAmount}px)`;
+
+      // Reiniciar el scroll si llega al final
+      if (Math.abs(scrollAmount) >= scrollWidth / 2.05 ) {
+    scrollAmount = 1;
+    scrollAmount -= 0.5;
+    }
+    requestAnimationFrame(autoScroll);
+  }
+    // Iniciar la animación
+    animationFrame = requestAnimationFrame(autoScroll);
+
+    // Detener animación si el usuario no está en la pestaña para ahorrar recursos
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        cancelAnimationFrame(animationFrame);
+      } else {
+        animationFrame = requestAnimationFrame(autoScroll);
+      }
+    });
+  });
+</script>
+

@@ -5,10 +5,13 @@ interface Props {
 }
 
 const { src, type = "video/mp4" } = Astro.props;
+
+// Verificar si el archivo es un video (ej: .mp4, .webm)
+const isVideo = src.endsWith(".mp4") || src.endsWith(".webm");
 ---
 
 <style>
-  .video-fondo {
+  .media-fondo {
     position: fixed;
     top: 0;
     left: 0;
@@ -18,7 +21,8 @@ const { src, type = "video/mp4" } = Astro.props;
     z-index: -1;
   }
 
-  .video-fondo video {
+  .media-fondo video,
+  .media-fondo img {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -29,9 +33,13 @@ const { src, type = "video/mp4" } = Astro.props;
   }
 </style>
 
-<div class="video-fondo">
-  <video autoplay muted loop playsinline>
+<div class="media-fondo">
+  {isVideo ? (
+    <video autoplay muted loop playsinline>
       <source src={src} type={type} />
       Tu navegador no soporta el elemento de video.
-  </video>
+    </video>
+  ) : (
+    <img src={src} alt="Fondo" />
+  )}
 </div>
