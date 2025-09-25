@@ -23,12 +23,12 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
+<section class="relative not-prose" {...id ? { id } : {}}>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
-    <div class="py-12 md:py-20 lg:py-0 lg:flex lg:items-center lg:h-screen gap-8 ">
+    <div class="py-12 md:py-20 lg:py-0 lg:flex lg:items-center gap-8 ">
       
-      <div class="basis-1/2">
+      <div class="basis-2/2">
         {
           title && (
             <h1
@@ -57,20 +57,21 @@ const {
             </div>
           )
         }
-         {subsubtitle && <p class="text-2xl text-center mb-6 dark:text-black" set:html={subsubtitle} />}
+         {subsubtitle && <p class="text-2xl text-center mb-6 dark:text-blue-900 mt-10" set:html={subsubtitle} />}
       </div>
-      <div class="basis-1/2">
+      <div class="basis-full">
         {
           image1 && (
-            <div class="relative m-auto max-w-5xl">
+            <div class="relative m-auto max-w-7xl">
               {typeof image1 === 'string' ? (
                 <Fragment set:html={image1} />
               ) : (
                 <Image
-                  class="mx-auto rounded-xl w-full hover:scale-105"
+                  class="mx-auto w-full hover:scale-105"
                   widths={[400, 768, 1024, 2040]}
-                  sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+                  sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2500px) 1024px, 2040px"
                   loading="eager"
+               
                  
                   
                   {...image1}
@@ -80,8 +81,8 @@ const {
           )
         }
       </div>
-      <div class="basis-1/2">
-        {subsubtitle2 && <p class="text-4xl text-muted mb-32 dark:text-blue-900" set:html={subsubtitle2} />}
+      <div class="basis-2/3 mx-10">
+        {subsubtitle2 && <p class="text-2xl text-muted mb-32 dark:text-blue-900 font-black leading-relaxed" set:html={subsubtitle2} />}
         {
           image2 && (
             <div class="relative m-auto ">
@@ -109,8 +110,8 @@ const {
               <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 lg:justify-start lg:m-0 lg:max-w-7xl">
                 {Array.isArray(actions) ? (
                   actions.map((action) => (
-                    <div class="flex w-full sm:w-auto">
-                     <a target="_blank" href="https://app.neighbour.cl/register?app=crm" class="px-24 py-6 rounded-xl text-white font-normal text-l
+                    <div class="flex w-full sm:w-auto my-16">
+                     <a target="_blank" href="https://app.neighbour.cl/register?app=crm" class="px-8 py-6 rounded-xl text-white font-normal text-l
                bg-gradient-to-r from-black to-blue-600"> PRUEBA GRATIS AHORA </a>
                     </div>
                   ))
