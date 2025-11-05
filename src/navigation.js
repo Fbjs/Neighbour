@@ -19,7 +19,7 @@ export const headerData = {
         },
         {
           text: 'Smart360',
-          href: 'https://smart360.cl',
+          href: 'https://smart360.neighbour.cl',
         },
         {
           text: 'Soluciones Digitales',
